@@ -1,0 +1,67 @@
+{
+  "name": "assay",
+  "version": "0.4.0",
+  "description": "Measured priors for Nansen signals, live. Today's Nansen flows joined to what a 12,781-call pre-registered study measured them to be worth, live Hyperliquid positioning (liquidations by holder, smart money against the crowd), and the tools to measure your own. CLI, MCP server and Claude plugin; zero dependencies.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "assay": "./src/cli.mjs",
+    "assay-mcp": "./src/mcp-server.mjs"
+  },
+  "scripts": {
+    "test": "node test/assay.test.mjs && node test/study.test.mjs && node test/audit-convention.test.mjs && node test/hl.test.mjs && node test/now.test.mjs && node test/positioning.test.mjs",
+    "now": "node src/now.mjs",
+    "positioning": "node src/positioning.mjs",
+    "leaderboard": "node src/cli.mjs leaderboard",
+    "audit": "node src/cli.mjs audit",
+    "mcp": "node src/mcp-server.mjs",
+    "study": "node src/study.mjs",
+    "score": "node src/score-study.mjs",
+    "hl:sample": "node src/hl-sample.mjs",
+    "hl:derive": "node src/hl-derive.mjs",
+    "fixtures": "node test/make-fixtures.mjs fixtures",
+    "replay": "node src/run-tournament.mjs --replay fixtures/",
+    "sweep": "node --max-old-space-size=4096 test/make-sweep.mjs fixtures docs/sweep.json",
+    "docs": "node docs/build.mjs",
+    "verify:docs": "node --max-old-space-size=4096 docs/verify.mjs"
+  },
+  "keywords": [
+    "nansen",
+    "onchain",
+    "smart-money",
+    "hyperliquid",
+    "perps",
+    "liquidations",
+    "mcp",
+    "claude",
+    "agents",
+    "calibration",
+    "backtesting"
+  ],
+  "files": [
+    "src",
+    "test",
+    "docs",
+    "ledger/study",
+    "skills",
+    ".claude-plugin",
+    ".mcp.json",
+    "README.md",
+    "LICENSE",
+    "PREREGISTRATION.md",
+    "PREREGISTRATION-AMENDMENT-1.md",
+    "PREREGISTRATION-HL.md",
+    "AUDIT-CONVENTION.md",
+    "NANSEN-API-REFERENCE.md",
+    "FINDINGS.md"
+  ],
+  "author": "Gryps (https://github.com/gryps-finance)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gryps-finance/assay.git"
+  },
+  "homepage": "https://github.com/gryps-finance/assay"
+}

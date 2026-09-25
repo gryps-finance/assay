@@ -1,0 +1,23 @@
+node_modules/
+.env
+*.log
+
+# Ledgers. The measured study ships (ledger/study): its verdicts, its sweep, its audit, and a receipt for every one
+# of the 12,781 calls (request id, credits, and a SHA-256 of each response). The responses themselves do not ship:
+# Nansen's redistribution rules keep raw API data with whoever made the call, so a run of yours keeps its raw pulls
+# on your machine too.
+ledger/*
+!ledger/study/
+ledger/study/calls.jsonl
+ledger/study/ohlcv/
+ledger/study/raw/
+
+# 35MB of generated data. The GENERATOR is committed, seeded and byte-for-byte deterministic, so running it
+# reproduces exactly the synthetic world the instrument was calibrated on.
+fixtures/
+
+# the skeleton-less build, produced at publish time from docs/page.body.html; docs/index.html is the committed one
+docs/artifact.html
+
+# screenshots docs/verify.mjs writes while checking the page against the engine
+.verify-*.png

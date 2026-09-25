@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "assay": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/src/mcp-server.mjs"
+      ],
+      "env": {
+        "ASSAY_LEDGER_DIR": "${CLAUDE_PLUGIN_ROOT}/ledger/study",
+        "ASSAY_LIVE_DIR": "${CLAUDE_PLUGIN_ROOT}/ledger/live",
+        "HL_LEDGER_DIR": "${CLAUDE_PLUGIN_ROOT}/ledger/hl"
+      }
+    }
+  }
+}
