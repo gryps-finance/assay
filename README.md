@@ -32,6 +32,7 @@ node src/cli.mjs audit
 export NANSEN_API_KEY=...            # PowerShell: $env:NANSEN_API_KEY = "..."
 node src/cli.mjs now                 # about 100 credits: today's signals, each with its prior and a decision
 node src/cli.mjs positioning         # about 65 credits: live Hyperliquid positioning
+node src/cli.mjs demo                # both of the above in one paced take with the framing, about 45 seconds; what our recording shows
 
 # the whole instrument against mock venues, no key
 npm test                             # 206 checks

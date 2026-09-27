@@ -2,6 +2,7 @@
 /**
  * assay — one entry point for the whole tool.
  *
+ *   assay demo                   one paced take of `now` and `positioning`, framed for a screen recording (key)
  *   assay now                    today's Nansen flow signals, each with its measured prior and a decision (key)
  *   assay positioning            a live read of Hyperliquid positioning: liquidations by holder, smart money vs crowd (key)
  *   assay prior <segment> <h>    the measured prior for one segment at one horizon (no key)
@@ -84,6 +85,7 @@ function audit() {
 const HELP = readFileSync(fileURLToPath(import.meta.url), 'utf8').split('\n').filter((l) => l.startsWith(' *   assay') || l.startsWith(' * The key')).map((l) => l.replace(/^ \* ?/, '  ')).join('\n')
 
 switch (cmd) {
+  case 'demo': run('demo.mjs', rest); break
   case 'now': run('now.mjs', rest); break
   case 'positioning': case 'hl': run('positioning.mjs', rest); break
   case 'study': run('study.mjs', rest); break
