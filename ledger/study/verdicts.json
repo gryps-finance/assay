@@ -1,0 +1,2921 @@
+{
+  "asOf": "2026-09-20T00:26:42.834Z",
+  "specHash": "deb117cbb478",
+  "spec": {
+    "minFlowUsd": 250000,
+    "topK": 10,
+    "horizonsHours": [
+      24,
+      48,
+      168
+    ],
+    "controlWindowDays": 3,
+    "controlSeed": 20260916
+  },
+  "costRtBps": 12,
+  "arm": "daily",
+  "lookAheadBoundDays": 1,
+  "observationsUsed": 10798,
+  "forecastsFormed": 43059,
+  "forecastsSkipped": {
+    "whale": {
+      "nullFlow": 0,
+      "belowThreshold": 9439,
+      "notTopK": 1,
+      "noPrice": 0,
+      "unparseable": 0
+    },
+    "public_figure": {
+      "nullFlow": 0,
+      "belowThreshold": 10670,
+      "notTopK": 0,
+      "noPrice": 0,
+      "unparseable": 0
+    },
+    "top_pnl": {
+      "nullFlow": 0,
+      "belowThreshold": 8365,
+      "notTopK": 13,
+      "noPrice": 0,
+      "unparseable": 0
+    },
+    "smart_trader": {
+      "nullFlow": 0,
+      "belowThreshold": 10576,
+      "notTopK": 0,
+      "noPrice": 0,
+      "unparseable": 0
+    },
+    "exchange": {
+      "nullFlow": 0,
+      "belowThreshold": 4940,
+      "notTopK": 942,
+      "noPrice": 1,
+      "unparseable": 0
+    },
+    "fresh_wallets": {
+      "nullFlow": 0,
+      "belowThreshold": 3135,
+      "notTopK": 2350,
+      "noPrice": 3,
+      "unparseable": 0
+    }
+  },
+  "searchCount": 18,
+  "results": [
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess -36.1 bps, p 0.0850 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Whale",
+        "horizonHours": 24,
+        "forecastsSeen": 1358,
+        "matured": 1358,
+        "pendingCount": 0,
+        "noControlCount": 0,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Whale",
+        "horizonHours": 24,
+        "netMeanBps": -48.11,
+        "sdBps": 647.2,
+        "standardErrorBps": 21.14,
+        "iidStandardErrorBps": 17.56,
+        "effectiveN": 937,
+        "varianceInflation": 1.2,
+        "n": 1358,
+        "pValue": 0.08496,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": 2.69,
+        "controlMeanBps": 38.79,
+        "excessMeanBps": -36.11,
+        "hitRate": 0.4993,
+        "calibration": {
+          "brier": 0.34478,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 285,
+              "meanPredicted": 0.1199,
+              "observedFrequency": 0.5263
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 403,
+              "meanPredicted": 0.2829,
+              "observedFrequency": 0.5161
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 415,
+              "meanPredicted": 0.7099,
+              "observedFrequency": 0.4578
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 255,
+              "meanPredicted": 0.8755,
+              "observedFrequency": 0.5098
+            }
+          ],
+          "n": 1358,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess -37.6 bps, p 0.1259 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Whale",
+        "horizonHours": 48,
+        "forecastsSeen": 1358,
+        "matured": 1358,
+        "pendingCount": 0,
+        "noControlCount": 0,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Whale",
+        "horizonHours": 48,
+        "netMeanBps": -49.59,
+        "sdBps": 875.26,
+        "standardErrorBps": 24.28,
+        "iidStandardErrorBps": 23.75,
+        "effectiveN": 1299,
+        "varianceInflation": 1.02,
+        "n": 1358,
+        "pValue": 0.12594,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": 7.33,
+        "controlMeanBps": 44.92,
+        "excessMeanBps": -37.59,
+        "hitRate": 0.5029,
+        "calibration": {
+          "brier": 0.35477,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 285,
+              "meanPredicted": 0.1199,
+              "observedFrequency": 0.5614
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 403,
+              "meanPredicted": 0.2829,
+              "observedFrequency": 0.5211
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 415,
+              "meanPredicted": 0.7099,
+              "observedFrequency": 0.4434
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 255,
+              "meanPredicted": 0.8755,
+              "observedFrequency": 0.5059
+            }
+          ],
+          "n": 1358,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess -22.7 bps, p 0.2969 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Whale",
+        "horizonHours": 168,
+        "forecastsSeen": 1358,
+        "matured": 1358,
+        "pendingCount": 0,
+        "noControlCount": 0,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Whale",
+        "horizonHours": 168,
+        "netMeanBps": -34.74,
+        "sdBps": 815.99,
+        "standardErrorBps": 21.68,
+        "iidStandardErrorBps": 22.14,
+        "effectiveN": 1416,
+        "varianceInflation": 0.98,
+        "n": 1358,
+        "pValue": 0.29685,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": 9.21,
+        "controlMeanBps": 31.95,
+        "excessMeanBps": -22.74,
+        "hitRate": 0.5029,
+        "calibration": {
+          "brier": 0.36571,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 285,
+              "meanPredicted": 0.1199,
+              "observedFrequency": 0.5579
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 403,
+              "meanPredicted": 0.2829,
+              "observedFrequency": 0.5558
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 415,
+              "meanPredicted": 0.7099,
+              "observedFrequency": 0.4458
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 255,
+              "meanPredicted": 0.8755,
+              "observedFrequency": 0.451
+            }
+          ],
+          "n": 1358,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess 59.5 bps, p 0.2564 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Public Figure",
+        "horizonHours": 24,
+        "forecastsSeen": 128,
+        "matured": 128,
+        "pendingCount": 0,
+        "noControlCount": 0,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Public Figure",
+        "horizonHours": 24,
+        "netMeanBps": 47.45,
+        "sdBps": 621.11,
+        "standardErrorBps": 51.94,
+        "iidStandardErrorBps": 54.9,
+        "effectiveN": 143,
+        "varianceInflation": 0.95,
+        "n": 128,
+        "pValue": 0.25637,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": 41.21,
+        "controlMeanBps": -18.24,
+        "excessMeanBps": 59.45,
+        "hitRate": 0.5859,
+        "calibration": {
+          "brier": 0.35103,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 47,
+              "meanPredicted": 0.1012,
+              "observedFrequency": 0.5532
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 36,
+              "meanPredicted": 0.2808,
+              "observedFrequency": 0.5833
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 26,
+              "meanPredicted": 0.7217,
+              "observedFrequency": 0.5769
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 19,
+              "meanPredicted": 0.8818,
+              "observedFrequency": 0.6842
+            }
+          ],
+          "n": 128,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess 0.3 bps, p 0.9965 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Public Figure",
+        "horizonHours": 48,
+        "forecastsSeen": 128,
+        "matured": 128,
+        "pendingCount": 0,
+        "noControlCount": 0,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Public Figure",
+        "horizonHours": 48,
+        "netMeanBps": -11.75,
+        "sdBps": 826.2,
+        "standardErrorBps": 78.12,
+        "iidStandardErrorBps": 73.03,
+        "effectiveN": 112,
+        "varianceInflation": 1.07,
+        "n": 128,
+        "pValue": 0.9965,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": 1.81,
+        "controlMeanBps": 1.55,
+        "excessMeanBps": 0.25,
+        "hitRate": 0.5,
+        "calibration": {
+          "brier": 0.31706,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 47,
+              "meanPredicted": 0.1012,
+              "observedFrequency": 0.4255
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 36,
+              "meanPredicted": 0.2808,
+              "observedFrequency": 0.5
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 26,
+              "meanPredicted": 0.7217,
+              "observedFrequency": 0.5769
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 19,
+              "meanPredicted": 0.8818,
+              "observedFrequency": 0.5789
+            }
+          ],
+          "n": 128,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess -12.0 bps, p 0.8031 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Public Figure",
+        "horizonHours": 168,
+        "forecastsSeen": 128,
+        "matured": 128,
+        "pendingCount": 0,
+        "noControlCount": 0,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Public Figure",
+        "horizonHours": 168,
+        "netMeanBps": -23.97,
+        "sdBps": 783.36,
+        "standardErrorBps": 50.92,
+        "iidStandardErrorBps": 69.24,
+        "effectiveN": 237,
+        "varianceInflation": 0.74,
+        "n": 128,
+        "pValue": 0.8031,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": 8.59,
+        "controlMeanBps": 20.56,
+        "excessMeanBps": -11.97,
+        "hitRate": 0.4609,
+        "calibration": {
+          "brier": 0.33968,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 47,
+              "meanPredicted": 0.1012,
+              "observedFrequency": 0.4255
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 36,
+              "meanPredicted": 0.2808,
+              "observedFrequency": 0.5
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 26,
+              "meanPredicted": 0.7217,
+              "observedFrequency": 0.4231
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 19,
+              "meanPredicted": 0.8818,
+              "observedFrequency": 0.5263
+            }
+          ],
+          "n": 128,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess -10.0 bps, p 0.5002 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Top PnL",
+        "horizonHours": 24,
+        "forecastsSeen": 2420,
+        "matured": 2420,
+        "pendingCount": 0,
+        "noControlCount": 0,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Top PnL",
+        "horizonHours": 24,
+        "netMeanBps": -22,
+        "sdBps": 659.91,
+        "standardErrorBps": 15.05,
+        "iidStandardErrorBps": 13.41,
+        "effectiveN": 1923,
+        "varianceInflation": 1.12,
+        "n": 2420,
+        "pValue": 0.50025,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": -2.64,
+        "controlMeanBps": 7.36,
+        "excessMeanBps": -10,
+        "hitRate": 0.4942,
+        "calibration": {
+          "brier": 0.36308,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 672,
+              "meanPredicted": 0.1051,
+              "observedFrequency": 0.494
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 786,
+              "meanPredicted": 0.2862,
+              "observedFrequency": 0.5369
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 512,
+              "meanPredicted": 0.7144,
+              "observedFrequency": 0.4668
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 450,
+              "meanPredicted": 0.9064,
+              "observedFrequency": 0.4511
+            }
+          ],
+          "n": 2420,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess 14.7 bps, p 0.4328 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Top PnL",
+        "horizonHours": 48,
+        "forecastsSeen": 2420,
+        "matured": 2420,
+        "pendingCount": 0,
+        "noControlCount": 0,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Top PnL",
+        "horizonHours": 48,
+        "netMeanBps": 2.71,
+        "sdBps": 854.07,
+        "standardErrorBps": 18.5,
+        "iidStandardErrorBps": 17.36,
+        "effectiveN": 2132,
+        "varianceInflation": 1.07,
+        "n": 2420,
+        "pValue": 0.43278,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": 7.71,
+        "controlMeanBps": -7,
+        "excessMeanBps": 14.71,
+        "hitRate": 0.5058,
+        "calibration": {
+          "brier": 0.36492,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 672,
+              "meanPredicted": 0.1051,
+              "observedFrequency": 0.5119
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 786,
+              "meanPredicted": 0.2862,
+              "observedFrequency": 0.5407
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 512,
+              "meanPredicted": 0.7144,
+              "observedFrequency": 0.4824
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 450,
+              "meanPredicted": 0.9064,
+              "observedFrequency": 0.4622
+            }
+          ],
+          "n": 2420,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess 23.3 bps, p 0.1749 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Top PnL",
+        "horizonHours": 168,
+        "forecastsSeen": 2420,
+        "matured": 2420,
+        "pendingCount": 0,
+        "noControlCount": 0,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Top PnL",
+        "horizonHours": 168,
+        "netMeanBps": 11.28,
+        "sdBps": 888.95,
+        "standardErrorBps": 17.5,
+        "iidStandardErrorBps": 18.07,
+        "effectiveN": 2580,
+        "varianceInflation": 0.97,
+        "n": 2420,
+        "pValue": 0.17491,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": 13.47,
+        "controlMeanBps": -9.81,
+        "excessMeanBps": 23.28,
+        "hitRate": 0.5153,
+        "calibration": {
+          "brier": 0.3668,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 672,
+              "meanPredicted": 0.1051,
+              "observedFrequency": 0.5164
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 786,
+              "meanPredicted": 0.2862,
+              "observedFrequency": 0.5573
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 512,
+              "meanPredicted": 0.7144,
+              "observedFrequency": 0.4961
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 450,
+              "meanPredicted": 0.9064,
+              "observedFrequency": 0.4622
+            }
+          ],
+          "n": 2420,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess -28.4 bps, p 0.5497 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Smart Trader",
+        "horizonHours": 24,
+        "forecastsSeen": 222,
+        "matured": 222,
+        "pendingCount": 0,
+        "noControlCount": 0,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Smart Trader",
+        "horizonHours": 24,
+        "netMeanBps": -40.41,
+        "sdBps": 649.88,
+        "standardErrorBps": 47.1,
+        "iidStandardErrorBps": 43.62,
+        "effectiveN": 190,
+        "varianceInflation": 1.08,
+        "n": 222,
+        "pValue": 0.54973,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": -20.55,
+        "controlMeanBps": 7.85,
+        "excessMeanBps": -28.41,
+        "hitRate": 0.4865,
+        "calibration": {
+          "brier": 0.38232,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 43,
+              "meanPredicted": 0.1077,
+              "observedFrequency": 0.5814
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 85,
+              "meanPredicted": 0.2786,
+              "observedFrequency": 0.5176
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 55,
+              "meanPredicted": 0.7242,
+              "observedFrequency": 0.4727
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 39,
+              "meanPredicted": 0.914,
+              "observedFrequency": 0.3333
+            }
+          ],
+          "n": 222,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess -69.7 bps, p 0.2444 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Smart Trader",
+        "horizonHours": 48,
+        "forecastsSeen": 222,
+        "matured": 222,
+        "pendingCount": 0,
+        "noControlCount": 0,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Smart Trader",
+        "horizonHours": 48,
+        "netMeanBps": -81.69,
+        "sdBps": 860.33,
+        "standardErrorBps": 59.8,
+        "iidStandardErrorBps": 57.74,
+        "effectiveN": 207,
+        "varianceInflation": 1.04,
+        "n": 222,
+        "pValue": 0.24438,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": 19.26,
+        "controlMeanBps": 88.96,
+        "excessMeanBps": -69.69,
+        "hitRate": 0.5045,
+        "calibration": {
+          "brier": 0.38959,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 43,
+              "meanPredicted": 0.1077,
+              "observedFrequency": 0.6047
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 85,
+              "meanPredicted": 0.2786,
+              "observedFrequency": 0.5647
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 55,
+              "meanPredicted": 0.7242,
+              "observedFrequency": 0.3818
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 39,
+              "meanPredicted": 0.914,
+              "observedFrequency": 0.4359
+            }
+          ],
+          "n": 222,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess 25.9 bps, p 0.7546 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Smart Trader",
+        "horizonHours": 168,
+        "forecastsSeen": 222,
+        "matured": 222,
+        "pendingCount": 0,
+        "noControlCount": 0,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Smart Trader",
+        "horizonHours": 168,
+        "netMeanBps": 13.89,
+        "sdBps": 946.62,
+        "standardErrorBps": 82.11,
+        "iidStandardErrorBps": 63.53,
+        "effectiveN": 133,
+        "varianceInflation": 1.29,
+        "n": 222,
+        "pValue": 0.75462,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": -7.53,
+        "controlMeanBps": -33.41,
+        "excessMeanBps": 25.89,
+        "hitRate": 0.4595,
+        "calibration": {
+          "brier": 0.41902,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 43,
+              "meanPredicted": 0.1077,
+              "observedFrequency": 0.6512
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 85,
+              "meanPredicted": 0.2786,
+              "observedFrequency": 0.5294
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 55,
+              "meanPredicted": 0.7242,
+              "observedFrequency": 0.2727
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 39,
+              "meanPredicted": 0.914,
+              "observedFrequency": 0.359
+            }
+          ],
+          "n": 222,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess 2.4 bps, p 0.8026 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Exchange",
+        "horizonHours": 24,
+        "forecastsSeen": 4915,
+        "matured": 4912,
+        "pendingCount": 1,
+        "noControlCount": 2,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Exchange",
+        "horizonHours": 24,
+        "netMeanBps": -9.61,
+        "sdBps": 645.84,
+        "standardErrorBps": 9.68,
+        "iidStandardErrorBps": 9.21,
+        "effectiveN": 4455,
+        "varianceInflation": 1.05,
+        "n": 4912,
+        "pValue": 0.8026,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": 0.84,
+        "controlMeanBps": -1.55,
+        "excessMeanBps": 2.39,
+        "hitRate": 0.5153,
+        "calibration": {
+          "brier": 0.39074,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 1834,
+              "meanPredicted": 0.0978,
+              "observedFrequency": 0.5371
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 1157,
+              "meanPredicted": 0.2696,
+              "observedFrequency": 0.5393
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 763,
+              "meanPredicted": 0.7259,
+              "observedFrequency": 0.4849
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 1158,
+              "meanPredicted": 0.8935,
+              "observedFrequency": 0.4767
+            }
+          ],
+          "n": 4912,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess -14.9 bps, p 0.1659 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Exchange",
+        "horizonHours": 48,
+        "forecastsSeen": 4915,
+        "matured": 4912,
+        "pendingCount": 2,
+        "noControlCount": 1,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Exchange",
+        "horizonHours": 48,
+        "netMeanBps": -26.94,
+        "sdBps": 856.68,
+        "standardErrorBps": 10.58,
+        "iidStandardErrorBps": 12.22,
+        "effectiveN": 6555,
+        "varianceInflation": 0.87,
+        "n": 4912,
+        "pValue": 0.16592,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": -10.96,
+        "controlMeanBps": 3.98,
+        "excessMeanBps": -14.94,
+        "hitRate": 0.49,
+        "calibration": {
+          "brier": 0.38895,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 1834,
+              "meanPredicted": 0.0978,
+              "observedFrequency": 0.5169
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 1157,
+              "meanPredicted": 0.2695,
+              "observedFrequency": 0.5108
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 763,
+              "meanPredicted": 0.7259,
+              "observedFrequency": 0.4509
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 1158,
+              "meanPredicted": 0.8935,
+              "observedFrequency": 0.4525
+            }
+          ],
+          "n": 4912,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess 1.1 bps, p 0.9280 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Exchange",
+        "horizonHours": 168,
+        "forecastsSeen": 4915,
+        "matured": 4911,
+        "pendingCount": 3,
+        "noControlCount": 1,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Exchange",
+        "horizonHours": 168,
+        "netMeanBps": -10.89,
+        "sdBps": 857.36,
+        "standardErrorBps": 12.68,
+        "iidStandardErrorBps": 12.23,
+        "effectiveN": 4572,
+        "varianceInflation": 1.04,
+        "n": 4911,
+        "pValue": 0.92804,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": 3.94,
+        "controlMeanBps": 2.83,
+        "excessMeanBps": 1.11,
+        "hitRate": 0.5062,
+        "calibration": {
+          "brier": 0.39809,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 1835,
+              "meanPredicted": 0.0979,
+              "observedFrequency": 0.533
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 1156,
+              "meanPredicted": 0.2696,
+              "observedFrequency": 0.5458
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 762,
+              "meanPredicted": 0.7259,
+              "observedFrequency": 0.4882
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 1158,
+              "meanPredicted": 0.8935,
+              "observedFrequency": 0.4361
+            }
+          ],
+          "n": 4911,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess -7.5 bps, p 0.3983 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Fresh Wallets",
+        "horizonHours": 24,
+        "forecastsSeen": 5310,
+        "matured": 5308,
+        "pendingCount": 1,
+        "noControlCount": 1,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Fresh Wallets",
+        "horizonHours": 24,
+        "netMeanBps": -19.55,
+        "sdBps": 649.41,
+        "standardErrorBps": 9.03,
+        "iidStandardErrorBps": 8.91,
+        "effectiveN": 5168,
+        "varianceInflation": 1.01,
+        "n": 5308,
+        "pValue": 0.3983,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": -12.48,
+        "controlMeanBps": -4.93,
+        "excessMeanBps": -7.55,
+        "hitRate": 0.4727,
+        "calibration": {
+          "brier": 0.44838,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 841,
+              "meanPredicted": 0.732,
+              "observedFrequency": 0.4673
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 4467,
+              "meanPredicted": 0.9437,
+              "observedFrequency": 0.4737
+            }
+          ],
+          "n": 5308,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess -16.6 bps, p 0.2034 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Fresh Wallets",
+        "horizonHours": 48,
+        "forecastsSeen": 5310,
+        "matured": 5307,
+        "pendingCount": 2,
+        "noControlCount": 1,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Fresh Wallets",
+        "horizonHours": 48,
+        "netMeanBps": -28.62,
+        "sdBps": 858.54,
+        "standardErrorBps": 13.27,
+        "iidStandardErrorBps": 11.79,
+        "effectiveN": 4188,
+        "varianceInflation": 1.13,
+        "n": 5307,
+        "pValue": 0.2034,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": -22.7,
+        "controlMeanBps": -6.08,
+        "excessMeanBps": -16.62,
+        "hitRate": 0.4733,
+        "calibration": {
+          "brier": 0.44906,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 841,
+              "meanPredicted": 0.732,
+              "observedFrequency": 0.4756
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 4466,
+              "meanPredicted": 0.9437,
+              "observedFrequency": 0.4729
+            }
+          ],
+          "n": 5307,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess -19.0 bps, p 0.3238 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Fresh Wallets",
+        "horizonHours": 168,
+        "forecastsSeen": 5310,
+        "matured": 5305,
+        "pendingCount": 3,
+        "noControlCount": 2,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Fresh Wallets",
+        "horizonHours": 168,
+        "netMeanBps": -31.03,
+        "sdBps": 876.5,
+        "standardErrorBps": 19.29,
+        "iidStandardErrorBps": 12.03,
+        "effectiveN": 2065,
+        "varianceInflation": 1.6,
+        "n": 5305,
+        "pValue": 0.32384,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": -62.08,
+        "controlMeanBps": -43.05,
+        "excessMeanBps": -19.03,
+        "hitRate": 0.4639,
+        "calibration": {
+          "brier": 0.45846,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 841,
+              "meanPredicted": 0.732,
+              "observedFrequency": 0.4792
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 4464,
+              "meanPredicted": 0.9436,
+              "observedFrequency": 0.461
+            }
+          ],
+          "n": 5305,
+          "skipped": 0
+        }
+      }
+    }
+  ],
+  "ranked": [
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess 59.5 bps, p 0.2564 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Public Figure",
+        "horizonHours": 24,
+        "forecastsSeen": 128,
+        "matured": 128,
+        "pendingCount": 0,
+        "noControlCount": 0,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Public Figure",
+        "horizonHours": 24,
+        "netMeanBps": 47.45,
+        "sdBps": 621.11,
+        "standardErrorBps": 51.94,
+        "iidStandardErrorBps": 54.9,
+        "effectiveN": 143,
+        "varianceInflation": 0.95,
+        "n": 128,
+        "pValue": 0.25637,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": 41.21,
+        "controlMeanBps": -18.24,
+        "excessMeanBps": 59.45,
+        "hitRate": 0.5859,
+        "calibration": {
+          "brier": 0.35103,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 47,
+              "meanPredicted": 0.1012,
+              "observedFrequency": 0.5532
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 36,
+              "meanPredicted": 0.2808,
+              "observedFrequency": 0.5833
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 26,
+              "meanPredicted": 0.7217,
+              "observedFrequency": 0.5769
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 19,
+              "meanPredicted": 0.8818,
+              "observedFrequency": 0.6842
+            }
+          ],
+          "n": 128,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess 25.9 bps, p 0.7546 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Smart Trader",
+        "horizonHours": 168,
+        "forecastsSeen": 222,
+        "matured": 222,
+        "pendingCount": 0,
+        "noControlCount": 0,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Smart Trader",
+        "horizonHours": 168,
+        "netMeanBps": 13.89,
+        "sdBps": 946.62,
+        "standardErrorBps": 82.11,
+        "iidStandardErrorBps": 63.53,
+        "effectiveN": 133,
+        "varianceInflation": 1.29,
+        "n": 222,
+        "pValue": 0.75462,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": -7.53,
+        "controlMeanBps": -33.41,
+        "excessMeanBps": 25.89,
+        "hitRate": 0.4595,
+        "calibration": {
+          "brier": 0.41902,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 43,
+              "meanPredicted": 0.1077,
+              "observedFrequency": 0.6512
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 85,
+              "meanPredicted": 0.2786,
+              "observedFrequency": 0.5294
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 55,
+              "meanPredicted": 0.7242,
+              "observedFrequency": 0.2727
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 39,
+              "meanPredicted": 0.914,
+              "observedFrequency": 0.359
+            }
+          ],
+          "n": 222,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess 23.3 bps, p 0.1749 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Top PnL",
+        "horizonHours": 168,
+        "forecastsSeen": 2420,
+        "matured": 2420,
+        "pendingCount": 0,
+        "noControlCount": 0,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Top PnL",
+        "horizonHours": 168,
+        "netMeanBps": 11.28,
+        "sdBps": 888.95,
+        "standardErrorBps": 17.5,
+        "iidStandardErrorBps": 18.07,
+        "effectiveN": 2580,
+        "varianceInflation": 0.97,
+        "n": 2420,
+        "pValue": 0.17491,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": 13.47,
+        "controlMeanBps": -9.81,
+        "excessMeanBps": 23.28,
+        "hitRate": 0.5153,
+        "calibration": {
+          "brier": 0.3668,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 672,
+              "meanPredicted": 0.1051,
+              "observedFrequency": 0.5164
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 786,
+              "meanPredicted": 0.2862,
+              "observedFrequency": 0.5573
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 512,
+              "meanPredicted": 0.7144,
+              "observedFrequency": 0.4961
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 450,
+              "meanPredicted": 0.9064,
+              "observedFrequency": 0.4622
+            }
+          ],
+          "n": 2420,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess 14.7 bps, p 0.4328 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Top PnL",
+        "horizonHours": 48,
+        "forecastsSeen": 2420,
+        "matured": 2420,
+        "pendingCount": 0,
+        "noControlCount": 0,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Top PnL",
+        "horizonHours": 48,
+        "netMeanBps": 2.71,
+        "sdBps": 854.07,
+        "standardErrorBps": 18.5,
+        "iidStandardErrorBps": 17.36,
+        "effectiveN": 2132,
+        "varianceInflation": 1.07,
+        "n": 2420,
+        "pValue": 0.43278,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": 7.71,
+        "controlMeanBps": -7,
+        "excessMeanBps": 14.71,
+        "hitRate": 0.5058,
+        "calibration": {
+          "brier": 0.36492,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 672,
+              "meanPredicted": 0.1051,
+              "observedFrequency": 0.5119
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 786,
+              "meanPredicted": 0.2862,
+              "observedFrequency": 0.5407
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 512,
+              "meanPredicted": 0.7144,
+              "observedFrequency": 0.4824
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 450,
+              "meanPredicted": 0.9064,
+              "observedFrequency": 0.4622
+            }
+          ],
+          "n": 2420,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess 2.4 bps, p 0.8026 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Exchange",
+        "horizonHours": 24,
+        "forecastsSeen": 4915,
+        "matured": 4912,
+        "pendingCount": 1,
+        "noControlCount": 2,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Exchange",
+        "horizonHours": 24,
+        "netMeanBps": -9.61,
+        "sdBps": 645.84,
+        "standardErrorBps": 9.68,
+        "iidStandardErrorBps": 9.21,
+        "effectiveN": 4455,
+        "varianceInflation": 1.05,
+        "n": 4912,
+        "pValue": 0.8026,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": 0.84,
+        "controlMeanBps": -1.55,
+        "excessMeanBps": 2.39,
+        "hitRate": 0.5153,
+        "calibration": {
+          "brier": 0.39074,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 1834,
+              "meanPredicted": 0.0978,
+              "observedFrequency": 0.5371
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 1157,
+              "meanPredicted": 0.2696,
+              "observedFrequency": 0.5393
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 763,
+              "meanPredicted": 0.7259,
+              "observedFrequency": 0.4849
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 1158,
+              "meanPredicted": 0.8935,
+              "observedFrequency": 0.4767
+            }
+          ],
+          "n": 4912,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess 1.1 bps, p 0.9280 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Exchange",
+        "horizonHours": 168,
+        "forecastsSeen": 4915,
+        "matured": 4911,
+        "pendingCount": 3,
+        "noControlCount": 1,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Exchange",
+        "horizonHours": 168,
+        "netMeanBps": -10.89,
+        "sdBps": 857.36,
+        "standardErrorBps": 12.68,
+        "iidStandardErrorBps": 12.23,
+        "effectiveN": 4572,
+        "varianceInflation": 1.04,
+        "n": 4911,
+        "pValue": 0.92804,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": 3.94,
+        "controlMeanBps": 2.83,
+        "excessMeanBps": 1.11,
+        "hitRate": 0.5062,
+        "calibration": {
+          "brier": 0.39809,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 1835,
+              "meanPredicted": 0.0979,
+              "observedFrequency": 0.533
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 1156,
+              "meanPredicted": 0.2696,
+              "observedFrequency": 0.5458
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 762,
+              "meanPredicted": 0.7259,
+              "observedFrequency": 0.4882
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 1158,
+              "meanPredicted": 0.8935,
+              "observedFrequency": 0.4361
+            }
+          ],
+          "n": 4911,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess 0.3 bps, p 0.9965 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Public Figure",
+        "horizonHours": 48,
+        "forecastsSeen": 128,
+        "matured": 128,
+        "pendingCount": 0,
+        "noControlCount": 0,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Public Figure",
+        "horizonHours": 48,
+        "netMeanBps": -11.75,
+        "sdBps": 826.2,
+        "standardErrorBps": 78.12,
+        "iidStandardErrorBps": 73.03,
+        "effectiveN": 112,
+        "varianceInflation": 1.07,
+        "n": 128,
+        "pValue": 0.9965,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": 1.81,
+        "controlMeanBps": 1.55,
+        "excessMeanBps": 0.25,
+        "hitRate": 0.5,
+        "calibration": {
+          "brier": 0.31706,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 47,
+              "meanPredicted": 0.1012,
+              "observedFrequency": 0.4255
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 36,
+              "meanPredicted": 0.2808,
+              "observedFrequency": 0.5
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 26,
+              "meanPredicted": 0.7217,
+              "observedFrequency": 0.5769
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 19,
+              "meanPredicted": 0.8818,
+              "observedFrequency": 0.5789
+            }
+          ],
+          "n": 128,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess -7.5 bps, p 0.3983 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Fresh Wallets",
+        "horizonHours": 24,
+        "forecastsSeen": 5310,
+        "matured": 5308,
+        "pendingCount": 1,
+        "noControlCount": 1,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Fresh Wallets",
+        "horizonHours": 24,
+        "netMeanBps": -19.55,
+        "sdBps": 649.41,
+        "standardErrorBps": 9.03,
+        "iidStandardErrorBps": 8.91,
+        "effectiveN": 5168,
+        "varianceInflation": 1.01,
+        "n": 5308,
+        "pValue": 0.3983,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": -12.48,
+        "controlMeanBps": -4.93,
+        "excessMeanBps": -7.55,
+        "hitRate": 0.4727,
+        "calibration": {
+          "brier": 0.44838,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 841,
+              "meanPredicted": 0.732,
+              "observedFrequency": 0.4673
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 4467,
+              "meanPredicted": 0.9437,
+              "observedFrequency": 0.4737
+            }
+          ],
+          "n": 5308,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess -10.0 bps, p 0.5002 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Top PnL",
+        "horizonHours": 24,
+        "forecastsSeen": 2420,
+        "matured": 2420,
+        "pendingCount": 0,
+        "noControlCount": 0,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Top PnL",
+        "horizonHours": 24,
+        "netMeanBps": -22,
+        "sdBps": 659.91,
+        "standardErrorBps": 15.05,
+        "iidStandardErrorBps": 13.41,
+        "effectiveN": 1923,
+        "varianceInflation": 1.12,
+        "n": 2420,
+        "pValue": 0.50025,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": -2.64,
+        "controlMeanBps": 7.36,
+        "excessMeanBps": -10,
+        "hitRate": 0.4942,
+        "calibration": {
+          "brier": 0.36308,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 672,
+              "meanPredicted": 0.1051,
+              "observedFrequency": 0.494
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 786,
+              "meanPredicted": 0.2862,
+              "observedFrequency": 0.5369
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 512,
+              "meanPredicted": 0.7144,
+              "observedFrequency": 0.4668
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 450,
+              "meanPredicted": 0.9064,
+              "observedFrequency": 0.4511
+            }
+          ],
+          "n": 2420,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess -12.0 bps, p 0.8031 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Public Figure",
+        "horizonHours": 168,
+        "forecastsSeen": 128,
+        "matured": 128,
+        "pendingCount": 0,
+        "noControlCount": 0,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Public Figure",
+        "horizonHours": 168,
+        "netMeanBps": -23.97,
+        "sdBps": 783.36,
+        "standardErrorBps": 50.92,
+        "iidStandardErrorBps": 69.24,
+        "effectiveN": 237,
+        "varianceInflation": 0.74,
+        "n": 128,
+        "pValue": 0.8031,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": 8.59,
+        "controlMeanBps": 20.56,
+        "excessMeanBps": -11.97,
+        "hitRate": 0.4609,
+        "calibration": {
+          "brier": 0.33968,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 47,
+              "meanPredicted": 0.1012,
+              "observedFrequency": 0.4255
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 36,
+              "meanPredicted": 0.2808,
+              "observedFrequency": 0.5
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 26,
+              "meanPredicted": 0.7217,
+              "observedFrequency": 0.4231
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 19,
+              "meanPredicted": 0.8818,
+              "observedFrequency": 0.5263
+            }
+          ],
+          "n": 128,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess -14.9 bps, p 0.1659 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Exchange",
+        "horizonHours": 48,
+        "forecastsSeen": 4915,
+        "matured": 4912,
+        "pendingCount": 2,
+        "noControlCount": 1,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Exchange",
+        "horizonHours": 48,
+        "netMeanBps": -26.94,
+        "sdBps": 856.68,
+        "standardErrorBps": 10.58,
+        "iidStandardErrorBps": 12.22,
+        "effectiveN": 6555,
+        "varianceInflation": 0.87,
+        "n": 4912,
+        "pValue": 0.16592,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": -10.96,
+        "controlMeanBps": 3.98,
+        "excessMeanBps": -14.94,
+        "hitRate": 0.49,
+        "calibration": {
+          "brier": 0.38895,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 1834,
+              "meanPredicted": 0.0978,
+              "observedFrequency": 0.5169
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 1157,
+              "meanPredicted": 0.2695,
+              "observedFrequency": 0.5108
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 763,
+              "meanPredicted": 0.7259,
+              "observedFrequency": 0.4509
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 1158,
+              "meanPredicted": 0.8935,
+              "observedFrequency": 0.4525
+            }
+          ],
+          "n": 4912,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess -16.6 bps, p 0.2034 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Fresh Wallets",
+        "horizonHours": 48,
+        "forecastsSeen": 5310,
+        "matured": 5307,
+        "pendingCount": 2,
+        "noControlCount": 1,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Fresh Wallets",
+        "horizonHours": 48,
+        "netMeanBps": -28.62,
+        "sdBps": 858.54,
+        "standardErrorBps": 13.27,
+        "iidStandardErrorBps": 11.79,
+        "effectiveN": 4188,
+        "varianceInflation": 1.13,
+        "n": 5307,
+        "pValue": 0.2034,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": -22.7,
+        "controlMeanBps": -6.08,
+        "excessMeanBps": -16.62,
+        "hitRate": 0.4733,
+        "calibration": {
+          "brier": 0.44906,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 841,
+              "meanPredicted": 0.732,
+              "observedFrequency": 0.4756
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 4466,
+              "meanPredicted": 0.9437,
+              "observedFrequency": 0.4729
+            }
+          ],
+          "n": 5307,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess -19.0 bps, p 0.3238 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Fresh Wallets",
+        "horizonHours": 168,
+        "forecastsSeen": 5310,
+        "matured": 5305,
+        "pendingCount": 3,
+        "noControlCount": 2,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Fresh Wallets",
+        "horizonHours": 168,
+        "netMeanBps": -31.03,
+        "sdBps": 876.5,
+        "standardErrorBps": 19.29,
+        "iidStandardErrorBps": 12.03,
+        "effectiveN": 2065,
+        "varianceInflation": 1.6,
+        "n": 5305,
+        "pValue": 0.32384,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": -62.08,
+        "controlMeanBps": -43.05,
+        "excessMeanBps": -19.03,
+        "hitRate": 0.4639,
+        "calibration": {
+          "brier": 0.45846,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 841,
+              "meanPredicted": 0.732,
+              "observedFrequency": 0.4792
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 4464,
+              "meanPredicted": 0.9436,
+              "observedFrequency": 0.461
+            }
+          ],
+          "n": 5305,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess -22.7 bps, p 0.2969 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Whale",
+        "horizonHours": 168,
+        "forecastsSeen": 1358,
+        "matured": 1358,
+        "pendingCount": 0,
+        "noControlCount": 0,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Whale",
+        "horizonHours": 168,
+        "netMeanBps": -34.74,
+        "sdBps": 815.99,
+        "standardErrorBps": 21.68,
+        "iidStandardErrorBps": 22.14,
+        "effectiveN": 1416,
+        "varianceInflation": 0.98,
+        "n": 1358,
+        "pValue": 0.29685,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": 9.21,
+        "controlMeanBps": 31.95,
+        "excessMeanBps": -22.74,
+        "hitRate": 0.5029,
+        "calibration": {
+          "brier": 0.36571,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 285,
+              "meanPredicted": 0.1199,
+              "observedFrequency": 0.5579
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 403,
+              "meanPredicted": 0.2829,
+              "observedFrequency": 0.5558
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 415,
+              "meanPredicted": 0.7099,
+              "observedFrequency": 0.4458
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 255,
+              "meanPredicted": 0.8755,
+              "observedFrequency": 0.451
+            }
+          ],
+          "n": 1358,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess -28.4 bps, p 0.5497 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Smart Trader",
+        "horizonHours": 24,
+        "forecastsSeen": 222,
+        "matured": 222,
+        "pendingCount": 0,
+        "noControlCount": 0,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Smart Trader",
+        "horizonHours": 24,
+        "netMeanBps": -40.41,
+        "sdBps": 649.88,
+        "standardErrorBps": 47.1,
+        "iidStandardErrorBps": 43.62,
+        "effectiveN": 190,
+        "varianceInflation": 1.08,
+        "n": 222,
+        "pValue": 0.54973,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": -20.55,
+        "controlMeanBps": 7.85,
+        "excessMeanBps": -28.41,
+        "hitRate": 0.4865,
+        "calibration": {
+          "brier": 0.38232,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 43,
+              "meanPredicted": 0.1077,
+              "observedFrequency": 0.5814
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 85,
+              "meanPredicted": 0.2786,
+              "observedFrequency": 0.5176
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 55,
+              "meanPredicted": 0.7242,
+              "observedFrequency": 0.4727
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 39,
+              "meanPredicted": 0.914,
+              "observedFrequency": 0.3333
+            }
+          ],
+          "n": 222,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess -36.1 bps, p 0.0850 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Whale",
+        "horizonHours": 24,
+        "forecastsSeen": 1358,
+        "matured": 1358,
+        "pendingCount": 0,
+        "noControlCount": 0,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Whale",
+        "horizonHours": 24,
+        "netMeanBps": -48.11,
+        "sdBps": 647.2,
+        "standardErrorBps": 21.14,
+        "iidStandardErrorBps": 17.56,
+        "effectiveN": 937,
+        "varianceInflation": 1.2,
+        "n": 1358,
+        "pValue": 0.08496,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": 2.69,
+        "controlMeanBps": 38.79,
+        "excessMeanBps": -36.11,
+        "hitRate": 0.4993,
+        "calibration": {
+          "brier": 0.34478,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 285,
+              "meanPredicted": 0.1199,
+              "observedFrequency": 0.5263
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 403,
+              "meanPredicted": 0.2829,
+              "observedFrequency": 0.5161
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 415,
+              "meanPredicted": 0.7099,
+              "observedFrequency": 0.4578
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 255,
+              "meanPredicted": 0.8755,
+              "observedFrequency": 0.5098
+            }
+          ],
+          "n": 1358,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess -37.6 bps, p 0.1259 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Whale",
+        "horizonHours": 48,
+        "forecastsSeen": 1358,
+        "matured": 1358,
+        "pendingCount": 0,
+        "noControlCount": 0,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Whale",
+        "horizonHours": 48,
+        "netMeanBps": -49.59,
+        "sdBps": 875.26,
+        "standardErrorBps": 24.28,
+        "iidStandardErrorBps": 23.75,
+        "effectiveN": 1299,
+        "varianceInflation": 1.02,
+        "n": 1358,
+        "pValue": 0.12594,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": 7.33,
+        "controlMeanBps": 44.92,
+        "excessMeanBps": -37.59,
+        "hitRate": 0.5029,
+        "calibration": {
+          "brier": 0.35477,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 285,
+              "meanPredicted": 0.1199,
+              "observedFrequency": 0.5614
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 403,
+              "meanPredicted": 0.2829,
+              "observedFrequency": 0.5211
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 415,
+              "meanPredicted": 0.7099,
+              "observedFrequency": 0.4434
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 255,
+              "meanPredicted": 0.8755,
+              "observedFrequency": 0.5059
+            }
+          ],
+          "n": 1358,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "verdict": "fail-signal",
+      "reading": "The cohort's flows do not predict returns beyond drift. Paired excess -69.7 bps, p 0.2444 against a bar of 2.78e-3 (Bonferroni over 18). This is a claim that did not survive its control.",
+      "provenance": {
+        "cohort": "Smart Trader",
+        "horizonHours": 48,
+        "forecastsSeen": 222,
+        "matured": 222,
+        "pendingCount": 0,
+        "noControlCount": 0,
+        "searchCount": 18,
+        "adjustedAlpha": 0.002777777777777778,
+        "costRtBps": 12,
+        "note": "pending and control-less rows are EXCLUDED and COUNTED — never filled, never silently dropped"
+      },
+      "prior": {
+        "cohort": "Smart Trader",
+        "horizonHours": 48,
+        "netMeanBps": -81.69,
+        "sdBps": 860.33,
+        "standardErrorBps": 59.8,
+        "iidStandardErrorBps": 57.74,
+        "effectiveN": 207,
+        "varianceInflation": 1.04,
+        "n": 222,
+        "pValue": 0.24438,
+        "adjustedAlpha": 0.002777777777777778,
+        "tradeable": false,
+        "costRtBps": 12
+      },
+      "detail": {
+        "rawSignalMeanBps": 19.26,
+        "controlMeanBps": 88.96,
+        "excessMeanBps": -69.69,
+        "hitRate": 0.5045,
+        "calibration": {
+          "brier": 0.38959,
+          "curve": [
+            {
+              "binLo": 0,
+              "binHi": 0.2,
+              "n": 43,
+              "meanPredicted": 0.1077,
+              "observedFrequency": 0.6047
+            },
+            {
+              "binLo": 0.2,
+              "binHi": 0.4,
+              "n": 85,
+              "meanPredicted": 0.2786,
+              "observedFrequency": 0.5647
+            },
+            {
+              "binLo": 0.4,
+              "binHi": 0.6,
+              "n": 0,
+              "meanPredicted": null,
+              "observedFrequency": null
+            },
+            {
+              "binLo": 0.6,
+              "binHi": 0.8,
+              "n": 55,
+              "meanPredicted": 0.7242,
+              "observedFrequency": 0.3818
+            },
+            {
+              "binLo": 0.8,
+              "binHi": 1,
+              "n": 39,
+              "meanPredicted": 0.914,
+              "observedFrequency": 0.4359
+            }
+          ],
+          "n": 222,
+          "skipped": 0
+        }
+      }
+    }
+  ],
+  "summary": {
+    "tested": 18,
+    "economic": 0,
+    "realButCostly": 0,
+    "failedSignal": 18,
+    "insufficient": 0,
+    "headline": "No pair carries predictive signal beyond drift at this bar."
+  }
+}

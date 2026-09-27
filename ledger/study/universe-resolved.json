@@ -1,0 +1,254 @@
+{
+  "resolvedAtIso": "2026-09-19T18:34:49.920Z",
+  "probeDate": "2026-09-01",
+  "source": "canonical contract / mint address as commonly published for the asset; confirmed against the venue's own token_symbol echo at resolution, or excluded",
+  "included": [
+    {
+      "chain": "ethereum",
+      "symbol": "WETH",
+      "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "source": "canonical contract / mint address as commonly published for the asset; confirmed against the venue's own token_symbol echo at resolution, or excluded",
+      "probeDate": "2026-09-01",
+      "state": "ok",
+      "requestId": "55863d1cea5d2e12a23ab1373327c55b",
+      "echoedSymbol": "WETH",
+      "rows": 1
+    },
+    {
+      "chain": "ethereum",
+      "symbol": "WBTC",
+      "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "source": "canonical contract / mint address as commonly published for the asset; confirmed against the venue's own token_symbol echo at resolution, or excluded",
+      "probeDate": "2026-09-01",
+      "state": "ok",
+      "requestId": "96be932cdf94da020fe8e12ab5eb7216",
+      "echoedSymbol": "WBTC",
+      "rows": 1
+    },
+    {
+      "chain": "ethereum",
+      "symbol": "LINK",
+      "address": "0x514910771AF9Ca656af840dff83E8264EcF986CA",
+      "source": "canonical contract / mint address as commonly published for the asset; confirmed against the venue's own token_symbol echo at resolution, or excluded",
+      "probeDate": "2026-09-01",
+      "state": "ok",
+      "requestId": "5a02b86ece511237f29f211101568b73",
+      "echoedSymbol": "LINK",
+      "rows": 1
+    },
+    {
+      "chain": "ethereum",
+      "symbol": "UNI",
+      "address": "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
+      "source": "canonical contract / mint address as commonly published for the asset; confirmed against the venue's own token_symbol echo at resolution, or excluded",
+      "probeDate": "2026-09-01",
+      "state": "ok",
+      "requestId": "ab86674a01ea0c2266015850683b2945",
+      "echoedSymbol": "UNI",
+      "rows": 1
+    },
+    {
+      "chain": "ethereum",
+      "symbol": "AAVE",
+      "address": "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9",
+      "source": "canonical contract / mint address as commonly published for the asset; confirmed against the venue's own token_symbol echo at resolution, or excluded",
+      "probeDate": "2026-09-01",
+      "state": "ok",
+      "requestId": "96a07b6d9f844a1903634b324127e337",
+      "echoedSymbol": "AAVE",
+      "rows": 1
+    },
+    {
+      "chain": "ethereum",
+      "symbol": "LDO",
+      "address": "0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32",
+      "source": "canonical contract / mint address as commonly published for the asset; confirmed against the venue's own token_symbol echo at resolution, or excluded",
+      "probeDate": "2026-09-01",
+      "state": "ok",
+      "requestId": "b47a5438c1365c6f28c2401ef3675069",
+      "echoedSymbol": "LDO",
+      "rows": 1
+    },
+    {
+      "chain": "ethereum",
+      "symbol": "CRV",
+      "address": "0xD533a949740bb3306d119CC777fa900bA034cd52",
+      "source": "canonical contract / mint address as commonly published for the asset; confirmed against the venue's own token_symbol echo at resolution, or excluded",
+      "probeDate": "2026-09-01",
+      "state": "ok",
+      "requestId": "6df822217b31584200329e49e37a872a",
+      "echoedSymbol": "CRV",
+      "rows": 1
+    },
+    {
+      "chain": "ethereum",
+      "symbol": "ONDO",
+      "address": "0xfAbA6f8e4a5E8Ab82F62fe7C39859FA577269BE3",
+      "source": "canonical contract / mint address as commonly published for the asset; confirmed against the venue's own token_symbol echo at resolution, or excluded",
+      "probeDate": "2026-09-01",
+      "state": "ok",
+      "requestId": "a1902e0ec9528306438cde110e89512f",
+      "echoedSymbol": "ONDO",
+      "rows": 1
+    },
+    {
+      "chain": "ethereum",
+      "symbol": "PEPE",
+      "address": "0x6982508145454Ce325dDbE47a25d4ec3d2311933",
+      "source": "canonical contract / mint address as commonly published for the asset; confirmed against the venue's own token_symbol echo at resolution, or excluded",
+      "probeDate": "2026-09-01",
+      "state": "ok",
+      "requestId": "a909f9044297603351deb021a5f8f13f",
+      "echoedSymbol": "PEPE",
+      "rows": 1
+    },
+    {
+      "chain": "ethereum",
+      "symbol": "ENA",
+      "address": "0x57e114B691Db790C35207b2e685D4A43181e6061",
+      "source": "canonical contract / mint address as commonly published for the asset; confirmed against the venue's own token_symbol echo at resolution, or excluded",
+      "probeDate": "2026-09-01",
+      "state": "ok",
+      "requestId": "773b4831f8a1391bf1a24207bcbf237a",
+      "echoedSymbol": "ENA",
+      "rows": 1
+    },
+    {
+      "chain": "solana",
+      "symbol": "JUP",
+      "address": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+      "source": "canonical contract / mint address as commonly published for the asset; confirmed against the venue's own token_symbol echo at resolution, or excluded",
+      "probeDate": "2026-09-01",
+      "state": "ok",
+      "requestId": "f558437a2310c3740e1e4506cfea3925",
+      "echoedSymbol": "JUP",
+      "rows": 1
+    },
+    {
+      "chain": "solana",
+      "symbol": "JTO",
+      "address": "jtojtomepa8beP8AuQc6eXt5FriJwfFMwQx2v2f9mCL",
+      "source": "canonical contract / mint address as commonly published for the asset; confirmed against the venue's own token_symbol echo at resolution, or excluded",
+      "probeDate": "2026-09-01",
+      "state": "ok",
+      "requestId": "f4eb731c364bce6b4ebe6f65a6670e73",
+      "echoedSymbol": "JTO",
+      "rows": 1
+    },
+    {
+      "chain": "solana",
+      "symbol": "WIF",
+      "address": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+      "source": "canonical contract / mint address as commonly published for the asset; confirmed against the venue's own token_symbol echo at resolution, or excluded",
+      "probeDate": "2026-09-01",
+      "state": "ok",
+      "requestId": "a842cc32cc2831649d46e104fc94c56b",
+      "echoedSymbol": "$WIF",
+      "rows": 1
+    },
+    {
+      "chain": "solana",
+      "symbol": "BONK",
+      "address": "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+      "source": "canonical contract / mint address as commonly published for the asset; confirmed against the venue's own token_symbol echo at resolution, or excluded",
+      "probeDate": "2026-09-01",
+      "state": "ok",
+      "requestId": "c800f57fc35edf7a77f6ac75b8f2c600",
+      "echoedSymbol": "BONK",
+      "rows": 1
+    },
+    {
+      "chain": "base",
+      "symbol": "AERO",
+      "address": "0x940181a94A35A4569E4529A3CDfB74e38FD98631",
+      "source": "canonical contract / mint address as commonly published for the asset; confirmed against the venue's own token_symbol echo at resolution, or excluded",
+      "probeDate": "2026-09-01",
+      "state": "ok",
+      "requestId": "c923e430202782191d4ed84e99d27474",
+      "echoedSymbol": "AERO",
+      "rows": 1
+    },
+    {
+      "chain": "base",
+      "symbol": "DEGEN",
+      "address": "0x4ed4E862860beD51a9570b96d89aF5E1B0Efefed",
+      "source": "canonical contract / mint address as commonly published for the asset; confirmed against the venue's own token_symbol echo at resolution, or excluded",
+      "probeDate": "2026-09-01",
+      "state": "ok",
+      "requestId": "2d5e7525fbdaca2cef313728b8f40559",
+      "echoedSymbol": "DEGEN",
+      "rows": 1
+    },
+    {
+      "chain": "base",
+      "symbol": "BRETT",
+      "address": "0x532f27101965dd16442E59d40670FaF5eBB142E4",
+      "source": "canonical contract / mint address as commonly published for the asset; confirmed against the venue's own token_symbol echo at resolution, or excluded",
+      "probeDate": "2026-09-01",
+      "state": "ok",
+      "requestId": "019d1b3d8ebf8a4d8caf0972869ac10a",
+      "echoedSymbol": "BRETT",
+      "rows": 1
+    },
+    {
+      "chain": "bnb",
+      "symbol": "CAKE",
+      "address": "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82",
+      "source": "canonical contract / mint address as commonly published for the asset; confirmed against the venue's own token_symbol echo at resolution, or excluded",
+      "probeDate": "2026-09-01",
+      "state": "ok",
+      "requestId": "df0202396e27af12f17a2b49ac07365d",
+      "echoedSymbol": "CAKE",
+      "rows": 1
+    },
+    {
+      "chain": "bnb",
+      "symbol": "XVS",
+      "address": "0xcF6BB5389c92Bdda8a3747Ddb454cB7a64626C63",
+      "source": "canonical contract / mint address as commonly published for the asset; confirmed against the venue's own token_symbol echo at resolution, or excluded",
+      "probeDate": "2026-09-01",
+      "state": "ok",
+      "requestId": "e4b3944905001064a02a04363de39c0a",
+      "echoedSymbol": "XVS",
+      "rows": 1
+    },
+    {
+      "chain": "bnb",
+      "symbol": "TWT",
+      "address": "0x4B0F1812e5Df2A09796481Ff14017e6005508003",
+      "source": "canonical contract / mint address as commonly published for the asset; confirmed against the venue's own token_symbol echo at resolution, or excluded",
+      "probeDate": "2026-09-01",
+      "state": "ok",
+      "requestId": "a0263200ea127c51b08ecb6c9cee0147",
+      "echoedSymbol": "TWT",
+      "rows": 1
+    }
+  ],
+  "excluded": [
+    {
+      "chain": "solana",
+      "symbol": "SOL",
+      "address": "So11111111111111111111111111111111111111112",
+      "source": "canonical contract / mint address as commonly published for the asset; confirmed against the venue's own token_symbol echo at resolution, or excluded",
+      "probeDate": "2026-09-01",
+      "state": "http-error",
+      "requestId": "0177ca57fd2b2a0212365b6670ef8d39",
+      "echoedSymbol": null,
+      "rows": 0,
+      "why": "http-error: HTTP 422 invalid_field_value: Native token 'So11111111111111111111111111111111111111112' is not supported on solana chain on the TGM Historical Token Flow Summary endpoint. This endpoint does not support native tokens on any chain. Please provide a specific token address instead."
+    },
+    {
+      "chain": "solana",
+      "symbol": "PYTH",
+      "address": "HZ1JovNiVvGrGNiiYvEozEVjZ58xaU3RKwX8eACQBCt3",
+      "source": "canonical contract / mint address as commonly published for the asset; confirmed against the venue's own token_symbol echo at resolution, or excluded",
+      "probeDate": "2026-09-01",
+      "state": "ok",
+      "requestId": "343ced54728c0f7216b42c5d2ac25a14",
+      "echoedSymbol": "",
+      "rows": 1,
+      "why": "venue echoes \"\", not PYTH — wrong address or wrong chain; EXCLUDED, not substituted"
+    }
+  ],
+  "note": "the universe is the prereg's commitment; this file is its mechanical resolution. An excluded token is counted, never replaced."
+}

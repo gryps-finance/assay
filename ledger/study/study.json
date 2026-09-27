@@ -1,0 +1,2218 @@
+{
+  "asOf": "2026-09-20T00:26:42.834Z",
+  "ledgerDir": "ledger/study",
+  "specHash": "deb117cbb478",
+  "spec": {
+    "minFlowUsd": 250000,
+    "topK": 10,
+    "horizonsHours": [
+      24,
+      48,
+      168
+    ],
+    "controlWindowDays": 3,
+    "controlSeed": 20260916
+  },
+  "costRtBps": 12,
+  "segments": [
+    "whale",
+    "public_figure",
+    "top_pnl",
+    "smart_trader",
+    "exchange",
+    "fresh_wallets"
+  ],
+  "universe": {
+    "included": [
+      "ethereum:WETH",
+      "ethereum:WBTC",
+      "ethereum:LINK",
+      "ethereum:UNI",
+      "ethereum:AAVE",
+      "ethereum:LDO",
+      "ethereum:CRV",
+      "ethereum:ONDO",
+      "ethereum:PEPE",
+      "ethereum:ENA",
+      "solana:JUP",
+      "solana:JTO",
+      "solana:WIF",
+      "solana:BONK",
+      "base:AERO",
+      "base:DEGEN",
+      "base:BRETT",
+      "bnb:CAKE",
+      "bnb:XVS",
+      "bnb:TWT"
+    ],
+    "excluded": [
+      {
+        "token": "solana:SOL",
+        "why": "http-error: HTTP 422 invalid_field_value: Native token 'So11111111111111111111111111111111111111112' is not supported on solana chain on the TGM Historical Token Flow Summary endpoint. This endpoint does not support native tokens on any chain. Please provide a specific token address instead."
+      },
+      {
+        "token": "solana:PYTH",
+        "why": "venue echoes \"\", not PYTH \u2014 wrong address or wrong chain; EXCLUDED, not substituted"
+      }
+    ]
+  },
+  "convention": {
+    "verdict": "inclusive",
+    "scores": {
+      "exchange": {
+        "inclusiveErr": 0.02435401556986801,
+        "exclusiveErr": 0.44135758653745866
+      },
+      "whale": {
+        "inclusiveErr": 0,
+        "exclusiveErr": 0
+      },
+      "smart_trader": {
+        "inclusiveErr": 1.1708830212173291,
+        "exclusiveErr": 1.1708830212173291
+      },
+      "meanInclusiveErr": 0.3984,
+      "meanExclusiveErr": 0.5374
+    }
+  },
+  "calls": {
+    "total": 12760,
+    "ok": 12756,
+    "byArm": {
+      "naive": 20,
+      "monthly": 380,
+      "weekly": 1558,
+      "daily": 10798
+    }
+  },
+  "spend": {
+    "calls": 12781,
+    "creditsSpent": 63900,
+    "accountRemaining": 136205,
+    "status": "complete"
+  },
+  "publishedFrom": "daily (labels resolved within one day of the flow)",
+  "arms": {
+    "daily": {
+      "arm": "daily",
+      "rowsUsed": 10798,
+      "nullFlowsBySegment": {
+        "whale": 0,
+        "public_figure": 0,
+        "top_pnl": 0,
+        "smart_trader": 0,
+        "exchange": 0,
+        "fresh_wallets": 0
+      },
+      "skippedBySegment": {
+        "whale": {
+          "nullFlow": 0,
+          "belowThreshold": 9439,
+          "notTopK": 1,
+          "noPrice": 0,
+          "unparseable": 0
+        },
+        "public_figure": {
+          "nullFlow": 0,
+          "belowThreshold": 10670,
+          "notTopK": 0,
+          "noPrice": 0,
+          "unparseable": 0
+        },
+        "top_pnl": {
+          "nullFlow": 0,
+          "belowThreshold": 8365,
+          "notTopK": 13,
+          "noPrice": 0,
+          "unparseable": 0
+        },
+        "smart_trader": {
+          "nullFlow": 0,
+          "belowThreshold": 10576,
+          "notTopK": 0,
+          "noPrice": 0,
+          "unparseable": 0
+        },
+        "exchange": {
+          "nullFlow": 0,
+          "belowThreshold": 4940,
+          "notTopK": 942,
+          "noPrice": 1,
+          "unparseable": 0
+        },
+        "fresh_wallets": {
+          "nullFlow": 0,
+          "belowThreshold": 3135,
+          "notTopK": 2350,
+          "noPrice": 3,
+          "unparseable": 0
+        }
+      },
+      "forecastsFormed": 43059,
+      "summary": {
+        "tested": 18,
+        "economic": 0,
+        "realButCostly": 0,
+        "failedSignal": 18,
+        "insufficient": 0,
+        "headline": "No pair carries predictive signal beyond drift at this bar."
+      },
+      "searchCount": 18,
+      "results": [
+        {
+          "cohort": "Whale",
+          "horizonHours": 24,
+          "verdict": "fail-signal",
+          "n": 1358,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -36.11,
+          "netMeanBps": -48.11,
+          "standardErrorBps": 21.14,
+          "effectiveN": 937,
+          "pValue": 0.08496
+        },
+        {
+          "cohort": "Whale",
+          "horizonHours": 48,
+          "verdict": "fail-signal",
+          "n": 1358,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -37.59,
+          "netMeanBps": -49.59,
+          "standardErrorBps": 24.28,
+          "effectiveN": 1299,
+          "pValue": 0.12594
+        },
+        {
+          "cohort": "Whale",
+          "horizonHours": 168,
+          "verdict": "fail-signal",
+          "n": 1358,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -22.74,
+          "netMeanBps": -34.74,
+          "standardErrorBps": 21.68,
+          "effectiveN": 1416,
+          "pValue": 0.29685
+        },
+        {
+          "cohort": "Public Figure",
+          "horizonHours": 24,
+          "verdict": "fail-signal",
+          "n": 128,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": 59.45,
+          "netMeanBps": 47.45,
+          "standardErrorBps": 51.94,
+          "effectiveN": 143,
+          "pValue": 0.25637
+        },
+        {
+          "cohort": "Public Figure",
+          "horizonHours": 48,
+          "verdict": "fail-signal",
+          "n": 128,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": 0.25,
+          "netMeanBps": -11.75,
+          "standardErrorBps": 78.12,
+          "effectiveN": 112,
+          "pValue": 0.9965
+        },
+        {
+          "cohort": "Public Figure",
+          "horizonHours": 168,
+          "verdict": "fail-signal",
+          "n": 128,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -11.97,
+          "netMeanBps": -23.97,
+          "standardErrorBps": 50.92,
+          "effectiveN": 237,
+          "pValue": 0.8031
+        },
+        {
+          "cohort": "Top PnL",
+          "horizonHours": 24,
+          "verdict": "fail-signal",
+          "n": 2420,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -10,
+          "netMeanBps": -22,
+          "standardErrorBps": 15.05,
+          "effectiveN": 1923,
+          "pValue": 0.50025
+        },
+        {
+          "cohort": "Top PnL",
+          "horizonHours": 48,
+          "verdict": "fail-signal",
+          "n": 2420,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": 14.71,
+          "netMeanBps": 2.71,
+          "standardErrorBps": 18.5,
+          "effectiveN": 2132,
+          "pValue": 0.43278
+        },
+        {
+          "cohort": "Top PnL",
+          "horizonHours": 168,
+          "verdict": "fail-signal",
+          "n": 2420,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": 23.28,
+          "netMeanBps": 11.28,
+          "standardErrorBps": 17.5,
+          "effectiveN": 2580,
+          "pValue": 0.17491
+        },
+        {
+          "cohort": "Smart Trader",
+          "horizonHours": 24,
+          "verdict": "fail-signal",
+          "n": 222,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -28.41,
+          "netMeanBps": -40.41,
+          "standardErrorBps": 47.1,
+          "effectiveN": 190,
+          "pValue": 0.54973
+        },
+        {
+          "cohort": "Smart Trader",
+          "horizonHours": 48,
+          "verdict": "fail-signal",
+          "n": 222,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -69.69,
+          "netMeanBps": -81.69,
+          "standardErrorBps": 59.8,
+          "effectiveN": 207,
+          "pValue": 0.24438
+        },
+        {
+          "cohort": "Smart Trader",
+          "horizonHours": 168,
+          "verdict": "fail-signal",
+          "n": 222,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": 25.89,
+          "netMeanBps": 13.89,
+          "standardErrorBps": 82.11,
+          "effectiveN": 133,
+          "pValue": 0.75462
+        },
+        {
+          "cohort": "Exchange",
+          "horizonHours": 24,
+          "verdict": "fail-signal",
+          "n": 4912,
+          "pending": 1,
+          "noControl": 2,
+          "excessMeanBps": 2.39,
+          "netMeanBps": -9.61,
+          "standardErrorBps": 9.68,
+          "effectiveN": 4455,
+          "pValue": 0.8026
+        },
+        {
+          "cohort": "Exchange",
+          "horizonHours": 48,
+          "verdict": "fail-signal",
+          "n": 4912,
+          "pending": 2,
+          "noControl": 1,
+          "excessMeanBps": -14.94,
+          "netMeanBps": -26.94,
+          "standardErrorBps": 10.58,
+          "effectiveN": 6555,
+          "pValue": 0.16592
+        },
+        {
+          "cohort": "Exchange",
+          "horizonHours": 168,
+          "verdict": "fail-signal",
+          "n": 4911,
+          "pending": 3,
+          "noControl": 1,
+          "excessMeanBps": 1.11,
+          "netMeanBps": -10.89,
+          "standardErrorBps": 12.68,
+          "effectiveN": 4572,
+          "pValue": 0.92804
+        },
+        {
+          "cohort": "Fresh Wallets",
+          "horizonHours": 24,
+          "verdict": "fail-signal",
+          "n": 5308,
+          "pending": 1,
+          "noControl": 1,
+          "excessMeanBps": -7.55,
+          "netMeanBps": -19.55,
+          "standardErrorBps": 9.03,
+          "effectiveN": 5168,
+          "pValue": 0.3983
+        },
+        {
+          "cohort": "Fresh Wallets",
+          "horizonHours": 48,
+          "verdict": "fail-signal",
+          "n": 5307,
+          "pending": 2,
+          "noControl": 1,
+          "excessMeanBps": -16.62,
+          "netMeanBps": -28.62,
+          "standardErrorBps": 13.27,
+          "effectiveN": 4188,
+          "pValue": 0.2034
+        },
+        {
+          "cohort": "Fresh Wallets",
+          "horizonHours": 168,
+          "verdict": "fail-signal",
+          "n": 5305,
+          "pending": 3,
+          "noControl": 2,
+          "excessMeanBps": -19.03,
+          "netMeanBps": -31.03,
+          "standardErrorBps": 19.29,
+          "effectiveN": 2065,
+          "pValue": 0.32384
+        }
+      ]
+    },
+    "weekly": {
+      "arm": "weekly",
+      "rowsUsed": 1558,
+      "nullFlowsBySegment": {
+        "whale": 0,
+        "public_figure": 0,
+        "top_pnl": 0,
+        "smart_trader": 0,
+        "exchange": 0,
+        "fresh_wallets": 0
+      },
+      "skippedBySegment": {
+        "whale": {
+          "nullFlow": 0,
+          "belowThreshold": 1346,
+          "notTopK": 0,
+          "noPrice": 0,
+          "unparseable": 0
+        },
+        "public_figure": {
+          "nullFlow": 0,
+          "belowThreshold": 1532,
+          "notTopK": 0,
+          "noPrice": 0,
+          "unparseable": 0
+        },
+        "top_pnl": {
+          "nullFlow": 0,
+          "belowThreshold": 1191,
+          "notTopK": 1,
+          "noPrice": 0,
+          "unparseable": 0
+        },
+        "smart_trader": {
+          "nullFlow": 0,
+          "belowThreshold": 1526,
+          "notTopK": 0,
+          "noPrice": 0,
+          "unparseable": 0
+        },
+        "exchange": {
+          "nullFlow": 0,
+          "belowThreshold": 690,
+          "notTopK": 153,
+          "noPrice": 0,
+          "unparseable": 0
+        },
+        "fresh_wallets": {
+          "nullFlow": 0,
+          "belowThreshold": 422,
+          "notTopK": 363,
+          "noPrice": 0,
+          "unparseable": 0
+        }
+      },
+      "forecastsFormed": 6372,
+      "summary": {
+        "tested": 18,
+        "economic": 0,
+        "realButCostly": 0,
+        "failedSignal": 15,
+        "insufficient": 3,
+        "headline": "No pair carries predictive signal beyond drift at this bar."
+      },
+      "searchCount": 18,
+      "results": [
+        {
+          "cohort": "Whale",
+          "horizonHours": 24,
+          "verdict": "fail-signal",
+          "n": 212,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -39.52,
+          "netMeanBps": -51.52,
+          "standardErrorBps": 38.32,
+          "effectiveN": 234,
+          "pValue": 0.30385
+        },
+        {
+          "cohort": "Whale",
+          "horizonHours": 48,
+          "verdict": "fail-signal",
+          "n": 212,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -1.72,
+          "netMeanBps": -13.72,
+          "standardErrorBps": 71.97,
+          "effectiveN": 146,
+          "pValue": 0.98201
+        },
+        {
+          "cohort": "Whale",
+          "horizonHours": 168,
+          "verdict": "fail-signal",
+          "n": 212,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -93.5,
+          "netMeanBps": -105.5,
+          "standardErrorBps": 72.02,
+          "effectiveN": 113,
+          "pValue": 0.1974
+        },
+        {
+          "cohort": "Public Figure",
+          "horizonHours": 24,
+          "verdict": "insufficient",
+          "n": 26,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": null,
+          "netMeanBps": null,
+          "standardErrorBps": null,
+          "effectiveN": null,
+          "pValue": null
+        },
+        {
+          "cohort": "Public Figure",
+          "horizonHours": 48,
+          "verdict": "insufficient",
+          "n": 26,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": null,
+          "netMeanBps": null,
+          "standardErrorBps": null,
+          "effectiveN": null,
+          "pValue": null
+        },
+        {
+          "cohort": "Public Figure",
+          "horizonHours": 168,
+          "verdict": "insufficient",
+          "n": 26,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": null,
+          "netMeanBps": null,
+          "standardErrorBps": null,
+          "effectiveN": null,
+          "pValue": null
+        },
+        {
+          "cohort": "Top PnL",
+          "horizonHours": 24,
+          "verdict": "fail-signal",
+          "n": 366,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": 1.66,
+          "netMeanBps": -10.34,
+          "standardErrorBps": 31.19,
+          "effectiveN": 383,
+          "pValue": 0.95602
+        },
+        {
+          "cohort": "Top PnL",
+          "horizonHours": 48,
+          "verdict": "fail-signal",
+          "n": 366,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": 20.78,
+          "netMeanBps": 8.78,
+          "standardErrorBps": 46.1,
+          "effectiveN": 293,
+          "pValue": 0.64918
+        },
+        {
+          "cohort": "Top PnL",
+          "horizonHours": 168,
+          "verdict": "fail-signal",
+          "n": 366,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": 36.29,
+          "netMeanBps": 24.29,
+          "standardErrorBps": 31.06,
+          "effectiveN": 586,
+          "pValue": 0.23788
+        },
+        {
+          "cohort": "Smart Trader",
+          "horizonHours": 24,
+          "verdict": "fail-signal",
+          "n": 32,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -78.25,
+          "netMeanBps": -90.25,
+          "standardErrorBps": 122.53,
+          "effectiveN": 20,
+          "pValue": 0.52724
+        },
+        {
+          "cohort": "Smart Trader",
+          "horizonHours": 48,
+          "verdict": "fail-signal",
+          "n": 32,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -8.97,
+          "netMeanBps": -20.97,
+          "standardErrorBps": 126.77,
+          "effectiveN": 66,
+          "pValue": 0.94103
+        },
+        {
+          "cohort": "Smart Trader",
+          "horizonHours": 168,
+          "verdict": "fail-signal",
+          "n": 32,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -2.33,
+          "netMeanBps": -14.33,
+          "standardErrorBps": 85.22,
+          "effectiveN": 24,
+          "pValue": 0.97551
+        },
+        {
+          "cohort": "Exchange",
+          "horizonHours": 24,
+          "verdict": "fail-signal",
+          "n": 714,
+          "pending": 1,
+          "noControl": 0,
+          "excessMeanBps": 0.06,
+          "netMeanBps": -11.94,
+          "standardErrorBps": 25.17,
+          "effectiveN": 700,
+          "pValue": 0.9975
+        },
+        {
+          "cohort": "Exchange",
+          "horizonHours": 48,
+          "verdict": "fail-signal",
+          "n": 714,
+          "pending": 1,
+          "noControl": 0,
+          "excessMeanBps": 12.59,
+          "netMeanBps": 0.59,
+          "standardErrorBps": 23.3,
+          "effectiveN": 1125,
+          "pValue": 0.5937
+        },
+        {
+          "cohort": "Exchange",
+          "horizonHours": 168,
+          "verdict": "fail-signal",
+          "n": 714,
+          "pending": 0,
+          "noControl": 1,
+          "excessMeanBps": -0.04,
+          "netMeanBps": -12.04,
+          "standardErrorBps": 25.73,
+          "effectiveN": 962,
+          "pValue": 0.997
+        },
+        {
+          "cohort": "Fresh Wallets",
+          "horizonHours": 24,
+          "verdict": "fail-signal",
+          "n": 772,
+          "pending": 1,
+          "noControl": 0,
+          "excessMeanBps": -10.23,
+          "netMeanBps": -22.23,
+          "standardErrorBps": 35.71,
+          "effectiveN": 287,
+          "pValue": 0.76812
+        },
+        {
+          "cohort": "Fresh Wallets",
+          "horizonHours": 48,
+          "verdict": "fail-signal",
+          "n": 772,
+          "pending": 1,
+          "noControl": 0,
+          "excessMeanBps": 32.83,
+          "netMeanBps": 20.83,
+          "standardErrorBps": 47.93,
+          "effectiveN": 316,
+          "pValue": 0.49175
+        },
+        {
+          "cohort": "Fresh Wallets",
+          "horizonHours": 168,
+          "verdict": "fail-signal",
+          "n": 773,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -23.49,
+          "netMeanBps": -35.49,
+          "standardErrorBps": 30.56,
+          "effectiveN": 722,
+          "pValue": 0.44928
+        }
+      ]
+    },
+    "monthly": {
+      "arm": "monthly",
+      "rowsUsed": 380,
+      "nullFlowsBySegment": {
+        "whale": 0,
+        "public_figure": 0,
+        "top_pnl": 0,
+        "smart_trader": 0,
+        "exchange": 0,
+        "fresh_wallets": 0
+      },
+      "skippedBySegment": {
+        "whale": {
+          "nullFlow": 0,
+          "belowThreshold": 239,
+          "notTopK": 18,
+          "noPrice": 0,
+          "unparseable": 0
+        },
+        "public_figure": {
+          "nullFlow": 0,
+          "belowThreshold": 353,
+          "notTopK": 0,
+          "noPrice": 0,
+          "unparseable": 0
+        },
+        "top_pnl": {
+          "nullFlow": 0,
+          "belowThreshold": 190,
+          "notTopK": 33,
+          "noPrice": 0,
+          "unparseable": 0
+        },
+        "smart_trader": {
+          "nullFlow": 0,
+          "belowThreshold": 317,
+          "notTopK": 0,
+          "noPrice": 0,
+          "unparseable": 0
+        },
+        "exchange": {
+          "nullFlow": 0,
+          "belowThreshold": 67,
+          "notTopK": 123,
+          "noPrice": 0,
+          "unparseable": 0
+        },
+        "fresh_wallets": {
+          "nullFlow": 0,
+          "belowThreshold": 111,
+          "notTopK": 83,
+          "noPrice": 0,
+          "unparseable": 0
+        }
+      },
+      "forecastsFormed": 2238,
+      "summary": {
+        "tested": 18,
+        "economic": 0,
+        "realButCostly": 0,
+        "failedSignal": 15,
+        "insufficient": 3,
+        "headline": "No pair carries predictive signal beyond drift at this bar."
+      },
+      "searchCount": 18,
+      "results": [
+        {
+          "cohort": "Whale",
+          "horizonHours": 24,
+          "verdict": "fail-signal",
+          "n": 123,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -13.73,
+          "netMeanBps": -25.73,
+          "standardErrorBps": 70.53,
+          "effectiveN": 84,
+          "pValue": 0.85407
+        },
+        {
+          "cohort": "Whale",
+          "horizonHours": 48,
+          "verdict": "fail-signal",
+          "n": 123,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": 44.53,
+          "netMeanBps": 32.53,
+          "standardErrorBps": 59.06,
+          "effectiveN": 168,
+          "pValue": 0.45027
+        },
+        {
+          "cohort": "Whale",
+          "horizonHours": 168,
+          "verdict": "fail-signal",
+          "n": 123,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -103.09,
+          "netMeanBps": -115.09,
+          "standardErrorBps": 83.27,
+          "effectiveN": 128,
+          "pValue": 0.21439
+        },
+        {
+          "cohort": "Public Figure",
+          "horizonHours": 24,
+          "verdict": "insufficient",
+          "n": 27,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": null,
+          "netMeanBps": null,
+          "standardErrorBps": null,
+          "effectiveN": null,
+          "pValue": null
+        },
+        {
+          "cohort": "Public Figure",
+          "horizonHours": 48,
+          "verdict": "insufficient",
+          "n": 27,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": null,
+          "netMeanBps": null,
+          "standardErrorBps": null,
+          "effectiveN": null,
+          "pValue": null
+        },
+        {
+          "cohort": "Public Figure",
+          "horizonHours": 168,
+          "verdict": "insufficient",
+          "n": 27,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": null,
+          "netMeanBps": null,
+          "standardErrorBps": null,
+          "effectiveN": null,
+          "pValue": null
+        },
+        {
+          "cohort": "Top PnL",
+          "horizonHours": 24,
+          "verdict": "fail-signal",
+          "n": 157,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": 46.56,
+          "netMeanBps": 34.56,
+          "standardErrorBps": 62.75,
+          "effectiveN": 87,
+          "pValue": 0.45427
+        },
+        {
+          "cohort": "Top PnL",
+          "horizonHours": 48,
+          "verdict": "fail-signal",
+          "n": 157,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -128.02,
+          "netMeanBps": -140.02,
+          "standardErrorBps": 84.64,
+          "effectiveN": 90,
+          "pValue": 0.13343
+        },
+        {
+          "cohort": "Top PnL",
+          "horizonHours": 168,
+          "verdict": "fail-signal",
+          "n": 156,
+          "pending": 1,
+          "noControl": 0,
+          "excessMeanBps": -74.97,
+          "netMeanBps": -86.97,
+          "standardErrorBps": 84.27,
+          "effectiveN": 91,
+          "pValue": 0.37031
+        },
+        {
+          "cohort": "Smart Trader",
+          "horizonHours": 24,
+          "verdict": "fail-signal",
+          "n": 63,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": 101.56,
+          "netMeanBps": 89.56,
+          "standardErrorBps": 56.77,
+          "effectiveN": 105,
+          "pValue": 0.07296
+        },
+        {
+          "cohort": "Smart Trader",
+          "horizonHours": 48,
+          "verdict": "fail-signal",
+          "n": 63,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": 18.09,
+          "netMeanBps": 6.09,
+          "standardErrorBps": 81.19,
+          "effectiveN": 92,
+          "pValue": 0.81259
+        },
+        {
+          "cohort": "Smart Trader",
+          "horizonHours": 168,
+          "verdict": "fail-signal",
+          "n": 63,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -69.28,
+          "netMeanBps": -81.28,
+          "standardErrorBps": 48.32,
+          "effectiveN": 136,
+          "pValue": 0.15392
+        },
+        {
+          "cohort": "Exchange",
+          "horizonHours": 24,
+          "verdict": "fail-signal",
+          "n": 190,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": 70.2,
+          "netMeanBps": 58.2,
+          "standardErrorBps": 43.35,
+          "effectiveN": 179,
+          "pValue": 0.10345
+        },
+        {
+          "cohort": "Exchange",
+          "horizonHours": 48,
+          "verdict": "fail-signal",
+          "n": 190,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -35.37,
+          "netMeanBps": -47.37,
+          "standardErrorBps": 68.32,
+          "effectiveN": 135,
+          "pValue": 0.6047
+        },
+        {
+          "cohort": "Exchange",
+          "horizonHours": 168,
+          "verdict": "fail-signal",
+          "n": 189,
+          "pending": 1,
+          "noControl": 0,
+          "excessMeanBps": 68.79,
+          "netMeanBps": 56.79,
+          "standardErrorBps": 55.42,
+          "effectiveN": 219,
+          "pValue": 0.21239
+        },
+        {
+          "cohort": "Fresh Wallets",
+          "horizonHours": 24,
+          "verdict": "fail-signal",
+          "n": 186,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -1.96,
+          "netMeanBps": -13.96,
+          "standardErrorBps": 68.98,
+          "effectiveN": 67,
+          "pValue": 0.97751
+        },
+        {
+          "cohort": "Fresh Wallets",
+          "horizonHours": 48,
+          "verdict": "fail-signal",
+          "n": 186,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": 158.71,
+          "netMeanBps": 146.71,
+          "standardErrorBps": 95.54,
+          "effectiveN": 57,
+          "pValue": 0.09895
+        },
+        {
+          "cohort": "Fresh Wallets",
+          "horizonHours": 168,
+          "verdict": "fail-signal",
+          "n": 185,
+          "pending": 1,
+          "noControl": 0,
+          "excessMeanBps": 70.57,
+          "netMeanBps": 58.57,
+          "standardErrorBps": 78.39,
+          "effectiveN": 116,
+          "pValue": 0.37631
+        }
+      ]
+    },
+    "weekly-from-daily": {
+      "arm": "weekly-from-daily",
+      "rowsUsed": 1556,
+      "nullFlowsBySegment": {
+        "whale": 0,
+        "public_figure": 0,
+        "top_pnl": 0,
+        "smart_trader": 0,
+        "exchange": 0,
+        "fresh_wallets": 0
+      },
+      "skippedBySegment": {
+        "whale": {
+          "nullFlow": 0,
+          "belowThreshold": 1066,
+          "notTopK": 31,
+          "noPrice": 0,
+          "unparseable": 0
+        },
+        "public_figure": {
+          "nullFlow": 0,
+          "belowThreshold": 1467,
+          "notTopK": 0,
+          "noPrice": 0,
+          "unparseable": 0
+        },
+        "top_pnl": {
+          "nullFlow": 0,
+          "belowThreshold": 866,
+          "notTopK": 80,
+          "noPrice": 0,
+          "unparseable": 0
+        },
+        "smart_trader": {
+          "nullFlow": 0,
+          "belowThreshold": 1402,
+          "notTopK": 0,
+          "noPrice": 0,
+          "unparseable": 0
+        },
+        "exchange": {
+          "nullFlow": 0,
+          "belowThreshold": 324,
+          "notTopK": 452,
+          "noPrice": 0,
+          "unparseable": 0
+        },
+        "fresh_wallets": {
+          "nullFlow": 0,
+          "belowThreshold": 6,
+          "notTopK": 770,
+          "noPrice": 0,
+          "unparseable": 0
+        }
+      },
+      "forecastsFormed": 8616,
+      "summary": {
+        "tested": 18,
+        "economic": 0,
+        "realButCostly": 0,
+        "failedSignal": 18,
+        "insufficient": 0,
+        "headline": "No pair carries predictive signal beyond drift at this bar."
+      },
+      "searchCount": 18,
+      "results": [
+        {
+          "cohort": "Whale",
+          "horizonHours": 24,
+          "verdict": "fail-signal",
+          "n": 459,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -60.95,
+          "netMeanBps": -72.95,
+          "standardErrorBps": 31.38,
+          "effectiveN": 418,
+          "pValue": 0.04848
+        },
+        {
+          "cohort": "Whale",
+          "horizonHours": 48,
+          "verdict": "fail-signal",
+          "n": 459,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -105.63,
+          "netMeanBps": -117.63,
+          "standardErrorBps": 38.17,
+          "effectiveN": 490,
+          "pValue": 0.008
+        },
+        {
+          "cohort": "Whale",
+          "horizonHours": 168,
+          "verdict": "fail-signal",
+          "n": 459,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -47.83,
+          "netMeanBps": -59.83,
+          "standardErrorBps": 32.29,
+          "effectiveN": 534,
+          "pValue": 0.13943
+        },
+        {
+          "cohort": "Public Figure",
+          "horizonHours": 24,
+          "verdict": "fail-signal",
+          "n": 89,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": 12.15,
+          "netMeanBps": 0.15,
+          "standardErrorBps": 60.86,
+          "effectiveN": 96,
+          "pValue": 0.84908
+        },
+        {
+          "cohort": "Public Figure",
+          "horizonHours": 48,
+          "verdict": "fail-signal",
+          "n": 89,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -159.98,
+          "netMeanBps": -171.98,
+          "standardErrorBps": 77.47,
+          "effectiveN": 139,
+          "pValue": 0.03498
+        },
+        {
+          "cohort": "Public Figure",
+          "horizonHours": 168,
+          "verdict": "fail-signal",
+          "n": 89,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": 103.3,
+          "netMeanBps": 91.3,
+          "standardErrorBps": 57.73,
+          "effectiveN": 164,
+          "pValue": 0.07696
+        },
+        {
+          "cohort": "Top PnL",
+          "horizonHours": 24,
+          "verdict": "fail-signal",
+          "n": 610,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -35.95,
+          "netMeanBps": -47.95,
+          "standardErrorBps": 27.74,
+          "effectiveN": 468,
+          "pValue": 0.2009
+        },
+        {
+          "cohort": "Top PnL",
+          "horizonHours": 48,
+          "verdict": "fail-signal",
+          "n": 610,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -16.68,
+          "netMeanBps": -28.68,
+          "standardErrorBps": 47.26,
+          "effectiveN": 332,
+          "pValue": 0.72214
+        },
+        {
+          "cohort": "Top PnL",
+          "horizonHours": 168,
+          "verdict": "fail-signal",
+          "n": 610,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": 57.74,
+          "netMeanBps": 45.74,
+          "standardErrorBps": 39.92,
+          "effectiveN": 339,
+          "pValue": 0.15792
+        },
+        {
+          "cohort": "Smart Trader",
+          "horizonHours": 24,
+          "verdict": "fail-signal",
+          "n": 154,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": 10.08,
+          "netMeanBps": -1.92,
+          "standardErrorBps": 56.14,
+          "effectiveN": 163,
+          "pValue": 0.87256
+        },
+        {
+          "cohort": "Smart Trader",
+          "horizonHours": 48,
+          "verdict": "fail-signal",
+          "n": 154,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -23.94,
+          "netMeanBps": -35.94,
+          "standardErrorBps": 64.33,
+          "effectiveN": 161,
+          "pValue": 0.72714
+        },
+        {
+          "cohort": "Smart Trader",
+          "horizonHours": 168,
+          "verdict": "fail-signal",
+          "n": 154,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -123.32,
+          "netMeanBps": -135.32,
+          "standardErrorBps": 60.19,
+          "effectiveN": 153,
+          "pValue": 0.04098
+        },
+        {
+          "cohort": "Exchange",
+          "horizonHours": 24,
+          "verdict": "fail-signal",
+          "n": 779,
+          "pending": 1,
+          "noControl": 0,
+          "excessMeanBps": 9.74,
+          "netMeanBps": -2.26,
+          "standardErrorBps": 29.45,
+          "effectiveN": 442,
+          "pValue": 0.73763
+        },
+        {
+          "cohort": "Exchange",
+          "horizonHours": 48,
+          "verdict": "fail-signal",
+          "n": 779,
+          "pending": 1,
+          "noControl": 0,
+          "excessMeanBps": -3.78,
+          "netMeanBps": -15.78,
+          "standardErrorBps": 30.73,
+          "effectiveN": 656,
+          "pValue": 0.90705
+        },
+        {
+          "cohort": "Exchange",
+          "horizonHours": 168,
+          "verdict": "fail-signal",
+          "n": 779,
+          "pending": 0,
+          "noControl": 1,
+          "excessMeanBps": 5.48,
+          "netMeanBps": -6.52,
+          "standardErrorBps": 25.64,
+          "effectiveN": 881,
+          "pValue": 0.82759
+        },
+        {
+          "cohort": "Fresh Wallets",
+          "horizonHours": 24,
+          "verdict": "fail-signal",
+          "n": 779,
+          "pending": 1,
+          "noControl": 0,
+          "excessMeanBps": -11.98,
+          "netMeanBps": -23.98,
+          "standardErrorBps": 43.25,
+          "effectiveN": 224,
+          "pValue": 0.78161
+        },
+        {
+          "cohort": "Fresh Wallets",
+          "horizonHours": 48,
+          "verdict": "fail-signal",
+          "n": 779,
+          "pending": 1,
+          "noControl": 0,
+          "excessMeanBps": 40.24,
+          "netMeanBps": 28.24,
+          "standardErrorBps": 41.91,
+          "effectiveN": 328,
+          "pValue": 0.34133
+        },
+        {
+          "cohort": "Fresh Wallets",
+          "horizonHours": 168,
+          "verdict": "fail-signal",
+          "n": 780,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": 26.28,
+          "netMeanBps": 14.28,
+          "standardErrorBps": 31.6,
+          "effectiveN": 600,
+          "pValue": 0.4023
+        }
+      ]
+    },
+    "monthly-from-daily": {
+      "arm": "monthly-from-daily",
+      "rowsUsed": 378,
+      "nullFlowsBySegment": {
+        "whale": 0,
+        "public_figure": 0,
+        "top_pnl": 0,
+        "smart_trader": 0,
+        "exchange": 0,
+        "fresh_wallets": 0
+      },
+      "skippedBySegment": {
+        "whale": {
+          "nullFlow": 0,
+          "belowThreshold": 199,
+          "notTopK": 38,
+          "noPrice": 0,
+          "unparseable": 0
+        },
+        "public_figure": {
+          "nullFlow": 0,
+          "belowThreshold": 332,
+          "notTopK": 0,
+          "noPrice": 0,
+          "unparseable": 0
+        },
+        "top_pnl": {
+          "nullFlow": 0,
+          "belowThreshold": 148,
+          "notTopK": 56,
+          "noPrice": 0,
+          "unparseable": 0
+        },
+        "smart_trader": {
+          "nullFlow": 0,
+          "belowThreshold": 283,
+          "notTopK": 0,
+          "noPrice": 0,
+          "unparseable": 0
+        },
+        "exchange": {
+          "nullFlow": 0,
+          "belowThreshold": 34,
+          "notTopK": 154,
+          "noPrice": 0,
+          "unparseable": 0
+        },
+        "fresh_wallets": {
+          "nullFlow": 0,
+          "belowThreshold": 6,
+          "notTopK": 182,
+          "noPrice": 0,
+          "unparseable": 0
+        }
+      },
+      "forecastsFormed": 2508,
+      "summary": {
+        "tested": 18,
+        "economic": 0,
+        "realButCostly": 0,
+        "failedSignal": 18,
+        "insufficient": 0,
+        "headline": "No pair carries predictive signal beyond drift at this bar."
+      },
+      "searchCount": 18,
+      "results": [
+        {
+          "cohort": "Whale",
+          "horizonHours": 24,
+          "verdict": "fail-signal",
+          "n": 141,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": 54.9,
+          "netMeanBps": 42.9,
+          "standardErrorBps": 37.06,
+          "effectiveN": 298,
+          "pValue": 0.14493
+        },
+        {
+          "cohort": "Whale",
+          "horizonHours": 48,
+          "verdict": "fail-signal",
+          "n": 141,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -57.17,
+          "netMeanBps": -69.17,
+          "standardErrorBps": 64.31,
+          "effectiveN": 179,
+          "pValue": 0.37531
+        },
+        {
+          "cohort": "Whale",
+          "horizonHours": 168,
+          "verdict": "fail-signal",
+          "n": 141,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -147.66,
+          "netMeanBps": -159.66,
+          "standardErrorBps": 75.91,
+          "effectiveN": 173,
+          "pValue": 0.05147
+        },
+        {
+          "cohort": "Public Figure",
+          "horizonHours": 24,
+          "verdict": "fail-signal",
+          "n": 46,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -40.73,
+          "netMeanBps": -52.73,
+          "standardErrorBps": 43.33,
+          "effectiveN": 139,
+          "pValue": 0.34983
+        },
+        {
+          "cohort": "Public Figure",
+          "horizonHours": 48,
+          "verdict": "fail-signal",
+          "n": 46,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -101.24,
+          "netMeanBps": -113.24,
+          "standardErrorBps": 100.82,
+          "effectiveN": 48,
+          "pValue": 0.31684
+        },
+        {
+          "cohort": "Public Figure",
+          "horizonHours": 168,
+          "verdict": "fail-signal",
+          "n": 46,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -46.29,
+          "netMeanBps": -58.29,
+          "standardErrorBps": 51.63,
+          "effectiveN": 192,
+          "pValue": 0.37281
+        },
+        {
+          "cohort": "Top PnL",
+          "horizonHours": 24,
+          "verdict": "fail-signal",
+          "n": 174,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -79,
+          "netMeanBps": -91,
+          "standardErrorBps": 48.03,
+          "effectiveN": 129,
+          "pValue": 0.10445
+        },
+        {
+          "cohort": "Top PnL",
+          "horizonHours": 48,
+          "verdict": "fail-signal",
+          "n": 174,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -127.21,
+          "netMeanBps": -139.21,
+          "standardErrorBps": 65.43,
+          "effectiveN": 152,
+          "pValue": 0.04798
+        },
+        {
+          "cohort": "Top PnL",
+          "horizonHours": 168,
+          "verdict": "fail-signal",
+          "n": 174,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": 32.32,
+          "netMeanBps": 20.32,
+          "standardErrorBps": 55.4,
+          "effectiveN": 203,
+          "pValue": 0.56622
+        },
+        {
+          "cohort": "Smart Trader",
+          "horizonHours": 24,
+          "verdict": "fail-signal",
+          "n": 95,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -111.48,
+          "netMeanBps": -123.48,
+          "standardErrorBps": 58.08,
+          "effectiveN": 111,
+          "pValue": 0.05997
+        },
+        {
+          "cohort": "Smart Trader",
+          "horizonHours": 48,
+          "verdict": "fail-signal",
+          "n": 95,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -147.02,
+          "netMeanBps": -159.02,
+          "standardErrorBps": 85.48,
+          "effectiveN": 96,
+          "pValue": 0.09095
+        },
+        {
+          "cohort": "Smart Trader",
+          "horizonHours": 168,
+          "verdict": "fail-signal",
+          "n": 95,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": 31.07,
+          "netMeanBps": 19.07,
+          "standardErrorBps": 67.65,
+          "effectiveN": 159,
+          "pValue": 0.63968
+        },
+        {
+          "cohort": "Exchange",
+          "horizonHours": 24,
+          "verdict": "fail-signal",
+          "n": 190,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -39.18,
+          "netMeanBps": -51.18,
+          "standardErrorBps": 49.66,
+          "effectiveN": 151,
+          "pValue": 0.43878
+        },
+        {
+          "cohort": "Exchange",
+          "horizonHours": 48,
+          "verdict": "fail-signal",
+          "n": 190,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": -68.46,
+          "netMeanBps": -80.46,
+          "standardErrorBps": 79.54,
+          "effectiveN": 89,
+          "pValue": 0.3948
+        },
+        {
+          "cohort": "Exchange",
+          "horizonHours": 168,
+          "verdict": "fail-signal",
+          "n": 189,
+          "pending": 1,
+          "noControl": 0,
+          "excessMeanBps": -5.41,
+          "netMeanBps": -17.41,
+          "standardErrorBps": 64.7,
+          "effectiveN": 212,
+          "pValue": 0.93203
+        },
+        {
+          "cohort": "Fresh Wallets",
+          "horizonHours": 24,
+          "verdict": "fail-signal",
+          "n": 190,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": 12.66,
+          "netMeanBps": 0.66,
+          "standardErrorBps": 64.62,
+          "effectiveN": 97,
+          "pValue": 0.83958
+        },
+        {
+          "cohort": "Fresh Wallets",
+          "horizonHours": 48,
+          "verdict": "fail-signal",
+          "n": 190,
+          "pending": 0,
+          "noControl": 0,
+          "excessMeanBps": 261.98,
+          "netMeanBps": 249.98,
+          "standardErrorBps": 89.47,
+          "effectiveN": 78,
+          "pValue": 0.003
+        },
+        {
+          "cohort": "Fresh Wallets",
+          "horizonHours": 168,
+          "verdict": "fail-signal",
+          "n": 189,
+          "pending": 1,
+          "noControl": 0,
+          "excessMeanBps": 153.9,
+          "netMeanBps": 141.9,
+          "standardErrorBps": 74.14,
+          "effectiveN": 118,
+          "pValue": 0.03498
+        }
+      ]
+    }
+  },
+  "leak": {
+    "weekly": {
+      "flow": {
+        "whale": {
+          "pairs": 1556,
+          "meanAbsDiffUsd": 1041979,
+          "meanAbsCalledUsd": 260952,
+          "relativeMove": 3.993,
+          "signFlipsAboveThreshold": 196
+        },
+        "public_figure": {
+          "pairs": 1556,
+          "meanAbsDiffUsd": 266154,
+          "meanAbsCalledUsd": 27596,
+          "relativeMove": 9.6446,
+          "signFlipsAboveThreshold": 59
+        },
+        "top_pnl": {
+          "pairs": 1556,
+          "meanAbsDiffUsd": 2214887,
+          "meanAbsCalledUsd": 792392,
+          "relativeMove": 2.7952,
+          "signFlipsAboveThreshold": 268
+        },
+        "smart_trader": {
+          "pairs": 1556,
+          "meanAbsDiffUsd": 422940,
+          "meanAbsCalledUsd": 26980,
+          "relativeMove": 15.6763,
+          "signFlipsAboveThreshold": 104
+        },
+        "exchange": {
+          "pairs": 1556,
+          "meanAbsDiffUsd": 11246527,
+          "meanAbsCalledUsd": 3200541,
+          "relativeMove": 3.5139,
+          "signFlipsAboveThreshold": 478
+        },
+        "fresh_wallets": {
+          "pairs": 1556,
+          "meanAbsDiffUsd": 2744875681,
+          "meanAbsCalledUsd": 376838654,
+          "relativeMove": 7.284,
+          "signFlipsAboveThreshold": 0
+        }
+      },
+      "verdict": [
+        {
+          "segment": "whale",
+          "cohort": "Whale",
+          "horizonHours": 24,
+          "pairedClaims": 184,
+          "leakBps": -36.16,
+          "leakSeBps": 53.0821,
+          "leakP": 0.5037481259370314,
+          "calledExcessBps": -39.52,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": -60.95,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "whale",
+          "cohort": "Whale",
+          "horizonHours": 48,
+          "pairedClaims": 184,
+          "leakBps": 80.27,
+          "leakSeBps": 66.8484,
+          "leakP": 0.23588205897051473,
+          "calledExcessBps": -1.72,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": -105.63,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "whale",
+          "cohort": "Whale",
+          "horizonHours": 168,
+          "pairedClaims": 184,
+          "leakBps": -137.25,
+          "leakSeBps": 91.5416,
+          "leakP": 0.13893053473263367,
+          "calledExcessBps": -93.5,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": -47.83,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "public_figure",
+          "cohort": "Public Figure",
+          "horizonHours": 24,
+          "pairedClaims": 19,
+          "leakBps": 239.95,
+          "leakSeBps": 85.8451,
+          "leakP": 0.004997501249375313,
+          "calledExcessBps": null,
+          "calledVerdict": "insufficient",
+          "summedExcessBps": 12.15,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "public_figure",
+          "cohort": "Public Figure",
+          "horizonHours": 48,
+          "pairedClaims": 19,
+          "leakBps": 250.65,
+          "leakSeBps": 190.5513,
+          "leakP": 0.19890054972513743,
+          "calledExcessBps": null,
+          "calledVerdict": "insufficient",
+          "summedExcessBps": -159.98,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "public_figure",
+          "cohort": "Public Figure",
+          "horizonHours": 168,
+          "pairedClaims": 19,
+          "leakBps": -462.75,
+          "leakSeBps": 306.2821,
+          "leakP": 0.13843078460769614,
+          "calledExcessBps": null,
+          "calledVerdict": "insufficient",
+          "summedExcessBps": 103.3,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "top_pnl",
+          "cohort": "Top PnL",
+          "horizonHours": 24,
+          "pairedClaims": 301,
+          "leakBps": 81.52,
+          "leakSeBps": 41.374,
+          "leakP": 0.04997501249375312,
+          "calledExcessBps": 1.66,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": -35.95,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "top_pnl",
+          "cohort": "Top PnL",
+          "horizonHours": 48,
+          "pairedClaims": 301,
+          "leakBps": 10.9,
+          "leakSeBps": 56.6486,
+          "leakP": 0.8505747126436781,
+          "calledExcessBps": 20.78,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": -16.68,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "top_pnl",
+          "cohort": "Top PnL",
+          "horizonHours": 168,
+          "pairedClaims": 301,
+          "leakBps": -39.82,
+          "leakSeBps": 46.7124,
+          "leakP": 0.384807596201899,
+          "calledExcessBps": 36.29,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": 57.74,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "smart_trader",
+          "cohort": "Smart Trader",
+          "horizonHours": 24,
+          "pairedClaims": 19,
+          "leakBps": 136.23,
+          "leakSeBps": 101.8206,
+          "leakP": 0.18240879560219891,
+          "calledExcessBps": -78.25,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": 10.08,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "smart_trader",
+          "cohort": "Smart Trader",
+          "horizonHours": 48,
+          "pairedClaims": 19,
+          "leakBps": 327.93,
+          "leakSeBps": 220.3015,
+          "leakP": 0.12693653173413294,
+          "calledExcessBps": -8.97,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": -23.94,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "smart_trader",
+          "cohort": "Smart Trader",
+          "horizonHours": 168,
+          "pairedClaims": 19,
+          "leakBps": 157.64,
+          "leakSeBps": 83.1748,
+          "leakP": 0.053973013493253376,
+          "calledExcessBps": -2.33,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": -123.32,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "exchange",
+          "cohort": "Exchange",
+          "horizonHours": 24,
+          "pairedClaims": 532,
+          "leakBps": 25.09,
+          "leakSeBps": 34.4074,
+          "leakP": 0.4702648675662169,
+          "calledExcessBps": 0.06,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": 9.74,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "exchange",
+          "cohort": "Exchange",
+          "horizonHours": 48,
+          "pairedClaims": 532,
+          "leakBps": -20.03,
+          "leakSeBps": 33.122,
+          "leakP": 0.5497251374312844,
+          "calledExcessBps": 12.59,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": -3.78,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "exchange",
+          "cohort": "Exchange",
+          "horizonHours": 168,
+          "pairedClaims": 532,
+          "leakBps": 31.69,
+          "leakSeBps": 38.1052,
+          "leakP": 0.4057971014492754,
+          "calledExcessBps": -0.04,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": 5.48,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "fresh_wallets",
+          "cohort": "Fresh Wallets",
+          "horizonHours": 24,
+          "pairedClaims": 656,
+          "leakBps": -8.56,
+          "leakSeBps": 23.4714,
+          "leakP": 0.7131434282858571,
+          "calledExcessBps": -10.23,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": -11.98,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "fresh_wallets",
+          "cohort": "Fresh Wallets",
+          "horizonHours": 48,
+          "pairedClaims": 656,
+          "leakBps": 19.22,
+          "leakSeBps": 23.6547,
+          "leakP": 0.4192903548225887,
+          "calledExcessBps": 32.83,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": 40.24,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "fresh_wallets",
+          "cohort": "Fresh Wallets",
+          "horizonHours": 168,
+          "pairedClaims": 657,
+          "leakBps": -19.94,
+          "leakSeBps": 27.1746,
+          "leakP": 0.4737631184407796,
+          "calledExcessBps": -23.49,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": 26.28,
+          "summedVerdict": "fail-signal"
+        }
+      ]
+    },
+    "monthly": {
+      "flow": {
+        "whale": {
+          "pairs": 378,
+          "meanAbsDiffUsd": 2732967,
+          "meanAbsCalledUsd": 1689746,
+          "relativeMove": 1.6174,
+          "signFlipsAboveThreshold": 53
+        },
+        "public_figure": {
+          "pairs": 378,
+          "meanAbsDiffUsd": 994176,
+          "meanAbsCalledUsd": 192795,
+          "relativeMove": 5.1567,
+          "signFlipsAboveThreshold": 18
+        },
+        "top_pnl": {
+          "pairs": 378,
+          "meanAbsDiffUsd": 5765145,
+          "meanAbsCalledUsd": 3130547,
+          "relativeMove": 1.8416,
+          "signFlipsAboveThreshold": 69
+        },
+        "smart_trader": {
+          "pairs": 378,
+          "meanAbsDiffUsd": 1398497,
+          "meanAbsCalledUsd": 440928,
+          "relativeMove": 3.1717,
+          "signFlipsAboveThreshold": 39
+        },
+        "exchange": {
+          "pairs": 378,
+          "meanAbsDiffUsd": 31498544,
+          "meanAbsCalledUsd": 19005334,
+          "relativeMove": 1.6574,
+          "signFlipsAboveThreshold": 118
+        },
+        "fresh_wallets": {
+          "pairs": 378,
+          "meanAbsDiffUsd": 12612701274,
+          "meanAbsCalledUsd": 231083098,
+          "relativeMove": 54.5808,
+          "signFlipsAboveThreshold": 0
+        }
+      },
+      "verdict": [
+        {
+          "segment": "whale",
+          "cohort": "Whale",
+          "horizonHours": 24,
+          "pairedClaims": 94,
+          "leakBps": 70.47,
+          "leakSeBps": 83.5839,
+          "leakP": 0.4002998500749625,
+          "calledExcessBps": -13.73,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": 54.9,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "whale",
+          "cohort": "Whale",
+          "horizonHours": 48,
+          "pairedClaims": 94,
+          "leakBps": 79.43,
+          "leakSeBps": 91.7296,
+          "leakP": 0.3968015992003998,
+          "calledExcessBps": 44.53,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": -57.17,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "whale",
+          "cohort": "Whale",
+          "horizonHours": 168,
+          "pairedClaims": 94,
+          "leakBps": 0.16,
+          "leakSeBps": 153.6941,
+          "leakP": 0.9995002498750625,
+          "calledExcessBps": -103.09,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": -147.66,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "public_figure",
+          "cohort": "Public Figure",
+          "horizonHours": 24,
+          "pairedClaims": 21,
+          "leakBps": 72.03,
+          "leakSeBps": 189.094,
+          "leakP": 0.7186406796601699,
+          "calledExcessBps": null,
+          "calledVerdict": "insufficient",
+          "summedExcessBps": -40.73,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "public_figure",
+          "cohort": "Public Figure",
+          "horizonHours": 48,
+          "pairedClaims": 21,
+          "leakBps": 54.81,
+          "leakSeBps": 67.4858,
+          "leakP": 0.4207896051974013,
+          "calledExcessBps": null,
+          "calledVerdict": "insufficient",
+          "summedExcessBps": -101.24,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "public_figure",
+          "cohort": "Public Figure",
+          "horizonHours": 168,
+          "pairedClaims": 21,
+          "leakBps": 44.93,
+          "leakSeBps": 332.8629,
+          "leakP": 0.9130434782608695,
+          "calledExcessBps": null,
+          "calledVerdict": "insufficient",
+          "summedExcessBps": -46.29,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "top_pnl",
+          "cohort": "Top PnL",
+          "horizonHours": 24,
+          "pairedClaims": 128,
+          "leakBps": 86.78,
+          "leakSeBps": 79.5976,
+          "leakP": 0.28285857071464265,
+          "calledExcessBps": 46.56,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": -79,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "top_pnl",
+          "cohort": "Top PnL",
+          "horizonHours": 48,
+          "pairedClaims": 128,
+          "leakBps": -7.37,
+          "leakSeBps": 80.7926,
+          "leakP": 0.9390304847576212,
+          "calledExcessBps": -128.02,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": -127.21,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "top_pnl",
+          "cohort": "Top PnL",
+          "horizonHours": 168,
+          "pairedClaims": 128,
+          "leakBps": -171.01,
+          "leakSeBps": 116.0837,
+          "leakP": 0.13393303348325838,
+          "calledExcessBps": -74.97,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": 32.32,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "smart_trader",
+          "cohort": "Smart Trader",
+          "horizonHours": 24,
+          "pairedClaims": 48,
+          "leakBps": 152.55,
+          "leakSeBps": 61.4008,
+          "leakP": 0.013993003498250875,
+          "calledExcessBps": 101.56,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": -111.48,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "smart_trader",
+          "cohort": "Smart Trader",
+          "horizonHours": 48,
+          "pairedClaims": 48,
+          "leakBps": -6.5,
+          "leakSeBps": 134.3749,
+          "leakP": 0.9625187406296851,
+          "calledExcessBps": 18.09,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": -147.02,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "smart_trader",
+          "cohort": "Smart Trader",
+          "horizonHours": 168,
+          "pairedClaims": 48,
+          "leakBps": -49.67,
+          "leakSeBps": 178.4347,
+          "leakP": 0.7856071964017991,
+          "calledExcessBps": -69.28,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": 31.07,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "exchange",
+          "cohort": "Exchange",
+          "horizonHours": 24,
+          "pairedClaims": 142,
+          "leakBps": 68.33,
+          "leakSeBps": 45.902,
+          "leakP": 0.13793103448275862,
+          "calledExcessBps": 70.2,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": -39.18,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "exchange",
+          "cohort": "Exchange",
+          "horizonHours": 48,
+          "pairedClaims": 142,
+          "leakBps": 10.26,
+          "leakSeBps": 91.2074,
+          "leakP": 0.9190404797601199,
+          "calledExcessBps": -35.37,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": -68.46,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "exchange",
+          "cohort": "Exchange",
+          "horizonHours": 168,
+          "pairedClaims": 141,
+          "leakBps": 112.65,
+          "leakSeBps": 72.4638,
+          "leakP": 0.1199400299850075,
+          "calledExcessBps": 68.79,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": -5.41,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "fresh_wallets",
+          "cohort": "Fresh Wallets",
+          "horizonHours": 24,
+          "pairedClaims": 154,
+          "leakBps": 9.06,
+          "leakSeBps": 40.4015,
+          "leakP": 0.8205897051474262,
+          "calledExcessBps": -1.96,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": 12.66,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "fresh_wallets",
+          "cohort": "Fresh Wallets",
+          "horizonHours": 48,
+          "pairedClaims": 154,
+          "leakBps": -69.08,
+          "leakSeBps": 50.1801,
+          "leakP": 0.17341329335332334,
+          "calledExcessBps": 158.71,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": 261.98,
+          "summedVerdict": "fail-signal"
+        },
+        {
+          "segment": "fresh_wallets",
+          "cohort": "Fresh Wallets",
+          "horizonHours": 168,
+          "pairedClaims": 153,
+          "leakBps": -11.12,
+          "leakSeBps": 78.5241,
+          "leakP": 0.8770614692653673,
+          "calledExcessBps": 70.57,
+          "calledVerdict": "fail-signal",
+          "summedExcessBps": 153.9,
+          "summedVerdict": "fail-signal"
+        }
+      ]
+    },
+    "naiveFlow": {
+      "whale": {
+        "pairs": 18,
+        "meanAbsDiffUsd": 16640407,
+        "meanAbsCalledUsd": 55305,
+        "relativeMove": 300.882,
+        "signFlipsAboveThreshold": 12
+      },
+      "public_figure": {
+        "pairs": 18,
+        "meanAbsDiffUsd": 1598448,
+        "meanAbsCalledUsd": 208128,
+        "relativeMove": 7.6801,
+        "signFlipsAboveThreshold": 3
+      },
+      "top_pnl": {
+        "pairs": 18,
+        "meanAbsDiffUsd": 31662370,
+        "meanAbsCalledUsd": 373653,
+        "relativeMove": 84.7373,
+        "signFlipsAboveThreshold": 8
+      },
+      "smart_trader": {
+        "pairs": 18,
+        "meanAbsDiffUsd": 5010096,
+        "meanAbsCalledUsd": 290187,
+        "relativeMove": 17.2651,
+        "signFlipsAboveThreshold": 7
+      },
+      "exchange": {
+        "pairs": 18,
+        "meanAbsDiffUsd": 199895688,
+        "meanAbsCalledUsd": 5958897,
+        "relativeMove": 33.5458,
+        "signFlipsAboveThreshold": 9
+      },
+      "fresh_wallets": {
+        "pairs": 18,
+        "meanAbsDiffUsd": 98570086183,
+        "meanAbsCalledUsd": 830148930,
+        "relativeMove": 118.7378,
+        "signFlipsAboveThreshold": 0
+      }
+    },
+    "note": "leakBps = mean over paired claims of (excess with labels resolved at the window end) \u2212 (excess with labels resolved each day). Positive = the longer resolution manufactured edge."
+  }
+}

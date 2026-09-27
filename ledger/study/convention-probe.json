@@ -1,0 +1,59 @@
+{
+  "probedAtIso": "2026-09-19T18:34:54.061Z",
+  "token": {
+    "chain": "ethereum",
+    "symbol": "WETH",
+    "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+  },
+  "days": {
+    "d1": "2026-08-24",
+    "d2": "2026-08-25"
+  },
+  "verdict": "inclusive",
+  "scores": {
+    "exchange": {
+      "inclusiveErr": 0.02435401556986801,
+      "exclusiveErr": 0.44135758653745866
+    },
+    "whale": {
+      "inclusiveErr": 0,
+      "exclusiveErr": 0
+    },
+    "smart_trader": {
+      "inclusiveErr": 1.1708830212173291,
+      "exclusiveErr": 1.1708830212173291
+    },
+    "meanInclusiveErr": 0.3984,
+    "meanExclusiveErr": 0.5374
+  },
+  "calls": {
+    "d1": {
+      "window": {
+        "fromDate": "2026-08-24",
+        "toDate": "2026-08-24"
+      },
+      "state": "ok",
+      "requestId": "e67100560ebb81445e7afb063263b856",
+      "note": null
+    },
+    "d2": {
+      "window": {
+        "fromDate": "2026-08-25",
+        "toDate": "2026-08-25"
+      },
+      "state": "ok",
+      "requestId": "1f2b471f1e823243f27a6a0a65f13445",
+      "note": null
+    },
+    "d1d2": {
+      "window": {
+        "fromDate": "2026-08-24",
+        "toDate": "2026-08-25"
+      },
+      "state": "ok",
+      "requestId": "110045710876f430a0a45d441fbf0256",
+      "note": null
+    }
+  },
+  "note": "inclusive: a window {from,to} covers the `to` day; exclusive: it stops before it. The arms are built with `to` = the last day INSIDE the window and shifted by one day if the verdict is exclusive. [public copy: the segment flows and raw rows are removed; the request ids let Nansen confirm the calls]"
+}

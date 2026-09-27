@@ -1,0 +1,252 @@
+
+  CONVENTION AUDIT — 12756 ok rows, 20 tokens with a daily series, from ledger/study
+
+  WEEKLY — 1558 one-call windows, rebuilt from the daily series
+
+  Whale — NO MATCH: best rebuild trail-2, within 5% on 6.8% of non-zero pairs   (report-style |Δ|/|flow|, inclusive: 399.3% over 1556 pairs)
+  rebuild        pairs  within5% ≠0 pairs  within≠0  med relW  med relG  spearman  sign-agree    (n)
+  inclusive       1556     21.6%     1250      2.4%    381.0%     64.1%      0.26       66.5%    188
+  to-exclusive    1537     22.6%     1224      2.9%    332.3%     49.9%      0.28       67.4%    193
+  shift+1         1536     21.0%     1237      1.9%    399.7%     55.9%      0.25       67.0%    185
+  shift-1         1536     21.2%     1241      2.4%    361.9%     54.3%      0.27       67.2%    186
+  last-day        1557     29.2%     1118      1.4%    111.4%     14.7%      0.06       54.0%    100
+  first-day       1558     28.1%     1140      1.8%    110.6%     15.6%      0.04       52.4%    103
+  mean-daily      1556     20.9%     1250      1.5%    102.7%     14.1%      0.26       66.4%    110
+  trail-2         1537     32.5%     1113      6.8%    100.0%      9.4%      0.43       85.5%    165 ◀
+  lead-2          1538     24.8%     1175      1.6%    153.4%     25.8%      0.08       53.4%    131
+  by token (inclusive, median relW): XVS 103%  DEGEN 174%  TWT 196%  BRETT 226%  CAKE 232%  JUP 241%  ONDO 318%  WIF 321%  JTO 326%  AAVE 341%  CRV 401%  BONK 440%  LDO 458%  UNI 531%  LINK 571%  WETH 610%  PEPE 633%  WBTC 682%  ENA 762%  AERO 863%
+  by period (inclusive, median relW): 2025-H1 334% (n=192)  2025-H2 406% (n=439)  2026 374% (n=312)
+
+  Public Figure — NO MATCH: best rebuild trail-2, within 5% on 29.1% of non-zero pairs   (report-style |Δ|/|flow|, inclusive: 964.5% over 1556 pairs)
+  rebuild        pairs  within5% ≠0 pairs  within≠0  med relW  med relG  spearman  sign-agree    (n)
+  inclusive       1556     61.8%      654      9.0%    100.0%    100.0%      0.30       89.5%     19
+  to-exclusive    1537     65.1%      599     10.5%     98.1%     99.3%      0.32       88.2%     17
+  shift+1         1536     61.2%      655      9.0%     98.1%    100.0%      0.29       93.8%     16
+  shift-1         1536     61.3%      650      8.6%     99.9%    100.0%      0.33       88.9%     18
+  last-day        1557     76.9%      364      1.1%    100.0%      0.5%      0.05      100.0%      4
+  first-day       1558     78.2%      342      0.9%    100.0%      0.0%      0.07       40.0%      5
+  mean-daily      1556     58.2%      654      0.6%     91.5%     14.3%      0.30      100.0%     10
+  trail-2         1537     83.3%      361     29.1%     24.6%      0.0%      0.49      100.0%     16 ◀
+  lead-2          1538     72.8%      418      0.0%    100.0%     17.9%      0.06       40.0%      5
+  by token (inclusive, median relW): LINK 0%  DEGEN 0%  XVS 0%  AERO 13%  AAVE 16%  BONK 27%  UNI 29%  JTO 45%  ONDO 48%  CRV 71%  PEPE 96%  JUP 97%  ENA 99%  LDO 100%  WBTC 101%  BRETT 199%  WETH 499%  CAKE 946%
+  by period (inclusive, median relW): 2025-H1 61% (n=42)  2025-H2 102% (n=74)  2026 82% (n=44)
+
+  Top PnL — NO MATCH: best rebuild trail-2, within 5% on 4.9% of non-zero pairs   (report-style |Δ|/|flow|, inclusive: 279.5% over 1556 pairs)
+  rebuild        pairs  within5% ≠0 pairs  within≠0  med relW  med relG  spearman  sign-agree    (n)
+  inclusive       1556      3.1%     1537      2.0%    329.7%     52.2%      0.27       70.6%    323
+  to-exclusive    1537      2.5%     1519      1.3%    284.6%     45.1%      0.27       71.2%    319
+  shift+1         1536      2.7%     1516      1.5%    330.0%     49.1%      0.28       71.5%    323
+  shift-1         1536      2.7%     1516      1.4%    321.8%     50.8%      0.28       71.3%    324
+  last-day        1557      5.7%     1502      2.3%    112.7%     16.4%      0.13       60.0%    235
+  first-day       1558      5.0%     1509      1.9%    118.1%     18.1%      0.02       55.7%    230
+  mean-daily      1556      3.1%     1537      2.0%     99.4%     13.2%      0.28       72.5%    207
+  trail-2         1537      8.0%     1487      4.9%     99.3%     12.2%      0.44       80.1%    291 ◀
+  lead-2          1538      3.1%     1504      0.9%    172.3%     25.8%      0.05       53.7%    268
+  by token (inclusive, median relW): TWT 208%  DEGEN 211%  JTO 263%  XVS 265%  CAKE 271%  JUP 277%  WETH 296%  BRETT 296%  WIF 311%  AERO 312%  WBTC 364%  LDO 368%  AAVE 375%  BONK 380%  ENA 386%  UNI 419%  ONDO 483%  CRV 486%  LINK 491%  PEPE 523%
+  by period (inclusive, median relW): 2025-H1 313% (n=292)  2025-H2 399% (n=459)  2026 314% (n=558)
+
+  Smart Trader — NO MATCH: best rebuild trail-2, within 5% on 24.7% of non-zero pairs   (report-style |Δ|/|flow|, inclusive: 1567.6% over 1556 pairs)
+  rebuild        pairs  within5% ≠0 pairs  within≠0  med relW  med relG  spearman  sign-agree    (n)
+  inclusive       1556     55.7%      734      6.0%    134.3%    100.0%      0.27       78.9%     19
+  to-exclusive    1537     58.5%      681      6.3%    107.3%     94.4%      0.29       82.4%     17
+  shift+1         1536     54.4%      739      5.3%    140.0%     98.3%      0.25       76.5%     17
+  shift-1         1536     54.9%      730      5.2%    118.6%     98.8%      0.25       78.9%     19
+  last-day        1557     71.7%      445      1.1%    100.0%      1.9%      0.12       57.1%      7
+  first-day       1558     71.3%      451      0.9%    100.0%      1.2%      0.11      100.0%      3
+  mean-daily      1556     53.1%      734      0.7%     93.4%     14.3%      0.27       50.0%      6
+  trail-2         1537     78.3%      442     24.7%     87.0%      0.0%      0.45       73.3%     15 ◀
+  lead-2          1538     65.3%      535      0.2%    100.0%     24.5%      0.13       50.0%      4
+  by token (inclusive, median relW): XVS 0%  UNI 50%  JUP 56%  BRETT 96%  ONDO 100%  BONK 106%  CRV 107%  PEPE 121%  AAVE 122%  LDO 123%  WETH 172%  ENA 225%  WIF 248%  WBTC 335%  DEGEN 432%  AERO 888%  JTO 968%  LINK 999%  CAKE 1010%
+  by period (inclusive, median relW): 2025-H1 170% (n=63)  2025-H2 150% (n=104)  2026 100% (n=55)
+
+  Exchange — NO MATCH: best rebuild mean-daily, within 5% on 3.0% of non-zero pairs   (report-style |Δ|/|flow|, inclusive: 351.4% over 1556 pairs)
+  rebuild        pairs  within5% ≠0 pairs  within≠0  med relW  med relG  spearman  sign-agree    (n)
+  inclusive       1556      2.7%     1556      2.7%    391.7%     49.8%      0.33       66.4%    812
+  to-exclusive    1537      0.8%     1537      0.8%    340.4%     43.8%      0.32       65.4%    800
+  shift+1         1536      0.9%     1536      0.9%    400.8%     47.9%      0.34       67.0%    808
+  shift-1         1536      0.5%     1536      0.5%    407.1%     49.9%      0.30       64.2%    798
+  last-day        1557      2.9%     1557      2.9%    123.7%     16.2%      0.17       61.1%    663
+  first-day       1558      2.6%     1558      2.6%    131.5%     18.6%      0.14       57.1%    671
+  mean-daily      1556      3.0%     1556      3.0%     98.9%     12.5%      0.34       68.8%    603 ◀
+  trail-3         1537      2.5%     1537      2.5%    144.2%     17.3%      0.48       74.8%    763
+  lead-2          1538      1.9%     1538      1.9%    188.8%     25.3%      0.17       58.1%    735
+  by token (inclusive, median relW): BONK 236%  JUP 252%  AERO 272%  WBTC 304%  CRV 308%  WETH 314%  LINK 327%  CAKE 330%  WIF 335%  DEGEN 362%  TWT 366%  BRETT 372%  XVS 395%  UNI 431%  AAVE 468%  JTO 532%  LDO 547%  PEPE 549%  ONDO 577%  ENA 820%
+  by period (inclusive, median relW): 2025-H1 395% (n=320)  2025-H2 350% (n=518)  2026 438% (n=711)
+
+  Fresh Wallets — MATCH: best rebuild last-day, within 5% on 100.0% of non-zero pairs   (report-style |Δ|/|flow|, inclusive: 728.4% over 1556 pairs)
+  rebuild        pairs  within5% ≠0 pairs  within≠0  med relW  med relG  spearman  sign-agree    (n)
+  inclusive       1556      1.5%     1556      1.5%    600.0%     85.7%      0.91      100.0%   1134
+  to-exclusive    1537      0.3%     1537      0.3%    500.2%     71.6%      0.87      100.0%   1121
+  shift+1         1536      0.1%     1536      0.1%    600.0%     85.7%      0.92      100.0%   1120
+  shift-1         1536      0.5%     1536      0.5%    629.0%     86.8%      0.87      100.0%   1115
+  last-day        1557    100.0%     1557    100.0%      0.0%      0.0%      1.00      100.0%   1135 ◀
+  first-day       1558     15.9%     1558     15.9%     63.0%      8.4%      0.82      100.0%   1030
+  mean-daily      1556     17.7%     1556     17.7%     42.5%      6.0%      0.92      100.0%   1110
+  trail-2         1537      4.2%     1537      4.2%     79.2%      8.8%      0.98      100.0%   1121
+  lead-2          1538      2.4%     1538      2.4%    100.0%     18.4%      0.83      100.0%   1085
+  by token (inclusive, median relW): WETH 569%  AERO 585%  WBTC 599%  LDO 600%  DEGEN 600%  BRETT 600%  XVS 600%  TWT 600%  WIF 605%  LINK 609%  ONDO 611%  BONK 642%  PEPE 650%  CAKE 685%  JTO 724%  AAVE 732%  CRV 765%  JUP 768%  ENA 972%  UNI 1056%
+  by period (inclusive, median relW): 2025-H1 600% (n=320)  2025-H2 666% (n=518)  2026 600% (n=718)
+
+  MONTHLY — 380 one-call windows, rebuilt from the daily series
+
+  Whale — NO MATCH: best rebuild trail-10, within 5% on 9.5% of non-zero pairs   (report-style |Δ|/|flow|, inclusive: 161.7% over 378 pairs)
+  rebuild        pairs  within5% ≠0 pairs  within≠0  med relW  med relG  spearman  sign-agree    (n)
+  inclusive        378     17.5%      321      2.8%    160.8%     38.8%      0.46       76.2%    122
+  to-exclusive     358     13.1%      316      1.6%    166.9%     39.9%      0.40       71.8%    124
+  shift+1          358     13.1%      316      1.6%    163.5%     39.4%      0.43       75.6%    123
+  shift-1          358     12.3%      321      2.2%    167.9%     40.4%      0.39       71.2%    125
+  last-day         380     24.7%      296      3.4%    100.0%     12.4%      0.19       69.7%     33
+  first-day        380     21.3%      304      1.6%    100.0%     15.5%     -0.01       43.3%     30
+  mean-daily       378     16.7%      321      1.9%     96.3%     12.1%      0.47       69.2%     26
+  trail-6          360     25.8%      292      8.6%     76.1%      6.7%      0.59       85.1%    101
+  lead-2           359     17.3%      301      1.3%    100.0%     16.8%      0.12       59.1%     44
+  by token (inclusive, median relW): JUP 68%  TWT 87%  LDO 99%  UNI 100%  AERO 108%  WETH 116%  JTO 119%  CRV 125%  XVS 134%  BRETT 156%  BONK 162%  AAVE 183%  WBTC 190%  ENA 213%  WIF 236%  PEPE 390%  DEGEN 413%  LINK 574%  ONDO 954%  CAKE 1107%
+  by period (inclusive, median relW): 2025-H1 116% (n=57)  2025-H2 195% (n=117)  2026 140% (n=109)
+
+  Public Figure — NO MATCH: best rebuild trail-7, within 5% on 37.4% of non-zero pairs   (report-style |Δ|/|flow|, inclusive: 515.7% over 378 pairs)
+  rebuild        pairs  within5% ≠0 pairs  within≠0  med relW  med relG  spearman  sign-agree    (n)
+  inclusive        378     38.1%      264     11.4%    141.3%     85.0%      0.45       71.4%     21
+  to-exclusive     358     33.5%      261      8.8%    149.8%     89.0%      0.41       71.4%     21
+  shift+1          358     34.1%      261      9.6%    158.7%     85.5%      0.41       66.7%     21
+  shift-1          358     33.8%      255      7.1%    159.4%     89.3%      0.43       68.4%     19
+  last-day         380     53.2%      193      7.8%    100.0%      2.7%      0.22       75.0%      4
+  first-day        380     49.2%      196      1.5%    100.0%      7.4%      0.15       66.7%      3
+  mean-daily       378     31.0%      264      1.1%     96.7%      5.8%      0.46       85.7%      7
+  trail-7          360     66.9%      190     37.4%     50.9%      0.0%      0.76       92.3%     13 ◀
+  lead-2           359     45.7%      199      2.0%    100.0%     10.8%      0.21       66.7%      3
+  by token (inclusive, median relW): LDO 0%  XVS 0%  JUP 9%  JTO 33%  WIF 35%  UNI 41%  BONK 100%  CAKE 100%  PEPE 103%  ONDO 150%  WBTC 150%  CRV 156%  ENA 247%  AERO 560%  AAVE 703%  WETH 745%  LINK 880%
+  by period (inclusive, median relW): 2025-H1 205% (n=32)  2025-H2 162% (n=47)  2026 88% (n=52)
+
+  Top PnL — NO MATCH: best rebuild inclusive, within 5% on 6.4% of non-zero pairs   (report-style |Δ|/|flow|, inclusive: 184.2% over 378 pairs)
+  rebuild        pairs  within5% ≠0 pairs  within≠0  med relW  med relG  spearman  sign-agree    (n)
+  inclusive        378      7.7%      373      6.4%    167.7%     29.5%      0.46       78.0%    173 ◀
+  to-exclusive     358      2.0%      357      1.7%    177.6%     30.6%      0.42       76.0%    171
+  shift+1          358      1.7%      357      1.4%    182.0%     30.0%      0.42       76.7%    172
+  shift-1          358      2.2%      354      1.1%    205.6%     32.2%      0.41       76.3%    160
+  last-day         380      6.6%      372      4.6%     98.7%     13.0%      0.29       71.0%     69
+  first-day        380      6.6%      373      4.8%    100.0%     14.8%      0.08       56.9%     65
+  mean-daily       378      6.1%      373      4.8%     96.4%     12.8%      0.46       72.0%     50
+  trail-6          360      5.6%      356      4.5%     74.8%      9.5%      0.58       82.8%    145
+  lead-7           359      2.8%      357      2.2%    108.1%     20.1%      0.02       55.1%    127
+  by token (inclusive, median relW): LDO 90%  BONK 93%  AERO 96%  LINK 104%  CRV 104%  PEPE 112%  JTO 120%  JUP 122%  AAVE 149%  UNI 160%  WBTC 164%  TWT 190%  WIF 194%  WETH 221%  CAKE 253%  ENA 256%  BRETT 278%  ONDO 340%  DEGEN 355%  XVS 390%
+  by period (inclusive, median relW): 2025-H1 167% (n=79)  2025-H2 190% (n=117)  2026 167% (n=159)
+
+  Smart Trader — NO MATCH: best rebuild trail-10, within 5% on 26.3% of non-zero pairs   (report-style |Δ|/|flow|, inclusive: 317.2% over 378 pairs)
+  rebuild        pairs  within5% ≠0 pairs  within≠0  med relW  med relG  spearman  sign-agree    (n)
+  inclusive        378     35.4%      273     10.6%    104.0%     71.4%      0.37       77.1%     48
+  to-exclusive     358     30.7%      269      7.8%    104.7%     73.8%      0.35       76.1%     46
+  shift+1          358     31.3%      271      9.2%    107.3%     73.4%      0.35       73.9%     46
+  shift-1          358     30.7%      264      6.1%    109.2%     80.7%      0.30       71.8%     39
+  last-day         380     45.0%      220      5.0%    100.0%     13.3%      0.33       90.0%     10
+  first-day        380     41.1%      228      1.8%    100.0%     20.3%      0.08      100.0%      6
+  mean-daily       378     29.1%      273      1.8%     97.0%     16.0%      0.37       77.8%      9
+  trail-7          360     54.7%      218     25.2%     67.7%      1.5%      0.68       91.4%     35
+  lead-2           359     36.5%      228      0.0%    100.0%     30.5%      0.01       54.5%     11
+  by token (inclusive, median relW): BONK 3%  JTO 8%  BRETT 39%  LINK 46%  UNI 50%  TWT 51%  ENA 85%  LDO 85%  WIF 92%  DEGEN 100%  ONDO 101%  AERO 117%  JUP 125%  AAVE 139%  CAKE 141%  CRV 173%  WETH 376%  WBTC 387%  PEPE 939%
+  by period (inclusive, median relW): 2025-H1 105% (n=54)  2025-H2 167% (n=66)  2026 100% (n=64)
+
+  Exchange — NO MATCH: best rebuild inclusive, within 5% on 8.2% of non-zero pairs   (report-style |Δ|/|flow|, inclusive: 165.7% over 378 pairs)
+  rebuild        pairs  within5% ≠0 pairs  within≠0  med relW  med relG  spearman  sign-agree    (n)
+  inclusive        378      8.2%      378      8.2%    189.9%     25.6%      0.35       68.3%    300 ◀
+  to-exclusive     358      2.2%      358      2.2%    199.1%     28.0%      0.33       67.6%    293
+  shift+1          358      2.8%      358      2.8%    198.8%     27.7%      0.35       68.3%    290
+  shift-1          358      2.2%      358      2.2%    206.7%     32.2%      0.34       66.9%    284
+  last-day         380      6.1%      380      6.1%     97.4%     12.9%      0.24       61.3%    204
+  first-day        380      5.5%      380      5.5%    100.0%     13.3%      0.06       53.7%    175
+  mean-daily       378      5.6%      378      5.6%     97.2%     13.7%      0.36       69.0%    158
+  trail-7          360      4.2%      360      4.2%     68.8%      9.6%      0.68       79.6%    265
+  lead-21          338      2.4%      338      2.4%    165.1%     27.9%      0.22       63.0%    265
+  by token (inclusive, median relW): WETH 80%  XVS 101%  JUP 101%  DEGEN 106%  TWT 113%  AERO 133%  JTO 140%  BRETT 146%  WIF 156%  ONDO 156%  UNI 166%  AAVE 179%  WBTC 192%  PEPE 278%  LDO 299%  CRV 300%  CAKE 312%  ENA 388%  LINK 390%  BONK 397%
+  by period (inclusive, median relW): 2025-H1 161% (n=80)  2025-H2 235% (n=119)  2026 171% (n=179)
+
+  Fresh Wallets — MATCH: best rebuild last-day, within 5% on 100.0% of non-zero pairs   (report-style |Δ|/|flow|, inclusive: 5458.1% over 378 pairs)
+  rebuild        pairs  within5% ≠0 pairs  within≠0  med relW  med relG  spearman  sign-agree    (n)
+  inclusive        378      5.3%      378      5.3%   4274.0%     97.7%      0.80      100.0%    267
+  to-exclusive     358      0.0%      358      0.0%   4599.4%     95.8%      0.81      100.0%    253
+  shift+1          358      0.0%      358      0.0%   4628.7%     97.3%      0.82      100.0%    253
+  shift-1          358      1.1%      358      1.1%   4614.5%     98.6%      0.78      100.0%    248
+  last-day         380    100.0%      380    100.0%      0.0%      0.0%      1.00      100.0%    269 ◀
+  first-day        380     12.4%      380     12.4%     67.6%      1.5%      0.78      100.0%    239
+  mean-daily       378     13.2%      378     13.2%     72.3%      2.1%      0.84      100.0%    261
+  trail-2          360      3.1%      360      3.1%    100.0%      1.8%      0.97      100.0%    255
+  lead-2           359      3.1%      359      3.1%    114.3%      3.2%      0.78      100.0%    245
+  by token (inclusive, median relW): LINK 2476%  XVS 2950%  DEGEN 3000%  TWT 3000%  WIF 3131%  BRETT 3310%  AAVE 3489%  PEPE 3649%  CRV 3768%  BONK 4178%  CAKE 4718%  UNI 4910%  WBTC 5919%  JUP 6608%  JTO 7329%  ONDO 8131%  AERO 8234%  WETH 8611%  LDO 9895%  ENA 16075%
+  by period (inclusive, median relW): 2025-H1 2462% (n=80)  2025-H2 8862% (n=119)  2026 3569% (n=179)
+
+  NAIVE — 20 one-call windows, rebuilt from the daily series
+
+  Whale — PARTIAL: best rebuild last-day, within 5% on 60.0% of all pairs   (report-style |Δ|/|flow|, inclusive: 30088.2% over 18 pairs)
+  rebuild        pairs  within5% ≠0 pairs  within≠0  med relW  med relG  spearman  sign-agree    (n)
+  inclusive         18      0.0%       18      0.0%  27223.5%     27.4%      0.08      100.0%      1
+  to-exclusive      18      0.0%       18      0.0%  27214.8%     27.4%      0.08      100.0%      1
+  last-day          20     60.0%        8      0.0%     93.4%      0.0%      0.75           —      0 ◀
+  first-day         20     60.0%        8      0.0%    100.0%      0.0%         —           —      0
+  mean-daily        18      0.0%       18      0.0%    102.5%      0.1%      0.08           —      0
+  trail-2           20     60.0%        8      0.0%     97.0%      0.0%      0.46           —      0
+  lead-2            20     60.0%        8      0.0%    100.0%      0.0%         —           —      0
+
+  Public Figure — NO MATCH: best rebuild trail-7, within 5% on 27.3% of non-zero pairs   (report-style |Δ|/|flow|, inclusive: 768.0% over 18 pairs)
+  rebuild        pairs  within5% ≠0 pairs  within≠0  med relW  med relG  spearman  sign-agree    (n)
+  inclusive         18      5.6%       17      0.0%    976.5%     26.7%      0.43      100.0%      1
+  to-exclusive      18      5.6%       17      0.0%    976.5%     26.7%      0.43      100.0%      1
+  last-day          20     45.0%       11      0.0%    100.0%      0.0%      0.24      100.0%      1
+  first-day         20     45.0%       11      0.0%    100.0%      0.0%     -0.40        0.0%      1
+  mean-daily        18      5.6%       17      0.0%     99.2%      0.1%      0.43           —      0
+  trail-7           20     60.0%       11     27.3%     42.0%      0.0%      0.69      100.0%      1 ◀
+  lead-2            20     40.0%       12      0.0%    100.0%      0.0%     -0.35        0.0%      1
+
+  Top PnL — NO MATCH: best rebuild last-day, within 5% on 11.1% of non-zero pairs   (report-style |Δ|/|flow|, inclusive: 8473.7% over 18 pairs)
+  rebuild        pairs  within5% ≠0 pairs  within≠0  med relW  med relG  spearman  sign-agree    (n)
+  inclusive         18      0.0%       18      0.0%  15110.6%     21.0%      0.13       60.0%      5
+  to-exclusive      18      0.0%       18      0.0%  15120.2%     20.5%      0.13       60.0%      5
+  last-day          20     20.0%       18     11.1%     99.2%      0.0%      0.23        0.0%      1 ◀
+  first-day         20      5.0%       20      5.0%    110.2%      0.2%      0.32       66.7%      3
+  mean-daily        18     11.1%       18     11.1%     95.8%      0.1%      0.13        0.0%      1
+  trail-5           20     20.0%       18     11.1%     67.5%      0.0%      0.31       50.0%      4
+  lead-7            20      5.0%       20      5.0%    117.2%      0.5%      0.33       66.7%      6
+
+  Smart Trader — NO MATCH: best rebuild trail-7, within 5% on 18.8% of non-zero pairs   (report-style |Δ|/|flow|, inclusive: 1726.5% over 18 pairs)
+  rebuild        pairs  within5% ≠0 pairs  within≠0  med relW  med relG  spearman  sign-agree    (n)
+  inclusive         18      0.0%       18      0.0%   1992.9%     37.5%      0.19       50.0%      4
+  to-exclusive      18      0.0%       18      0.0%   1992.9%     37.5%      0.16       50.0%      4
+  last-day          20     25.0%       16      6.3%    100.0%      0.4%      0.29      100.0%      2
+  first-day         20     20.0%       16      0.0%    100.0%      0.6%      0.12           —      0
+  mean-daily        18      0.0%       18      0.0%     98.7%      0.5%      0.19           —      0
+  trail-7           20     35.0%       16     18.8%     91.5%      0.3%      0.42      100.0%      3 ◀
+  lead-2            20     15.0%       17      0.0%    100.0%      0.6%     -0.09           —      0
+
+  Exchange — NO MATCH: best rebuild lead-2, within 5% on 5.0% of non-zero pairs   (report-style |Δ|/|flow|, inclusive: 3354.6% over 18 pairs)
+  rebuild        pairs  within5% ≠0 pairs  within≠0  med relW  med relG  spearman  sign-agree    (n)
+  inclusive         18      0.0%       18      0.0%   3405.1%     19.7%      0.17       50.0%     14
+  to-exclusive      18      0.0%       18      0.0%   3404.7%     19.8%      0.17       50.0%     14
+  last-day          20      0.0%       20      0.0%     90.9%      0.3%      0.20       63.6%     11
+  first-day         20      0.0%       20      0.0%     98.3%      0.5%      0.35       64.3%     14
+  mean-daily        18      0.0%       18      0.0%     99.5%      0.4%      0.17       57.1%      7
+  trail-3           20      5.0%       20      5.0%     98.7%      0.3%      0.45       66.7%     12
+  lead-2            20      5.0%       20      5.0%    104.7%      0.5%      0.30       60.0%     15 ◀
+
+  Fresh Wallets — MATCH: best rebuild last-day, within 5% on 100.0% of non-zero pairs   (report-style |Δ|/|flow|, inclusive: 11873.8% over 18 pairs)
+  rebuild        pairs  within5% ≠0 pairs  within≠0  med relW  med relG  spearman  sign-agree    (n)
+  inclusive         18      0.0%       18      0.0% 609926.6%    100.0%      0.62      100.0%     12
+  to-exclusive      18      0.0%       18      0.0% 609826.6%    100.0%      0.59      100.0%     12
+  last-day          20    100.0%       20    100.0%      0.0%      0.0%      1.00      100.0%     14 ◀
+  first-day         20      0.0%       20      0.0%    125.7%      0.1%      0.58      100.0%     14
+  mean-daily        18      0.0%       18      0.0%   1029.7%      0.2%      0.62      100.0%     12
+  trail-2           20      0.0%       20      0.0%     92.6%      0.0%      0.95      100.0%     14
+  lead-2            20      0.0%       20      0.0%    419.4%      0.2%      0.57      100.0%     14
+
+  LAG-1 AUTOCORRELATION of the daily series (median across tokens; a trailing 7-day window would read ≈0.85)
+  Whale          0.051
+  Public Figure  -0.002
+  Top PnL        -0.016
+  Smart Trader   -0.001
+  Exchange       0.051
+  Fresh Wallets  0.390
+
+  VERDICTS
+  weekly   whale: NO MATCH (trail-2 7%)  public_figure: NO MATCH (trail-2 29%)  top_pnl: NO MATCH (trail-2 5%)  smart_trader: NO MATCH (trail-2 25%)  exchange: NO MATCH (mean-daily 3%)  fresh_wallets: MATCH (last-day 100%)
+  monthly  whale: NO MATCH (trail-10 9%)  public_figure: NO MATCH (trail-7 37%)  top_pnl: NO MATCH (inclusive 6%)  smart_trader: NO MATCH (trail-10 26%)  exchange: NO MATCH (inclusive 8%)  fresh_wallets: MATCH (last-day 100%)
+  naive    whale: PARTIAL (last-day 60%)  public_figure: NO MATCH (trail-7 27%)  top_pnl: NO MATCH (last-day 11%)  smart_trader: NO MATCH (trail-7 19%)  exchange: NO MATCH (lead-2 5%)  fresh_wallets: MATCH (last-day 100%)
+
+  written: ledger/study/convention-audit.json
+

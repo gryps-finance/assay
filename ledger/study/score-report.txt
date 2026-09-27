@@ -1,0 +1,178 @@
+(re-scored 2026-09-24 in a clean Linux environment from the full private ledger; verdicts.json, study.json and sweep.json are identical to the 2026-09-20 scoring, timestamps aside)
+
+ASSAY STUDY — scored from ledger/study at 12 bps round trip
+  universe: 20 included, 2 excluded (solana:SOL, solana:PYTH)
+  window convention: inclusive
+  calls ok by arm: naive 20, monthly 380, weekly 1558, daily 10798
+
+  ARM daily — 10798 rows, 43059 forecasts; No pair carries predictive signal beyond drift at this bar.
+  SEGMENT         HRZN  VERDICT           EXCESS      NET     ±SE      n   effN  p
+  Public Figure    24h  fail-signal         59.5     47.5    51.9    128    143  0.25637
+  Smart Trader    168h  fail-signal         25.9     13.9    82.1    222    133  0.75462
+  Top PnL         168h  fail-signal         23.3     11.3    17.5   2420   2580  0.17491
+  Top PnL          48h  fail-signal         14.7      2.7    18.5   2420   2132  0.43278
+  Exchange         24h  fail-signal          2.4     -9.6     9.7   4912   4455  0.8026
+  Exchange        168h  fail-signal          1.1    -10.9    12.7   4911   4572  0.92804
+  Public Figure    48h  fail-signal          0.3    -11.8    78.1    128    112  0.9965
+  Fresh Wallets    24h  fail-signal         -7.5    -19.6     9.0   5308   5168  0.3983
+  Top PnL          24h  fail-signal        -10.0    -22.0    15.1   2420   1923  0.50025
+  Public Figure   168h  fail-signal        -12.0    -24.0    50.9    128    237  0.8031
+  Exchange         48h  fail-signal        -14.9    -26.9    10.6   4912   6555  0.16592
+  Fresh Wallets    48h  fail-signal        -16.6    -28.6    13.3   5307   4188  0.2034
+  Fresh Wallets   168h  fail-signal        -19.0    -31.0    19.3   5305   2065  0.32384
+  Whale           168h  fail-signal        -22.7    -34.7    21.7   1358   1416  0.29685
+  Smart Trader     24h  fail-signal        -28.4    -40.4    47.1    222    190  0.54973
+  Whale            24h  fail-signal        -36.1    -48.1    21.1   1358    937  0.08496
+  Whale            48h  fail-signal        -37.6    -49.6    24.3   1358   1299  0.12594
+  Smart Trader     48h  fail-signal        -69.7    -81.7    59.8    222    207  0.24438
+
+  ARM weekly — 1558 rows, 6372 forecasts; No pair carries predictive signal beyond drift at this bar.
+  SEGMENT         HRZN  VERDICT           EXCESS      NET     ±SE      n   effN  p
+  Top PnL         168h  fail-signal         36.3     24.3    31.1    366    586  0.23788
+  Fresh Wallets    48h  fail-signal         32.8     20.8    47.9    772    316  0.49175
+  Top PnL          48h  fail-signal         20.8      8.8    46.1    366    293  0.64918
+  Exchange         48h  fail-signal         12.6      0.6    23.3    714   1125  0.5937
+  Top PnL          24h  fail-signal          1.7    -10.3    31.2    366    383  0.95602
+  Exchange         24h  fail-signal          0.1    -11.9    25.2    714    700  0.9975
+  Exchange        168h  fail-signal         -0.0    -12.0    25.7    714    962  0.997
+  Whale            48h  fail-signal         -1.7    -13.7    72.0    212    146  0.98201
+  Smart Trader    168h  fail-signal         -2.3    -14.3    85.2     32     24  0.97551
+  Smart Trader     48h  fail-signal         -9.0    -21.0   126.8     32     66  0.94103
+  Fresh Wallets    24h  fail-signal        -10.2    -22.2    35.7    772    287  0.76812
+  Fresh Wallets   168h  fail-signal        -23.5    -35.5    30.6    773    722  0.44928
+  Whale            24h  fail-signal        -39.5    -51.5    38.3    212    234  0.30385
+  Smart Trader     24h  fail-signal        -78.3    -90.3   122.5     32     20  0.52724
+  Whale           168h  fail-signal        -93.5   -105.5    72.0    212    113  0.1974
+  Public Figure    24h  insufficient           —        —       —     26      —  —
+  Public Figure    48h  insufficient           —        —       —     26      —  —
+  Public Figure   168h  insufficient           —        —       —     26      —  —
+
+  ARM monthly — 380 rows, 2238 forecasts; No pair carries predictive signal beyond drift at this bar.
+  SEGMENT         HRZN  VERDICT           EXCESS      NET     ±SE      n   effN  p
+  Fresh Wallets    48h  fail-signal        158.7    146.7    95.5    186     57  0.09895
+  Smart Trader     24h  fail-signal        101.6     89.6    56.8     63    105  0.07296
+  Fresh Wallets   168h  fail-signal         70.6     58.6    78.4    185    116  0.37631
+  Exchange         24h  fail-signal         70.2     58.2    43.4    190    179  0.10345
+  Exchange        168h  fail-signal         68.8     56.8    55.4    189    219  0.21239
+  Top PnL          24h  fail-signal         46.6     34.6    62.8    157     87  0.45427
+  Whale            48h  fail-signal         44.5     32.5    59.1    123    168  0.45027
+  Smart Trader     48h  fail-signal         18.1      6.1    81.2     63     92  0.81259
+  Fresh Wallets    24h  fail-signal         -2.0    -14.0    69.0    186     67  0.97751
+  Whale            24h  fail-signal        -13.7    -25.7    70.5    123     84  0.85407
+  Exchange         48h  fail-signal        -35.4    -47.4    68.3    190    135  0.6047
+  Smart Trader    168h  fail-signal        -69.3    -81.3    48.3     63    136  0.15392
+  Top PnL         168h  fail-signal        -75.0    -87.0    84.3    156     91  0.37031
+  Whale           168h  fail-signal       -103.1   -115.1    83.3    123    128  0.21439
+  Top PnL          48h  fail-signal       -128.0   -140.0    84.6    157     90  0.13343
+  Public Figure    24h  insufficient           —        —       —     27      —  —
+  Public Figure    48h  insufficient           —        —       —     27      —  —
+  Public Figure   168h  insufficient           —        —       —     27      —  —
+
+  ARM weekly-from-daily — 1556 rows, 8616 forecasts; No pair carries predictive signal beyond drift at this bar.
+  SEGMENT         HRZN  VERDICT           EXCESS      NET     ±SE      n   effN  p
+  Public Figure   168h  fail-signal        103.3     91.3    57.7     89    164  0.07696
+  Top PnL         168h  fail-signal         57.7     45.7    39.9    610    339  0.15792
+  Fresh Wallets    48h  fail-signal         40.2     28.2    41.9    779    328  0.34133
+  Fresh Wallets   168h  fail-signal         26.3     14.3    31.6    780    600  0.4023
+  Public Figure    24h  fail-signal         12.2      0.1    60.9     89     96  0.84908
+  Smart Trader     24h  fail-signal         10.1     -1.9    56.1    154    163  0.87256
+  Exchange         24h  fail-signal          9.7     -2.3    29.4    779    442  0.73763
+  Exchange        168h  fail-signal          5.5     -6.5    25.6    779    881  0.82759
+  Exchange         48h  fail-signal         -3.8    -15.8    30.7    779    656  0.90705
+  Fresh Wallets    24h  fail-signal        -12.0    -24.0    43.3    779    224  0.78161
+  Top PnL          48h  fail-signal        -16.7    -28.7    47.3    610    332  0.72214
+  Smart Trader     48h  fail-signal        -23.9    -35.9    64.3    154    161  0.72714
+  Top PnL          24h  fail-signal        -36.0    -48.0    27.7    610    468  0.2009
+  Whale           168h  fail-signal        -47.8    -59.8    32.3    459    534  0.13943
+  Whale            24h  fail-signal        -61.0    -73.0    31.4    459    418  0.04848
+  Whale            48h  fail-signal       -105.6   -117.6    38.2    459    490  0.008
+  Smart Trader    168h  fail-signal       -123.3   -135.3    60.2    154    153  0.04098
+  Public Figure    48h  fail-signal       -160.0   -172.0    77.5     89    139  0.03498
+
+  ARM monthly-from-daily — 378 rows, 2508 forecasts; No pair carries predictive signal beyond drift at this bar.
+  SEGMENT         HRZN  VERDICT           EXCESS      NET     ±SE      n   effN  p
+  Fresh Wallets    48h  fail-signal        262.0    250.0    89.5    190     78  0.003
+  Fresh Wallets   168h  fail-signal        153.9    141.9    74.1    189    118  0.03498
+  Whale            24h  fail-signal         54.9     42.9    37.1    141    298  0.14493
+  Top PnL         168h  fail-signal         32.3     20.3    55.4    174    203  0.56622
+  Smart Trader    168h  fail-signal         31.1     19.1    67.7     95    159  0.63968
+  Fresh Wallets    24h  fail-signal         12.7      0.7    64.6    190     97  0.83958
+  Exchange        168h  fail-signal         -5.4    -17.4    64.7    189    212  0.93203
+  Exchange         24h  fail-signal        -39.2    -51.2    49.7    190    151  0.43878
+  Public Figure    24h  fail-signal        -40.7    -52.7    43.3     46    139  0.34983
+  Public Figure   168h  fail-signal        -46.3    -58.3    51.6     46    192  0.37281
+  Whale            48h  fail-signal        -57.2    -69.2    64.3    141    179  0.37531
+  Exchange         48h  fail-signal        -68.5    -80.5    79.5    190     89  0.3948
+  Top PnL          24h  fail-signal        -79.0    -91.0    48.0    174    129  0.10445
+  Public Figure    48h  fail-signal       -101.2   -113.2   100.8     46     48  0.31684
+  Smart Trader     24h  fail-signal       -111.5   -123.5    58.1     95    111  0.05997
+  Top PnL          48h  fail-signal       -127.2   -139.2    65.4    174    152  0.04798
+  Smart Trader     48h  fail-signal       -147.0   -159.0    85.5     95     96  0.09095
+  Whale           168h  fail-signal       -147.7   -159.7    75.9    141    173  0.05147
+
+  LEAK — weekly window, one call vs summed daily calls
+  SEGMENT         pairs  |Δflow|/|flow|  sign flips
+  whale            1556          399.3%         196
+  public_figure    1556          964.5%          59
+  top_pnl          1556          279.5%         268
+  smart_trader     1556         1567.6%         104
+  exchange         1556          351.4%         478
+  fresh_wallets    1556          728.4%           0
+  SEGMENT         HRZN  claims  leak bps     ±SE  called          summed         
+  Whale            24h     184     -36.2    53.1  fail-signal     fail-signal    
+  Whale            48h     184      80.3    66.8  fail-signal     fail-signal    
+  Whale           168h     184    -137.3    91.5  fail-signal     fail-signal    
+  Public Figure    24h      19     239.9    85.8  insufficient    fail-signal    
+  Public Figure    48h      19     250.7   190.6  insufficient    fail-signal    
+  Public Figure   168h      19    -462.8   306.3  insufficient    fail-signal    
+  Top PnL          24h     301      81.5    41.4  fail-signal     fail-signal    
+  Top PnL          48h     301      10.9    56.6  fail-signal     fail-signal    
+  Top PnL         168h     301     -39.8    46.7  fail-signal     fail-signal    
+  Smart Trader     24h      19     136.2   101.8  fail-signal     fail-signal    
+  Smart Trader     48h      19     327.9   220.3  fail-signal     fail-signal    
+  Smart Trader    168h      19     157.6    83.2  fail-signal     fail-signal    
+  Exchange         24h     532      25.1    34.4  fail-signal     fail-signal    
+  Exchange         48h     532     -20.0    33.1  fail-signal     fail-signal    
+  Exchange        168h     532      31.7    38.1  fail-signal     fail-signal    
+  Fresh Wallets    24h     656      -8.6    23.5  fail-signal     fail-signal    
+  Fresh Wallets    48h     656      19.2    23.7  fail-signal     fail-signal    
+  Fresh Wallets   168h     657     -19.9    27.2  fail-signal     fail-signal    
+
+  LEAK — monthly window, one call vs summed daily calls
+  SEGMENT         pairs  |Δflow|/|flow|  sign flips
+  whale             378          161.7%          53
+  public_figure     378          515.7%          18
+  top_pnl           378          184.2%          69
+  smart_trader      378          317.2%          39
+  exchange          378          165.7%         118
+  fresh_wallets     378         5458.1%           0
+  SEGMENT         HRZN  claims  leak bps     ±SE  called          summed         
+  Whale            24h      94      70.5    83.6  fail-signal     fail-signal    
+  Whale            48h      94      79.4    91.7  fail-signal     fail-signal    
+  Whale           168h      94       0.2   153.7  fail-signal     fail-signal    
+  Public Figure    24h      21      72.0   189.1  insufficient    fail-signal    
+  Public Figure    48h      21      54.8    67.5  insufficient    fail-signal    
+  Public Figure   168h      21      44.9   332.9  insufficient    fail-signal    
+  Top PnL          24h     128      86.8    79.6  fail-signal     fail-signal    
+  Top PnL          48h     128      -7.4    80.8  fail-signal     fail-signal    
+  Top PnL         168h     128    -171.0   116.1  fail-signal     fail-signal    
+  Smart Trader     24h      48     152.6    61.4  fail-signal     fail-signal    
+  Smart Trader     48h      48      -6.5   134.4  fail-signal     fail-signal    
+  Smart Trader    168h      48     -49.7   178.4  fail-signal     fail-signal    
+  Exchange         24h     142      68.3    45.9  fail-signal     fail-signal    
+  Exchange         48h     142      10.3    91.2  fail-signal     fail-signal    
+  Exchange        168h     141     112.7    72.5  fail-signal     fail-signal    
+  Fresh Wallets    24h     154       9.1    40.4  fail-signal     fail-signal    
+  Fresh Wallets    48h     154     -69.1    50.2  fail-signal     fail-signal    
+  Fresh Wallets   168h     153     -11.1    78.5  fail-signal     fail-signal    
+
+  LEAK — whole range in one call vs summed daily calls (flow level only; one row per token)
+  whale              18        30088.2%          12
+  public_figure      18          768.0%           3
+  top_pnl            18         8473.7%           8
+  smart_trader       18         1726.5%           7
+  exchange           18         3354.6%           9
+  fresh_wallets      18        11873.8%           0
+
+  written: study.json, verdicts.json (daily arm, MCP-ready), sweep.json (the page)
+

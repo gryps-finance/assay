@@ -1,0 +1,100 @@
+{
+  "startedAtIso": "2026-09-19T18:34:28.121Z",
+  "fromDate": "2025-03-11",
+  "toDate": "2026-09-01",
+  "arms": [
+    "naive",
+    "monthly",
+    "weekly",
+    "daily"
+  ],
+  "tokens": [
+    "WETH",
+    "WBTC",
+    "LINK",
+    "UNI",
+    "AAVE",
+    "LDO",
+    "CRV",
+    "ONDO",
+    "PEPE",
+    "ENA",
+    "SOL",
+    "JUP",
+    "JTO",
+    "PYTH",
+    "WIF",
+    "BONK",
+    "AERO",
+    "DEGEN",
+    "BRETT",
+    "CAKE",
+    "XVS",
+    "TWT"
+  ],
+  "specHash": "deb117cbb478",
+  "spec": {
+    "minFlowUsd": 250000,
+    "topK": 10,
+    "horizonsHours": [
+      24,
+      48,
+      168
+    ],
+    "controlWindowDays": 3,
+    "controlSeed": 20260916
+  },
+  "segments": [
+    "whale",
+    "public_figure",
+    "top_pnl",
+    "smart_trader",
+    "exchange",
+    "fresh_wallets"
+  ],
+  "baseUrl": "https://api.nansen.ai",
+  "tier": "pro",
+  "prereg": "bf3024fb33a53051",
+  "amendment": "88328d592759d830",
+  "plan": {
+    "lines": [
+      {
+        "what": "universe resolution (one probe day per token)",
+        "calls": 22,
+        "credits": 110
+      },
+      {
+        "what": "convention probe (one token, three calls)",
+        "calls": 3,
+        "credits": 15
+      },
+      {
+        "what": "OHLCV 1h, one call per token (split only if truncated)",
+        "calls": 22,
+        "credits": 110
+      },
+      {
+        "what": "arm: naive",
+        "calls": 22,
+        "credits": 110
+      },
+      {
+        "what": "arm: monthly",
+        "calls": 418,
+        "credits": 2090
+      },
+      {
+        "what": "arm: weekly",
+        "calls": 1716,
+        "credits": 8580
+      },
+      {
+        "what": "arm: daily",
+        "calls": 11880,
+        "credits": 59400
+      }
+    ],
+    "calls": 14083,
+    "credits": 70415
+  }
+}

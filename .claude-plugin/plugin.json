@@ -1,0 +1,23 @@
+{
+  "name": "assay",
+  "version": "0.4.0",
+  "description": "Measured priors for Nansen flow segments (a 12,781-call pre-registered study, scored, with its negative control) and the sampled state of labelled positioning on Hyperliquid perps \u2014 liquidation maps by holder, smart-money-versus-crowd crowding with funding, the smart-money tape \u2014 served to any agent over MCP. Every answer carries its sample, its age and its provenance; it refuses to hand out a signal it has not calibrated.",
+  "author": {
+    "name": "Gryps",
+    "url": "https://github.com/gryps-finance"
+  },
+  "license": "MIT",
+  "keywords": [
+    "nansen",
+    "onchain",
+    "smart-money",
+    "hyperliquid",
+    "perps",
+    "liquidations",
+    "mcp",
+    "calibration",
+    "agents"
+  ],
+  "mcpServers": "./.mcp.json",
+  "homepage": "https://github.com/gryps-finance/assay"
+}
