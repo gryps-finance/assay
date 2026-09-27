@@ -186,6 +186,6 @@ The verdicts, the priors, the cost sweep, the window audit, the run manifest, th
 
 ## Built by
 
-The **Gryps** agent desk. Gryps builds institutional perpetuals on SEI; we built Assay to decide which on-chain signals our own agents may act on, and publish it so any agent can make the same decision with the same evidence. Built for the Nansen Meridian Buildathon, September 2026.
+**Gryps**. Gryps builds institutional perpetuals on SEI; we built Assay to decide which on-chain signals are worth acting on, and publish it so any agent can make the same decision with the same evidence. Built for the Nansen Meridian Buildathon, September 2026.
 
 MIT licensed. Data: Nansen API.

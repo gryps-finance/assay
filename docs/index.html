@@ -709,10 +709,10 @@ npm test                       <span class="c"># the whole instrument, no key</s
 
 <script id="live-data" type="application/json">{
   "kind": "assay-live-signals",
-  "note": "The tool's own output from `node src/now.mjs --budget 150 --tier pro` on the Gryps host, transcribed from the run's table. The 20 largest of the day's 27 signals are here, as the command prints them; the run's file holds all 27. Replace this file with your own ledger/live/live-signals.json and rebuild to render your run.",
+  "note": "The tool's own output from `node src/now.mjs --budget 150 --tier pro` on a Gryps host, transcribed from the run's table. The 20 largest of the day's 27 signals are here, as the command prints them; the run's file holds all 27. Replace this file with your own ledger/live/live-signals.json and rebuild to render your run.",
   "asOf": "2026-09-27T17:35:00Z",
   "date": "2026-09-26",
-  "host": "the Gryps agent desk's host",
+  "host": "a Gryps host",
   "universe": { "tokens": 20, "read": 20, "chains": ["ethereum", "solana", "base", "bnb"] },
   "priors": { "from": "daily arm of the study, scored 2026-09-20T00:26:42.834Z", "costRtBps": 12, "searchCount": 18 },
   "credits": { "used": 100, "remaining": 136066 },
@@ -750,7 +750,7 @@ npm test                       <span class="c"># the whole instrument, no key</s
 </script>
 <script id="pos-data" type="application/json">{
   "kind": "assay-positioning-snapshot",
-  "note": "The tool's own output from `node src/positioning.mjs --markets 3 --budget 120 --tier pro` on the Gryps host, transcribed from the run's table and its liquidation lines. The map's holders by cohort (smart money, whales) are served on the machine that sampled them and are not on this page: they come from the smart-money-filtered positions pull, which Nansen restricts from public display.",
+  "note": "The tool's own output from `node src/positioning.mjs --markets 3 --budget 120 --tier pro` on a Gryps host, transcribed from the run's table and its liquidation lines. The map's holders by cohort (smart money, whales) are served on the machine that sampled them and are not on this page: they come from the smart-money-filtered positions pull, which Nansen restricts from public display.",
   "asOf": "2026-09-27T17:35:00Z",
   "sampleId": "2026-09-27T17",
   "screenerHour": "2026-09-27T17",
@@ -916,7 +916,7 @@ npm test                       <span class="c"># the whole instrument, no key</s
     `Method: <a href="https://github.com/gryps-finance/assay/blob/main/PREREGISTRATION.md">PREREGISTRATION.md</a>, sealed before the run; every flow call's request id is in <code>ledger/study/receipts.jsonl</code>. Signal fingerprint <b>${esc(S.signalFingerprint)}</b>.`
 
   $('foot').innerHTML =
-    `<b>Assay</b> · built by the Gryps agent desk for the Nansen Meridian Buildathon, September 2026 · MIT · zero dependencies, Node 18+ · ` +
+    `<b>Assay</b> · built by Gryps for the Nansen Meridian Buildathon, September 2026 · MIT · zero dependencies, Node 18+ · ` +
     `<a href="https://github.com/gryps-finance/assay">github.com/gryps-finance/assay</a> · <a href="https://nansen.ai">Powered by Nansen API</a><br>` +
     `The signals and the positioning read are the tool's own output from runs on our host, rendered verbatim with their times; run it with your key for today's. The study's figures are the engine's output over ${fmtInt(S.observationsUsed)} token-days, scored once per cost; the browser computes no verdict.`
 </script>

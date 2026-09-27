@@ -1,9 +1,9 @@
 {
   "kind": "assay-live-signals",
-  "note": "The tool's own output from `node src/now.mjs --budget 150 --tier pro` on the Gryps host, transcribed from the run's table. The 20 largest of the day's 27 signals are here, as the command prints them; the run's file holds all 27. Replace this file with your own ledger/live/live-signals.json and rebuild to render your run.",
+  "note": "The tool's own output from `node src/now.mjs --budget 150 --tier pro` on a Gryps host, transcribed from the run's table. The 20 largest of the day's 27 signals are here, as the command prints them; the run's file holds all 27. Replace this file with your own ledger/live/live-signals.json and rebuild to render your run.",
   "asOf": "2026-09-27T17:35:00Z",
   "date": "2026-09-26",
-  "host": "the Gryps agent desk's host",
+  "host": "a Gryps host",
   "universe": { "tokens": 20, "read": 20, "chains": ["ethereum", "solana", "base", "bnb"] },
   "priors": { "from": "daily arm of the study, scored 2026-09-20T00:26:42.834Z", "costRtBps": 12, "searchCount": 18 },
   "credits": { "used": 100, "remaining": 136066 },

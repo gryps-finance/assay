@@ -1,6 +1,6 @@
 {
   "kind": "assay-positioning-snapshot",
-  "note": "The tool's own output from `node src/positioning.mjs --markets 3 --budget 120 --tier pro` on the Gryps host, transcribed from the run's table and its liquidation lines. The map's holders by cohort (smart money, whales) are served on the machine that sampled them and are not on this page: they come from the smart-money-filtered positions pull, which Nansen restricts from public display.",
+  "note": "The tool's own output from `node src/positioning.mjs --markets 3 --budget 120 --tier pro` on a Gryps host, transcribed from the run's table and its liquidation lines. The map's holders by cohort (smart money, whales) are served on the machine that sampled them and are not on this page: they come from the smart-money-filtered positions pull, which Nansen restricts from public display.",
   "asOf": "2026-09-27T17:35:00Z",
   "sampleId": "2026-09-27T17",
   "screenerHour": "2026-09-27T17",
