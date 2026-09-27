@@ -174,7 +174,11 @@ export async function runNow({ client, date, universe, verdicts, say = () => {},
 
 const pad = (s, n) => String(s).padEnd(n)
 const lpad = (s, n) => String(s).padStart(n)
-const usd = (x) => `${x < 0 ? '-' : '+'}$${Math.abs(x) >= 1e6 ? `${(Math.abs(x) / 1e6).toFixed(2)}M` : `${Math.round(Math.abs(x) / 1e3)}k`}`
+const usd = (x) => {
+  const a = Math.abs(x)
+  const n = a >= 1e9 ? `${(a / 1e9).toFixed(2)}b` : a >= 1e6 ? `${(a / 1e6).toFixed(2)}m` : `${Math.round(a / 1e3)}k`
+  return `${x < 0 ? '-' : '+'}$${n}`
+}
 
 /**
  * The table a person reads. `limit` caps the rows shown (the strongest flows

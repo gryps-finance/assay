@@ -4,7 +4,8 @@ venture: gryps
 project: assay
 from: mango
 date: 2026-09-20
-status: DRAFT — to be sealed by M. Dogwood before the first SCHEDULED sample. The one-off probe sample (schema and cost check, ≤ 100 credits) is recorded in its own ledger directory and is not part of the panel.
+sealed: 2026-09-27
+status: SEALED by M. Dogwood on 2026-09-27, before the first scheduled sample, from the probe's readings (§10). The probe sample 2026-09-27T12 (schema and cost check, 49 credits) and the one-off run 2026-09-27T17 sit in their own ledger directories and are not part of the panel.
 sampling: src/hl-sample.mjs ; derivation: src/hl-derive.mjs ; scoring: src/hl-score.mjs (to be written before the floor is reached; refuses to run before it)
 ---
 
@@ -32,7 +33,7 @@ Three passes on a clock (UTC), every call kept as a raw page under
 | pass | cadence | what | calls |
 |---|---|---|---|
 | screener | hourly, at :05 | every Hyperliquid perp market: volume, buy/sell pressure and trader count over the hour; mark, funding and open interest now; the smart-money, whale and public-figure books (longs, shorts, counts) | 4 |
-| positions | every six hours (00 06 12 18), at :10 | the ten markets with the most open interest at that sample: the 2,000 largest positions of everyone, plus every smart-money, whale and public-figure position (address, label, side, notional, leverage, entry, mark, liquidation price, funding paid, unrealised PnL) | ~60 |
+| positions | every six hours (00 06 12 18 UTC), at :10 | the ten markets with the most open interest at that sample: the largest positions of everyone (the sampler asks for 2,000; the endpoint returns at most 1,000 per market and marks the pull capped, §10), plus every smart-money, whale and public-figure position (address, label, side, notional, leverage, entry, mark, liquidation price, funding paid, unrealised PnL) | 40 |
 | tape | every two hours, at :15 | smart-money perp trades over the trailing three hours, de-duplicated by transaction into a continuous record | ~2 |
 
 Derivation (`src/hl-derive.mjs`, no key) runs hourly at :25 and writes one
@@ -119,14 +120,15 @@ of signal.
 
 ## 6. Budget
 
-At the cost table's rows (screener 1, positions 5 *assumed until the probe*,
-trades 5 credits per call): screener 96/day, positions ~1,200/day, tape
-~120/day — about **1,400 credits a day, ~43,000 over the 30-day floor**,
-against a balance of ~136,000. The sampler refuses any call that would take
-the account below a 5,000-credit reserve and stops a pass at its own budget
-(2,000 credits per run). If the probe finds positions priced above 10 credits
-a call, the positions cadence drops to every eight hours before the first
-scheduled sample and this section is amended to say so.
+Measured on the probe (§10): screener 1, positions 5 and trades 5 credits per
+call, whatever the page holds. At those prices: screener 96/day, positions
+800/day (40 calls a pass, four passes), tape ~120/day — about **1,000
+credits a day, ~31,000 over the 30-day floor**, against a balance of 136,166
+after the probe. The sampler refuses any call that would take the account
+below a 5,000-credit reserve and stops a pass at its own budget (2,000 credits
+per run). The eight-hourly fallback the draft held in reserve, for positions
+priced above 10 credits a call, is not triggered; the six-hourly cadence
+stands.
 
 ## 7. Falsifiers, stated in advance
 
@@ -147,9 +149,18 @@ scheduled sample and this section is amended to say so.
 
 ## 8. What is published either way
 
-`ledger/hl/derived/` (series, tape, latest, maps), the scorer's output, the
-credits spent by pass, the coverage per market per sample, every refused or
-shape-refused row with the venue's note, and this document with its seal.
+The scorer's output (the statistics of §3 for every test, labelled and
+label-free, with the permutation rank and the sample), the credits spent by
+pass, the coverage per market per sample, every refused or shape-refused row
+with the venue's note, a request-id receipt for every call, and this document
+with its seal. The sampled and derived files themselves (`ledger/hl/raw/` and
+`ledger/hl/derived/`: positions, the smart-money tape, the per-market series
+and maps) stay on the machine that sampled them, under Nansen's redistribution
+guide, which does not allow smart-money trades to be republished and asks for
+significant transformation and Nansen's approval before anything built on
+positions is. The draft of this section listed `ledger/hl/derived/` among the
+published files; that was wrong, and it is corrected here, before any
+scheduled sample.
 
 ## 9. Amendments
 
@@ -157,7 +168,44 @@ Any change after the first scheduled sample is an amendment: filed
 separately, dated, and carried into the scorer's output. The probe sample is
 not the first scheduled sample.
 
+## 10. The probe, read before sealing
+
+One sample of every pass at 2026-09-27T12 UTC, ledger `hl-probe`, two markets
+(BTC, ETH), 13 calls, 49 credits, 136,166 left; and one run of the
+`positioning` command at 2026-09-27T17 UTC, ledger `hl-oneshot`, three
+markets (BTC, ETH, HYPE), 16 calls, 64 credits. Neither is part of the panel.
+What they showed, and what this document does about each:
+
+- **Costs.** Screener 1 credit, positions 5, trades 5, per call, whatever the
+  page holds. §6 is written at these prices.
+- **Screener.** All four trader types accepted (`all`, `smart_money`, `whale`,
+  `public_figure`), each in one page: 469 markets at 12h; 504, 504, 310 and 80
+  at 17h. No row shape-refused. The derivation wrote 480 series rows for 480
+  markets at 12h.
+- **Positions, all traders.** The endpoint returns at most 1,000 positions per
+  market and marks the pull `capped`, on every market tried. §1 asks for 2,000
+  and records what comes back. Coverage (captured notional over twice open
+  interest, §1) read 0.4413 on BTC (the screener's trader count 1,165) and
+  0.4805 on ETH (463) at 12h. The liquidation map and the crowd skew are
+  therefore built on the largest positions, covering about half of the book's
+  notional, and every surface that serves them says so beside the number.
+- **Positions, labelled.** Smart money 97 to 115 positions per market, public
+  figures 36 to 53. The `whale` type returns exactly one row per market, state
+  ok, on every market tried. It is recorded as returned; no test in §3 uses the
+  whale positions, and the map reports whale holdings as the endpoint gives
+  them.
+- **Tape.** 893 smart-money trades over the trailing three hours at 12h, one
+  call.
+- **The key** was never printed by any pass, and no pass was given a market
+  list: markets came from the venue-wide screener, ranked by open interest.
+
+The clock is registered after this seal. Its cron lines run on the host's
+local clock; the sample hours in §1 are UTC, and the wrappers hold to them.
+
 ---
 
-**Sealed by:** _______________ , 2026-09-__ , before the first scheduled
-sample; probe sample ______________ excluded.
+**Sealed by:** M. Dogwood, 2026-09-27, before the first scheduled sample;
+probe sample 2026-09-27T12 (ledger `hl-probe`) and the one-off run
+2026-09-27T17 (ledger `hl-oneshot`) excluded. The SHA-256 of this file as
+sealed is recorded in the commit that carries it and in the go message to the
+host; the host checks it before the clock is registered.
