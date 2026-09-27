@@ -558,7 +558,15 @@
   .map .side { font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
   .skewbar { position: relative; height: 10px; border-radius: 3px; background: var(--dead-quiet); margin: 4px 0 2px; overflow: hidden; }
   .skewbar::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: var(--hair-strong); }
-  .skewbar i { position: absolute; top: 0; bottom: 0; background: var(--accent); opacity: .85; }
+  .skewbar i { position: absolute; top: 0; bottom: 0; background: var(--accent); opacity: .85; transform-origin: 50% 50%; }
+  /* the page arriving: rows land one by one like a pull coming back, the bars draw in, the tally counts up */
+  @keyframes land { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  @keyframes draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  table.live tbody tr { animation: land .45s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 70ms + 500ms); }
+  .skewbar i { animation: draw .9s cubic-bezier(.2,.7,.2,1) both; animation-delay: 300ms; }
+  .skewbar i.sm { transform-origin: 50% 50%; }
+  .map, .tile { animation: land .5s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 120ms + 200ms); }
+  @media (prefers-reduced-motion: reduce) { table.live tbody tr, .skewbar i, .map, .tile { animation: none; } }
   .skewbar i.sm { background: var(--accent); }
   .skewbar i.crowd { background: var(--ink-3); opacity: .55; }
   .skewrow { display: grid; grid-template-columns: 52px 1fr 52px; gap: 8px; align-items: center; font-family: var(--mono); font-size: 11px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
@@ -821,7 +829,14 @@ npm test                       <span class="c"># the whole instrument, no key</s
 
   /* ── the band ── */
   $('band-eyebrow').textContent = `assay now · flows for ${LIVE.date}, read ${when(LIVE.asOf)}`
-  $('band-n').textContent = LIVE.summary.signals
+  const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const countUp = (el, to, ms = 900) => {
+    if (reduce || !Number.isFinite(to) || to === 0) { el.textContent = to; return }
+    const t0 = performance.now()
+    const step = (t) => { const k = Math.min(1, (t - t0) / ms); el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(step) }
+    requestAnimationFrame(step)
+  }
+  countUp($('band-n'), LIVE.summary.signals)
   $('band-word').textContent = LIVE.summary.signals === 1 ? 'signal.' : 'signals.'
   $('band-t').textContent = LIVE.summary.tradeable
   const m24 = LIVE.summary.meanMeasuredNet24hBps
@@ -833,10 +848,10 @@ npm test                       <span class="c"># the whole instrument, no key</s
 
   /* ── the live rows ── */
   const rows = [...LIVE.signals].sort((a, b) => Math.abs(b.flowUsd) - Math.abs(a.flowUsd))
-  $('live-rows').innerHTML = rows.map((s) => {
+  $('live-rows').innerHTML = rows.map((s, i) => {
     const p = s.prior
     const net = p ? `${sgn(p.netMeanBps)}${f1(p.netMeanBps)} <small>± ${f1(p.standardErrorBps)}</small>` : 'not measured'
-    return `<tr>
+    return `<tr style="--i:${i}">
       <td>${esc(s.cohort)}</td>
       <td class="sym">${esc(s.subject)}</td>
       <td class="dim">${esc(s.chain)}</td>
@@ -856,9 +871,9 @@ npm test                       <span class="c"># the whole instrument, no key</s
     `A token outside the measured universe would get its segment's prior with a note that it is an extrapolation. ` +
     `${esc(LIVE.source)}; ${LIVE.credits.used} credits for the pull, ${fmtInt(LIVE.credits.remaining)} left on the account.`
   $('live-tiles').innerHTML = `
-    <div class="tile"><span class="k">Tokens read</span><span class="v">${LIVE.universe.read}<small>of ${LIVE.universe.tokens}</small></span><span class="d">${esc(LIVE.universe.chains.join(', '))}. One call per token, the day's flow summary by segment.</span></div>
-    <div class="tile dead"><span class="k">Tradeable on their prior</span><span class="v">${LIVE.summary.tradeable}<small>of ${LIVE.summary.signals}</small></span><span class="d">A signal trades only when its segment's measured prior clears the bar and the cost. None did.</span></div>
-    <div class="tile"><span class="k">Credits</span><span class="v">${LIVE.credits.used}<small>spent</small></span><span class="d">${fmtInt(LIVE.credits.remaining)} left on the account after the pull; the budget flag stops a run before it overspends.</span></div>`
+    <div class="tile" style="--i:0"><span class="k">Tokens read</span><span class="v">${LIVE.universe.read}<small>of ${LIVE.universe.tokens}</small></span><span class="d">${esc(LIVE.universe.chains.join(', '))}. One call per token, the day's flow summary by segment.</span></div>
+    <div class="tile dead" style="--i:1"><span class="k">Tradeable on their prior</span><span class="v">${LIVE.summary.tradeable}<small>of ${LIVE.summary.signals}</small></span><span class="d">A signal trades only when its segment's measured prior clears the bar and the cost. None did.</span></div>
+    <div class="tile" style="--i:2"><span class="k">Credits</span><span class="v">${LIVE.credits.used}<small>spent</small></span><span class="d">${fmtInt(LIVE.credits.remaining)} left on the account after the pull; the budget flag stops a run before it overspends.</span></div>`
 
   /* ── positioning ── */
   $('pos-eyebrow').textContent = `assay positioning · ${POS.venue} · sample ${POS.sampleId} UTC · the top ${POS.markets.length} markets by open interest`
@@ -876,10 +891,10 @@ npm test                       <span class="c"># the whole instrument, no key</s
   const bar = (v, cls) => {
     const w = Math.min(50, Math.abs(v) * 50)
     const left = v >= 0 ? 50 : 50 - w
-    return `<div class="skewbar"><i class="${cls}" style="left:${left}%;width:${w}%"></i></div>`
+    return `<div class="skewbar"><i class="${cls}" style="left:${left}%;width:${w}%;transform-origin:${v >= 0 ? 'left' : 'right'} center"></i></div>`
   }
   const band = (b, side) => `${side === 'below' ? '−' : '+'}${(Math.abs(b.lo) * 100).toFixed(1)}% to ${side === 'below' ? '−' : '+'}${(Math.abs(b.hi) * 100).toFixed(1)}%`
-  $('maps').innerHTML = POS.markets.map((m) => `<div class="map">
+  $('maps').innerHTML = POS.markets.map((m, i) => `<div class="map" style="--i:${i}">
       <h3>${esc(m.market)} <small>${fmtInt(m.positions.all_traders)} positions pulled${m.positions.allTradersCapped ? ', at the cap' : ''} · ${m.positions.smart_money} smart money</small></h3>
       <div class="skewrow"><span>smart</span>${bar(m.smSkew, 'sm')}<span class="v">${skew(m.smSkew)}</span></div>
       <div class="skewrow"><span>crowd</span>${bar(m.crowdSkew, 'crowd')}<span class="v">${skew(m.crowdSkew)}</span></div>
