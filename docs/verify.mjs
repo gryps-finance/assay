@@ -10,7 +10,7 @@
  *
  *   check.html  against `run-tournament` re-run from the seeded fixtures at the
  *               same cost (needs `npm run fixtures` first: 35 MB, not shipped)
- *   index.html  against ledger/study/verdicts.json, the scorer's own output
+ *   study.html  against ledger/study/verdicts.json, the scorer's own output
  *               file, not the sweep the page inlines: every cell's verdict and
  *               net re-derived at every cost with the engine's two-verdict rule,
  *               the money panel re-run through src/economics.mjs, and the audit
@@ -78,7 +78,7 @@ const consoleErrors = []
 const usd = (n) => (n < 0 ? '−$' : '$') + Math.abs(Math.round(n)).toLocaleString('en-US')
 
 // ════════════════════════════════════════════════════════════════════════════
-// THE STUDY: index.html against the scorer's own verdicts file
+// THE STUDY: study.html against the scorer's own verdicts file
 // ════════════════════════════════════════════════════════════════════════════
 {
   const V = JSON.parse(readFileSync(join(ROOT, 'ledger/study/verdicts.json'), 'utf8'))
@@ -102,7 +102,7 @@ const usd = (n) => (n < 0 ? '−$' : '$') + Math.abs(Math.round(n)).toLocaleStri
     const page = await ctx.newPage()
     page.on('console', (m) => { if (m.type() === 'error') consoleErrors.push(`[study ${theme}] ${m.text()}`) })
     page.on('pageerror', (e) => consoleErrors.push(`[study ${theme}] pageerror: ${e.message}`))
-    const url = pathToFileURL(join(HERE, 'index.html')).href
+    const url = pathToFileURL(join(HERE, 'study.html')).href
     await page.goto(url)
     await page.waitForSelector('.cell[data-v]')
     const rest = await page.evaluate(() => ({ cost: Number(document.getElementById('cost').value), pressed: document.querySelector('.cell[aria-pressed="true"]')?.dataset, h1: document.getElementById('h1').textContent, truth: document.getElementById('truth-sec').hidden, audit: document.getElementById('audit-sec').hidden }))

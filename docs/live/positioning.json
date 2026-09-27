@@ -1,0 +1,42 @@
+{
+  "kind": "assay-positioning-snapshot",
+  "note": "The tool's own output from `node src/positioning.mjs --markets 3 --budget 120 --tier pro` on the Gryps host, transcribed from the run's table and its liquidation lines. The map's holders by cohort (smart money, whales) are served on the machine that sampled them and are not on this page: they come from the smart-money-filtered positions pull, which Nansen restricts from public display.",
+  "asOf": "2026-09-27T17:35:00Z",
+  "sampleId": "2026-09-27T17",
+  "screenerHour": "2026-09-27T17",
+  "venue": "Hyperliquid",
+  "screener": { "all": 504, "smart_money": 504, "whale": 310, "public_figure": 80 },
+  "calls": 16,
+  "credits": { "used": 64, "remaining": 136002 },
+  "markets": [
+    {
+      "market": "HYPE", "fundingAnnualised": 0.109, "oi": 1890000000,
+      "smSkew": 0.65, "crowdSkew": 0.04, "divergence": 0.61,
+      "positions": { "all_traders": 1000, "allTradersCapped": true, "smart_money": 115, "whale": 1, "public_figure": 53 },
+      "liq": {
+        "below": { "w3": 0.009, "w5": 0.056, "w10": 0.126, "heaviest": { "lo": -0.05, "hi": -0.045, "share": 0.036, "usd": 25800000 } },
+        "above": { "w3": 0.0, "w5": 0.0, "w10": 0.009, "heaviest": { "lo": 0.065, "hi": 0.07, "share": 0.007, "usd": 6200000 } }
+      }
+    },
+    {
+      "market": "ETH", "fundingAnnualised": 0.109, "oi": 2950000000,
+      "smSkew": 0.80, "crowdSkew": 0.21, "divergence": 0.59,
+      "positions": { "all_traders": 1000, "allTradersCapped": true, "smart_money": 97, "whale": 1, "public_figure": 36 },
+      "liq": {
+        "below": { "w3": 0.031, "w5": 0.051, "w10": 0.358, "heaviest": { "lo": -0.09, "hi": -0.085, "share": 0.121, "usd": 154900000 } },
+        "above": { "w3": 0.003, "w5": 0.005, "w10": 0.037, "heaviest": { "lo": 0.085, "hi": 0.09, "share": 0.019, "usd": 26900000 } }
+      }
+    },
+    {
+      "market": "BTC", "fundingAnnualised": 0.109, "oi": 3190000000,
+      "smSkew": 0.42, "crowdSkew": 0.15, "divergence": 0.27,
+      "positions": { "all_traders": 1000, "allTradersCapped": true, "smart_money": 114, "whale": 1, "public_figure": 46 },
+      "liq": {
+        "below": { "w3": 0.078, "w5": 0.117, "w10": 0.342, "heaviest": { "lo": -0.09, "hi": -0.085, "share": 0.087, "usd": 112100000 } },
+        "above": { "w3": 0.035, "w5": 0.05, "w10": 0.12, "heaviest": { "lo": 0.01, "hi": 0.015, "share": 0.029, "usd": 42300000 } }
+      }
+    }
+  ],
+  "coverageProbe": { "sampleId": "2026-09-27T12", "BTC": 0.4413, "ETH": 0.4805, "note": "captured notional over twice open interest, on the probe sample: the all-traders pull is capped at 1,000 positions a market, so the map is weighted on the largest positions covering about half of the book" },
+  "source": "Powered by Nansen API: perp-screener, tgm/perp-positions"
+}

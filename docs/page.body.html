@@ -521,7 +521,8 @@
       instrument finds a planted edge when there is one; the other page shows it doing so.
     </p>
     <nav class="modes" aria-label="Which data this page shows">
-      <a href="index.html" id="mode-study">The study · real Nansen data</a>
+      <a href="index.html">← Assay · the tool</a>
+      <a href="study.html" id="mode-study">The study · real Nansen data</a>
       <a href="check.html" id="mode-check">The instrument check · a planted edge</a>
     </nav>
     <div class="provenance" id="prov"></div>
@@ -845,7 +846,7 @@
     $('notice-p').innerHTML = `<b>No Nansen API call was made to produce this page.</b> Every figure below is the engine's own
       output over a seeded generator with a planted answer (<code>test/make-fixtures.mjs</code>), the only way to prove an
       instrument recovers what is there and refuses what is not. The cohort names are Nansen's; the edges attached to them are
-      invented. Nothing here is a finding about any real cohort. The real study is <a href="index.html">the other page</a>.`
+      invented. Nothing here is a finding about any real cohort. The real study is <a href="study.html">the other page</a>.`
     $('truth-sec').hidden = false
     $('audit-sec').hidden = true
     $('close-study').hidden = true

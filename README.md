@@ -11,7 +11,7 @@ Assay sits between Nansen's data and an agent's order. It does four things:
 
 It runs as a **CLI**, an **MCP server** for any agent (Claude, Cursor, anything that speaks MCP), and a **Claude plugin**. Zero dependencies: Node 18+ and nothing to install.
 
-**See the study:** [gryps-finance.github.io/assay](https://gryps-finance.github.io/assay/) renders all eighteen verdicts, the cost at which each would turn, what an agent that traded them would expect, and the window audit, straight from the engine's output. [The instrument check](https://gryps-finance.github.io/assay/check.html) runs the same page over a world with a planted edge, to show the instrument finds one when it is there.
+**See it:** [gryps-finance.github.io/assay](https://gryps-finance.github.io/assay/) shows what the tool served on real runs (the day's 27 signals with their priors and decisions; the Hyperliquid positioning read for BTC, ETH and HYPE), the priors behind them, and how to run it. [The study page](https://gryps-finance.github.io/assay/study.html) renders all eighteen verdicts, the cost at which each would turn, what an agent that traded them would expect, and the window audit, straight from the engine's output. [The instrument check](https://gryps-finance.github.io/assay/check.html) runs the same page over a world with a planted edge, to show the instrument finds one when it is there.
 
 > Powered by Nansen API.
 
@@ -37,20 +37,57 @@ node src/cli.mjs positioning         # about 65 credits: live Hyperliquid positi
 npm test                             # 206 checks
 ```
 
-`assay now` prints one line per signal: the flow, the prior the study measured for that segment (here at 24 hours), the verdict, and the decision. This is a run against the mock venue in `test/` (the flows are synthetic; the priors are the real ones):
+`assay now` prints one line per signal: the flow, the prior the study measured for that segment (here at 24 hours), the verdict, and the decision. This is a real run, on our host, 2026-09-27 17:35 UTC, 100 credits:
 
 ```
-  ASSAY NOW  Nansen flows for 2026-06-15, 20 of 20 tokens read
+  ASSAY NOW  Nansen flows for 2026-09-26, 20 of 20 tokens read
   priors: daily arm of the study, scored 2026-09-20T00:26:42.834Z, 12 bps round trip, 18 hypotheses
 
-  SEGMENT        TOKEN     FLOW  SIDE  24h PRIOR (net ± SE bps)   VERDICT       DECISION
-  Smart Trader   AAVE   -$1.90M  short -40.4 ± 47.1  (n 222)      fail-signal   skip
-  Exchange       XVS    +$3.30M  long  -9.6 ± 9.7  (n 4912)       fail-signal   skip
-  Fresh Wallets  TWT    +$4.96M  long  -19.6 ± 9.0  (n 5308)      fail-signal   skip
-  ...
-  60 live signals; 0 tradeable on their measured prior. Acting on all of them at 24h
-  carries a measured net of -15.4 bps each at 12 bps round trip.
+  SEGMENT        TOKEN       FLOW  SIDE  24h PRIOR (net ± SE bps)   VERDICT       DECISION
+  Fresh Wallets  WETH     +$8.33b  long  -19.6 ± 9.0  (n 5308)      fail-signal   skip
+  Fresh Wallets  AERO    +$67.15m  long  -19.6 ± 9.0  (n 5308)      fail-signal   skip
+  Fresh Wallets  AAVE    +$41.77m  long  -19.6 ± 9.0  (n 5308)      fail-signal   skip
+  Fresh Wallets  WBTC    +$28.69m  long  -19.6 ± 9.0  (n 5308)      fail-signal   skip
+  Fresh Wallets  ENA     +$18.03m  long  -19.6 ± 9.0  (n 5308)      fail-signal   skip
+  Fresh Wallets  UNI     +$10.43m  long  -19.6 ± 9.0  (n 5308)      fail-signal   skip
+  Top PnL        WBTC     -$7.44m  short -22.0 ± 15.1  (n 2420)     fail-signal   skip
+  Exchange       WBTC     +$6.89m  long  -9.6 ± 9.7  (n 4912)       fail-signal   skip
+  Fresh Wallets  LINK     +$4.99m  long  -19.6 ± 9.0  (n 5308)      fail-signal   skip
+  Exchange       AERO     +$4.42m  long  -9.6 ± 9.7  (n 4912)       fail-signal   skip
+  Exchange       ENA      -$2.86m  short -9.6 ± 9.7  (n 4912)       fail-signal   skip
+  Exchange       UNI      -$2.83m  short -9.6 ± 9.7  (n 4912)       fail-signal   skip
+  Fresh Wallets  CAKE     +$2.44m  long  -19.6 ± 9.0  (n 5308)      fail-signal   skip
+  Exchange       PEPE     +$2.42m  long  -9.6 ± 9.7  (n 4912)       fail-signal   skip
+  Exchange       WETH     +$2.39m  long  -9.6 ± 9.7  (n 4912)       fail-signal   skip
+  Fresh Wallets  ONDO     +$1.26m  long  -19.6 ± 9.0  (n 5308)      fail-signal   skip
+  Fresh Wallets  JUP      +$1.18m  long  -19.6 ± 9.0  (n 5308)      fail-signal   skip
+  Exchange       LINK     -$1.15m  short -9.6 ± 9.7  (n 4912)       fail-signal   skip
+  Top PnL        AERO      -$964k  short -22.0 ± 15.1  (n 2420)     fail-signal   skip
+  Whale          ENA       +$818k  long  -48.1 ± 21.1  (n 1358)     fail-signal   skip
+  ... 7 more, the largest flows shown first; every signal is in ledger/live/live-signals.json (--all prints them)
+
+  27 live signals; 0 tradeable on their measured prior. Acting on all of them at 24h carries a measured net of -18.4 bps each at 12 bps round trip.
+  Powered by Nansen API: tgm/historical-token-flow-summary, one call per token per day.
 ```
+
+`assay positioning` reads the venue-wide screener and then the largest positions on the markets with the most open interest. Same host, same hour, 64 credits:
+
+```
+  ASSAY POSITIONING  Hyperliquid, sample 2026-09-27T17 (screener 2026-09-27T17)
+
+  MARKET   FUNDING/yr        OI   SMART   CROWD  DIVERGE  LONGS LIQ <5%  SHORTS LIQ <5%
+  HYPE          10.9%    $1.89b   +0.65   +0.04    +0.61           5.6%            0.0%
+  ETH           10.9%    $2.95b   +0.80   +0.21    +0.59           5.1%            0.5%
+  BTC           10.9%    $3.19b   +0.42   +0.15    +0.27          11.7%            5.0%
+
+  ETH: Longs (liquidate below the mark): 3.1% of mapped long notional within 3%, 5.1% within 5%, 35.8% within 10%;
+  the heaviest half-percent band sits at -9.0% to -8.5% holding 12.1% ($154.9m).
+  ...
+  Skew is by notional: +1 all long, -1 all short. Smart money's is the venue's full smart-money book; the crowd's is
+  the largest positions pulled, excluding smart money. Measurements with an age, not a validated signal.
+```
+
+The full map also names who holds each band (smart money, whales); that part is served on your machine and not reproduced here, under Nansen's redistribution guide.
 
 ---
 
@@ -141,7 +178,7 @@ The verdicts, the priors, the cost sweep, the window audit, the run manifest, th
 ## Honest limits
 
 - The priors are measured on 20 large tokens over 18 months at daily resolution. A token outside that universe gets its segment's prior with a note that it is an extrapolation.
-- The Hyperliquid positioning read is a measurement with an age, not a validated signal. `PREREGISTRATION-HL.md` fixes six tests (crowding against funding, liquidation proximity against realised volatility, smart-money skew against returns) that score the sampled panel once 30 days of samples exist, with a label-free control for each.
+- The Hyperliquid positioning read is a measurement with an age, not a validated signal. `PREREGISTRATION-HL.md`, sealed 2026-09-27 before the first scheduled sample, fixes six tests (crowding against funding, liquidation proximity against realised volatility, smart-money skew against returns) that score the sampled panel once 30 days of six-hourly samples exist, with a label-free control for each. The venue caps the all-traders positions pull at 1,000 a market, so the map is weighted on the largest positions covering about half of the book; every surface says so beside the number.
 - The economics are a closed-form expectation, not a backtest. Slippage beyond the flat cost, capacity, funding and correlation between positions each make the real figure worse.
 
 ---

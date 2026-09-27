@@ -1,0 +1,40 @@
+{
+  "kind": "assay-live-signals",
+  "note": "The tool's own output from `node src/now.mjs --budget 150 --tier pro` on the Gryps host, transcribed from the run's table. The 20 largest of the day's 27 signals are here, as the command prints them; the run's file holds all 27. Replace this file with your own ledger/live/live-signals.json and rebuild to render your run.",
+  "asOf": "2026-09-27T17:35:00Z",
+  "date": "2026-09-26",
+  "host": "the Gryps agent desk's host",
+  "universe": { "tokens": 20, "read": 20, "chains": ["ethereum", "solana", "base", "bnb"] },
+  "priors": { "from": "daily arm of the study, scored 2026-09-20T00:26:42.834Z", "costRtBps": 12, "searchCount": 18 },
+  "credits": { "used": 100, "remaining": 136066 },
+  "summary": {
+    "signals": 27,
+    "shown": 20,
+    "tradeable": 0,
+    "meanMeasuredNet24hBps": -18.4,
+    "headline": "27 live signals; 0 tradeable on their measured prior. Acting on all of them at 24h carries a measured net of -18.4 bps each at 12 bps round trip."
+  },
+  "signals": [
+    { "cohort": "Fresh Wallets", "subject": "WETH", "chain": "ethereum", "flowUsd": 8331380000, "direction": "long", "prior": { "netMeanBps": -19.6, "standardErrorBps": 9.0, "n": 5308 }, "verdict": "fail-signal", "action": "skip" },
+    { "cohort": "Fresh Wallets", "subject": "AERO", "chain": "base", "flowUsd": 67150000, "direction": "long", "prior": { "netMeanBps": -19.6, "standardErrorBps": 9.0, "n": 5308 }, "verdict": "fail-signal", "action": "skip" },
+    { "cohort": "Fresh Wallets", "subject": "AAVE", "chain": "ethereum", "flowUsd": 41770000, "direction": "long", "prior": { "netMeanBps": -19.6, "standardErrorBps": 9.0, "n": 5308 }, "verdict": "fail-signal", "action": "skip" },
+    { "cohort": "Fresh Wallets", "subject": "WBTC", "chain": "ethereum", "flowUsd": 28690000, "direction": "long", "prior": { "netMeanBps": -19.6, "standardErrorBps": 9.0, "n": 5308 }, "verdict": "fail-signal", "action": "skip" },
+    { "cohort": "Fresh Wallets", "subject": "ENA", "chain": "ethereum", "flowUsd": 18030000, "direction": "long", "prior": { "netMeanBps": -19.6, "standardErrorBps": 9.0, "n": 5308 }, "verdict": "fail-signal", "action": "skip" },
+    { "cohort": "Fresh Wallets", "subject": "UNI", "chain": "ethereum", "flowUsd": 10430000, "direction": "long", "prior": { "netMeanBps": -19.6, "standardErrorBps": 9.0, "n": 5308 }, "verdict": "fail-signal", "action": "skip" },
+    { "cohort": "Top PnL", "subject": "WBTC", "chain": "ethereum", "flowUsd": -7440000, "direction": "short", "prior": { "netMeanBps": -22.0, "standardErrorBps": 15.1, "n": 2420 }, "verdict": "fail-signal", "action": "skip" },
+    { "cohort": "Exchange", "subject": "WBTC", "chain": "ethereum", "flowUsd": 6890000, "direction": "long", "prior": { "netMeanBps": -9.6, "standardErrorBps": 9.7, "n": 4912 }, "verdict": "fail-signal", "action": "skip" },
+    { "cohort": "Fresh Wallets", "subject": "LINK", "chain": "ethereum", "flowUsd": 4990000, "direction": "long", "prior": { "netMeanBps": -19.6, "standardErrorBps": 9.0, "n": 5308 }, "verdict": "fail-signal", "action": "skip" },
+    { "cohort": "Exchange", "subject": "AERO", "chain": "base", "flowUsd": 4420000, "direction": "long", "prior": { "netMeanBps": -9.6, "standardErrorBps": 9.7, "n": 4912 }, "verdict": "fail-signal", "action": "skip" },
+    { "cohort": "Exchange", "subject": "ENA", "chain": "ethereum", "flowUsd": -2860000, "direction": "short", "prior": { "netMeanBps": -9.6, "standardErrorBps": 9.7, "n": 4912 }, "verdict": "fail-signal", "action": "skip" },
+    { "cohort": "Exchange", "subject": "UNI", "chain": "ethereum", "flowUsd": -2830000, "direction": "short", "prior": { "netMeanBps": -9.6, "standardErrorBps": 9.7, "n": 4912 }, "verdict": "fail-signal", "action": "skip" },
+    { "cohort": "Fresh Wallets", "subject": "CAKE", "chain": "bnb", "flowUsd": 2440000, "direction": "long", "prior": { "netMeanBps": -19.6, "standardErrorBps": 9.0, "n": 5308 }, "verdict": "fail-signal", "action": "skip" },
+    { "cohort": "Exchange", "subject": "PEPE", "chain": "ethereum", "flowUsd": 2420000, "direction": "long", "prior": { "netMeanBps": -9.6, "standardErrorBps": 9.7, "n": 4912 }, "verdict": "fail-signal", "action": "skip" },
+    { "cohort": "Exchange", "subject": "WETH", "chain": "ethereum", "flowUsd": 2390000, "direction": "long", "prior": { "netMeanBps": -9.6, "standardErrorBps": 9.7, "n": 4912 }, "verdict": "fail-signal", "action": "skip" },
+    { "cohort": "Fresh Wallets", "subject": "ONDO", "chain": "ethereum", "flowUsd": 1260000, "direction": "long", "prior": { "netMeanBps": -19.6, "standardErrorBps": 9.0, "n": 5308 }, "verdict": "fail-signal", "action": "skip" },
+    { "cohort": "Fresh Wallets", "subject": "JUP", "chain": "solana", "flowUsd": 1180000, "direction": "long", "prior": { "netMeanBps": -19.6, "standardErrorBps": 9.0, "n": 5308 }, "verdict": "fail-signal", "action": "skip" },
+    { "cohort": "Exchange", "subject": "LINK", "chain": "ethereum", "flowUsd": -1150000, "direction": "short", "prior": { "netMeanBps": -9.6, "standardErrorBps": 9.7, "n": 4912 }, "verdict": "fail-signal", "action": "skip" },
+    { "cohort": "Top PnL", "subject": "AERO", "chain": "base", "flowUsd": -964000, "direction": "short", "prior": { "netMeanBps": -22.0, "standardErrorBps": 15.1, "n": 2420 }, "verdict": "fail-signal", "action": "skip" },
+    { "cohort": "Whale", "subject": "ENA", "chain": "ethereum", "flowUsd": 818000, "direction": "long", "prior": { "netMeanBps": -48.1, "standardErrorBps": 21.1, "n": 1358 }, "verdict": "fail-signal", "action": "skip" }
+  ],
+  "source": "Powered by Nansen API: tgm/historical-token-flow-summary, one call per token per day"
+}

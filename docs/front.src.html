@@ -1,0 +1,316 @@
+<style>
+  /* ── front page only; everything else is the study page's own system ── */
+  .modes a[href^="#"] { scroll-margin-top: 20px; }
+  .sec { scroll-margin-top: 24px; }
+  .lead { font-size: 15.5px; line-height: 1.6; color: var(--ink-2); max-width: 72ch; }
+  .lead b { color: var(--ink-strong); font-weight: 600; }
+  .lead code { font-family: var(--mono); font-size: 12px; color: var(--ink); background: var(--panel-2); border: 1px solid var(--hair); border-radius: 4px; padding: 1px 5px; }
+
+  /* the live table: text columns read left, numbers read right, the decision stands alone */
+  .tablewrap { overflow-x: auto; margin-inline: -4px; padding-inline: 4px; }
+  table.live { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 13px; }
+  table.live th { text-align: left; font-family: var(--mono); font-size: 10.5px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); padding: 0 10px 9px 0; border-bottom: 1px solid var(--hair-strong); white-space: nowrap; }
+  table.live th.r, table.live td.r { text-align: right; }
+  table.live td { padding: 8px 10px 8px 0; border-bottom: 1px solid var(--hair); vertical-align: baseline; white-space: nowrap; color: var(--ink); }
+  table.live td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+  table.live td.sym { font-weight: 600; color: var(--ink-strong); }
+  table.live td.dim, table.live td .dim { color: var(--ink-3); }
+  table.live td small { color: var(--ink-3); font-size: 11px; margin-left: 4px; }
+  table.live tr:last-child td { border-bottom: 1px solid var(--hair-strong); }
+  table.live .neg { color: var(--costly); }
+  table.live .pos { color: var(--econ); }
+  .chip.dec { font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; }
+  .chip[data-a="skip"], .chip[data-a="refuse"] { color: var(--ink-2); border-color: var(--hair-strong); background: var(--panel-2); }
+  .chip[data-a="hold"] { color: var(--costly); border-color: var(--costly-edge); background: var(--costly-quiet); }
+  .chip[data-a="trade"] { color: var(--econ); border-color: var(--econ-edge); background: var(--econ-quiet); }
+
+  /* the positioning read: one row per market, and the map in words under it */
+  .maps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 28px; }
+  @media (max-width: 760px) { .maps { grid-template-columns: 1fr; gap: 18px; } }
+  .map { border-top: 1px solid var(--hair-strong); padding-top: 14px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  .map h3 { font-size: 15px; font-weight: 600; color: var(--ink-strong); display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .map h3 small { font-family: var(--mono); font-size: 11px; font-weight: 400; color: var(--ink-3); letter-spacing: .02em; }
+  .map p { font-size: 13px; line-height: 1.55; color: var(--ink-2); }
+  .map p b { color: var(--ink); font-weight: 500; font-variant-numeric: tabular-nums; }
+  .map .side { font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
+  .skewbar { position: relative; height: 10px; border-radius: 3px; background: var(--dead-quiet); margin: 4px 0 2px; overflow: hidden; }
+  .skewbar::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: var(--hair-strong); }
+  .skewbar i { position: absolute; top: 0; bottom: 0; background: var(--accent); opacity: .85; }
+  .skewbar i.sm { background: var(--accent); }
+  .skewbar i.crowd { background: var(--ink-3); opacity: .55; }
+  .skewrow { display: grid; grid-template-columns: 52px 1fr 52px; gap: 8px; align-items: center; font-family: var(--mono); font-size: 11px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+  .skewrow .v { text-align: right; color: var(--ink); }
+
+  /* the priors, six by three, each cell a verdict */
+  table.priors td.pcell { text-align: right; }
+  table.priors td .v { display: block; font-family: var(--mono); font-variant-numeric: tabular-nums; color: var(--ink); }
+  table.priors td .se { display: block; font-family: var(--mono); font-size: 11px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+
+  .cta { display: flex; flex-wrap: wrap; gap: 10px; }
+  .cta a { display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border: 1px solid var(--hair-strong); border-radius: 999px; color: var(--ink-strong); font-size: 13.5px; font-weight: 500; background: var(--panel); }
+  .cta a:hover { text-decoration: none; border-color: var(--ink-3); }
+  .cta a.primary { background: var(--ink-strong); color: var(--ground); border-color: var(--ink-strong); }
+  .cta a.primary:hover { opacity: .92; }
+
+  pre.mcp.cmd { font-size: 12px; }
+  pre.mcp .c { color: var(--ink-3); }
+  .close code { white-space: nowrap; }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow"><span>Assay · Powered by Nansen API · Nansen Meridian Buildathon, September 2026</span></div>
+    <h1>What a Nansen signal is worth, before your agent trades it.</h1>
+    <p class="thesis">
+      Your agent reads Nansen and sees a flow: fresh wallets piled into WETH, the top PnL wallets sold WBTC. Assay hands it every one of
+      those signals with a <b>measured prior</b> attached, from 12,781 calls of the same endpoint scored against a
+      drift-matched control, and a decision at your cost. Then it reads where the Hyperliquid book actually sits: funding,
+      open interest, the smart-money skew against the crowd, and where the longs and shorts liquidate. A CLI, an MCP server
+      and a Claude plugin, with nothing to install.
+    </p>
+    <nav class="modes" aria-label="On this page">
+      <a href="#live">Today's signals</a>
+      <a href="#positioning">Hyperliquid positioning</a>
+      <a href="#study">The study · 18 verdicts</a>
+      <a href="#run">Run it</a>
+      <a href="study.html">Open the study page ↗</a>
+      <a href="check.html">The instrument check ↗</a>
+    </nav>
+    <div class="provenance" id="prov"></div>
+  </header>
+
+  <section class="band" id="live">
+    <div class="eyebrow"><span id="band-eyebrow">assay now · —</span></div>
+    <div class="head"><span class="n" id="band-n">—</span> <span id="band-word">signals.</span> <span class="n" id="band-t">—</span> <span>tradeable.</span></div>
+    <p class="sub" id="band-sub"></p>
+  </section>
+
+  <section class="sec">
+    <div class="eyebrow"><span>The day's signals, each with the prior the study measured for it</span></div>
+    <p class="lead">
+      <code>assay now</code> reads yesterday's flow summary for twenty tokens, one call each, and applies the study's own
+      rule to make signals of them: a segment's net flow of $250k or more, the ten strongest per segment, the sign as the
+      direction. Each signal is joined to the 24-hour prior the study measured for that segment (net of a 12 bps round
+      trip, with its standard error and sample) and to a decision: <b>trade</b>, sized on the error; <b>hold</b>, real but
+      eaten by cost; <b>skip</b>, nothing beyond drift; <b>refuse</b>, never measured.
+    </p>
+    <div class="tablewrap">
+      <table class="live" aria-label="Live signals with measured priors">
+        <thead><tr>
+          <th>Segment</th><th>Token</th><th>Chain</th><th class="r">Net flow</th><th>Side</th>
+          <th class="r">24h prior <span class="dim">net ± SE, bps</span></th><th class="r">n</th><th>Verdict</th><th>Decision</th>
+        </tr></thead>
+        <tbody id="live-rows"></tbody>
+      </table>
+    </div>
+    <p class="note" id="live-note"></p>
+    <div class="tiles" id="live-tiles"></div>
+  </section>
+
+  <section class="sec" id="positioning">
+    <div class="eyebrow"><span id="pos-eyebrow">assay positioning · Hyperliquid · —</span></div>
+    <p class="lead">
+      <code>assay positioning</code> reads the venue-wide screener (every market's funding, open interest and the
+      smart-money book), then pulls the largest positions on the markets with the most open interest and maps where they
+      liquidate. Smart money's skew is the venue's full smart-money book; the crowd's is the largest positions pulled,
+      excluding smart money. <b>Divergence</b> is the gap between them: positive means the informed cohort is longer than
+      the crowd. These are measurements with an age, served as such. The tests that would make them a signal are sealed in
+      <a href="https://github.com/gryps-finance/assay/blob/main/PREREGISTRATION-HL.md">PREREGISTRATION-HL.md</a> and score
+      after thirty days of six-hourly samples.
+    </p>
+    <div class="tablewrap">
+      <table class="live" aria-label="Hyperliquid positioning by market">
+        <thead><tr>
+          <th>Market</th><th class="r">Funding / yr</th><th class="r">Open interest</th><th class="r">Smart-money skew</th>
+          <th class="r">Crowd skew</th><th class="r">Divergence</th><th class="r">Longs liq. within 5%</th><th class="r">Shorts liq. within 5%</th>
+        </tr></thead>
+        <tbody id="pos-rows"></tbody>
+      </table>
+    </div>
+    <div class="maps" id="maps"></div>
+    <p class="note" id="pos-note"></p>
+  </section>
+
+  <section class="sec" id="study">
+    <div class="eyebrow"><span>The study behind the priors</span></div>
+    <div class="tiles" id="study-tiles"></div>
+    <p class="lead" id="study-lead"></p>
+    <div class="tablewrap">
+      <table class="live priors" aria-label="Measured priors by segment and horizon">
+        <thead><tr><th>Segment</th><th class="r">24 hours</th><th class="r">48 hours</th><th class="r">168 hours</th><th class="r">Largest sample</th></tr></thead>
+        <tbody id="prior-rows"></tbody>
+      </table>
+    </div>
+    <p class="note" id="study-note"></p>
+    <div class="cta">
+      <a class="primary" href="study.html">Open the study: every verdict, the cost at which it turns, and what an agent would have made →</a>
+      <a href="check.html">The instrument check: the same engine finding a planted edge →</a>
+    </div>
+  </section>
+
+  <section class="sec" id="run">
+    <div class="eyebrow"><span>Run it · under ten minutes, Node 18+, no dependencies</span></div>
+    <div class="close">
+      <div>
+        <h3>The command line</h3>
+        <pre class="mcp cmd"><span class="c"># the study's priors need no key</span>
+git clone https://github.com/gryps-finance/assay.git
+cd assay
+node src/cli.mjs leaderboard
+node src/cli.mjs prior "Smart Trader" 48
+
+<span class="c"># live, with a key from app.nansen.ai/api</span>
+export NANSEN_API_KEY=...
+node src/cli.mjs now           <span class="c"># ~100 credits</span>
+node src/cli.mjs positioning   <span class="c"># ~65 credits</span>
+
+npm test                       <span class="c"># the whole instrument, no key</span></pre>
+      </div>
+      <div>
+        <h3>From an agent, over MCP</h3>
+        <p>Twelve tools over stdio. The readers need no key; <code>assay_now</code> and <code>hl_refresh</code> pull live and are capped per call.</p>
+        <pre class="mcp cmd">claude mcp add assay -- node /path/to/assay/src/mcp-server.mjs</pre>
+        <p>Ask the agent <i>"smart money bought AAVE yesterday, should I go long?"</i> and it gets the flow, the prior measured for that segment, and <b>skip</b>, with the reason. Any MCP client works the same way: <code>docs/USAGE.md</code>.</p>
+      </div>
+      <div>
+        <h3>As a Claude plugin</h3>
+        <p>The repository root is the plugin: <code>.claude-plugin/plugin.json</code>, <code>.mcp.json</code>, and a skill that teaches the agent how to read the answers and what a verdict does and does not license.</p>
+        <p>Every number the tool serves comes with its provenance: the request id of the call, the credits it cost, the hash of the sealed method, and the sample the prior was measured on.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="foot"></footer>
+</div>
+
+<script id="live-data" type="application/json">__LIVE_JSON__</script>
+<script id="pos-data" type="application/json">__POS_JSON__</script>
+<script id="study-data" type="application/json">__STUDY_JSON__</script>
+<script>
+  'use strict'
+  const $ = (id) => document.getElementById(id)
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
+  const LIVE = JSON.parse($('live-data').textContent)
+  const POS = JSON.parse($('pos-data').textContent)
+  const S = JSON.parse($('study-data').textContent)
+
+  const usd = (x) => {
+    const a = Math.abs(x)
+    const n = a >= 1e9 ? `${(a / 1e9).toFixed(2)}b` : a >= 1e6 ? `${(a / 1e6).toFixed(2)}m` : `${Math.round(a / 1e3)}k`
+    return `${x < 0 ? '-' : '+'}$${n}`
+  }
+  const usdPlain = (x) => (x >= 1e9 ? `$${(x / 1e9).toFixed(2)}b` : x >= 1e6 ? `$${(x / 1e6).toFixed(1)}m` : `$${Math.round(x / 1e3)}k`)
+  const f1 = (x) => (Number.isFinite(x) ? x.toFixed(1) : '?')
+  const sgn = (x) => (x > 0 ? '+' : '')
+  const pct = (x, d = 1) => `${(x * 100).toFixed(d)}%`
+  const fmtInt = (n) => Number(n).toLocaleString('en-US')
+  const when = (iso) => iso.replace('T', ' ').replace(/:\d\d(\.\d+)?Z$/, ' UTC')
+
+  /* ── header provenance ── */
+  $('prov').innerHTML =
+    `<span><b>live pull</b> ${esc(when(LIVE.asOf))} · ${esc(LIVE.host)}</span>` +
+    `<span><b>positioning sample</b> ${esc(POS.sampleId)} UTC</span>` +
+    `<span><b>priors</b> ${esc(LIVE.priors.from)}</span>` +
+    `<span><b>study</b> ${fmtInt(S.calls)} calls · ${fmtInt(S.observationsUsed)} token-days · ${fmtInt(S.forecastsFormed)} forecasts</span>`
+
+  /* ── the band ── */
+  $('band-eyebrow').textContent = `assay now · flows for ${LIVE.date}, read ${when(LIVE.asOf)}`
+  $('band-n').textContent = LIVE.summary.signals
+  $('band-word').textContent = LIVE.summary.signals === 1 ? 'signal.' : 'signals.'
+  $('band-t').textContent = LIVE.summary.tradeable
+  const m24 = LIVE.summary.meanMeasuredNet24hBps
+  $('band-sub').innerHTML =
+    `Six Nansen segments moved $250k or more in ${LIVE.universe.read} tokens yesterday. ` +
+    (LIVE.summary.tradeable === 0
+      ? `Every signal's measured 24-hour prior sits below zero net of ${LIVE.priors.costRtBps} bps; acting on all of them would carry <b>${sgn(m24)}${f1(m24)} bps</b> each. The flows are real. The edge is what the tool checks for, and today it is not there.`
+      : `<b>${LIVE.summary.tradeable}</b> clear their measured prior at ${LIVE.priors.costRtBps} bps and are sized on the standard error; the rest are held or skipped.`)
+
+  /* ── the live rows ── */
+  const rows = [...LIVE.signals].sort((a, b) => Math.abs(b.flowUsd) - Math.abs(a.flowUsd))
+  $('live-rows').innerHTML = rows.map((s) => {
+    const p = s.prior
+    const net = p ? `${sgn(p.netMeanBps)}${f1(p.netMeanBps)} <small>± ${f1(p.standardErrorBps)}</small>` : 'not measured'
+    return `<tr>
+      <td>${esc(s.cohort)}</td>
+      <td class="sym">${esc(s.subject)}</td>
+      <td class="dim">${esc(s.chain)}</td>
+      <td class="num r ${s.flowUsd < 0 ? 'neg' : ''}">${esc(usd(s.flowUsd))}</td>
+      <td class="dim">${esc(s.direction)}</td>
+      <td class="num r">${net}</td>
+      <td class="num r dim">${p ? fmtInt(p.n) : '—'}</td>
+      <td><span class="pill chip" data-v="${esc(s.verdict)}">${esc(s.verdict)}</span></td>
+      <td><span class="pill chip dec" data-a="${esc(s.action)}">${esc(s.action)}</span></td>
+    </tr>`
+  }).join('')
+  $('live-note').innerHTML =
+    (LIVE.summary.shown < LIVE.summary.signals
+      ? `The <b>${LIVE.summary.shown} largest</b> of the day's <b>${LIVE.summary.signals}</b> signals, as the command prints them; the run's file holds every one. `
+      : `All <b>${LIVE.summary.signals}</b> of the day's signals. `) +
+    `Priors are the ${esc(LIVE.priors.from)}, at ${LIVE.priors.costRtBps} bps round trip, over ${LIVE.priors.searchCount} hypotheses. ` +
+    `A token outside the measured universe would get its segment's prior with a note that it is an extrapolation. ` +
+    `${esc(LIVE.source)}; ${LIVE.credits.used} credits for the pull, ${fmtInt(LIVE.credits.remaining)} left on the account.`
+  $('live-tiles').innerHTML = `
+    <div class="tile"><span class="k">Tokens read</span><span class="v">${LIVE.universe.read}<small>of ${LIVE.universe.tokens}</small></span><span class="d">${esc(LIVE.universe.chains.join(', '))}. One call per token, the day's flow summary by segment.</span></div>
+    <div class="tile dead"><span class="k">Tradeable on their prior</span><span class="v">${LIVE.summary.tradeable}<small>of ${LIVE.summary.signals}</small></span><span class="d">A signal trades only when its segment's measured prior clears the bar and the cost. None did.</span></div>
+    <div class="tile"><span class="k">Credits</span><span class="v">${LIVE.credits.used}<small>spent</small></span><span class="d">${fmtInt(LIVE.credits.remaining)} left on the account after the pull; the budget flag stops a run before it overspends.</span></div>`
+
+  /* ── positioning ── */
+  $('pos-eyebrow').textContent = `assay positioning · ${POS.venue} · sample ${POS.sampleId} UTC · the top ${POS.markets.length} markets by open interest`
+  const skew = (x) => `${sgn(x)}${x.toFixed(2)}`
+  $('pos-rows').innerHTML = POS.markets.map((m) => `<tr>
+      <td class="sym">${esc(m.market)}</td>
+      <td class="num r">${pct(m.fundingAnnualised)}</td>
+      <td class="num r">${usdPlain(m.oi)}</td>
+      <td class="num r">${skew(m.smSkew)}</td>
+      <td class="num r">${skew(m.crowdSkew)}</td>
+      <td class="num r ${m.divergence > 0.2 ? 'pos' : m.divergence < -0.2 ? 'neg' : ''}">${skew(m.divergence)}</td>
+      <td class="num r">${pct(m.liq.below.w5)}</td>
+      <td class="num r">${pct(m.liq.above.w5)}</td>
+    </tr>`).join('')
+  const bar = (v, cls) => {
+    const w = Math.min(50, Math.abs(v) * 50)
+    const left = v >= 0 ? 50 : 50 - w
+    return `<div class="skewbar"><i class="${cls}" style="left:${left}%;width:${w}%"></i></div>`
+  }
+  const band = (b, side) => `${side === 'below' ? '−' : '+'}${(Math.abs(b.lo) * 100).toFixed(1)}% to ${side === 'below' ? '−' : '+'}${(Math.abs(b.hi) * 100).toFixed(1)}%`
+  $('maps').innerHTML = POS.markets.map((m) => `<div class="map">
+      <h3>${esc(m.market)} <small>${fmtInt(m.positions.all_traders)} positions pulled${m.positions.allTradersCapped ? ', at the cap' : ''} · ${m.positions.smart_money} smart money</small></h3>
+      <div class="skewrow"><span>smart</span>${bar(m.smSkew, 'sm')}<span class="v">${skew(m.smSkew)}</span></div>
+      <div class="skewrow"><span>crowd</span>${bar(m.crowdSkew, 'crowd')}<span class="v">${skew(m.crowdSkew)}</span></div>
+      <p><span class="side">Longs, liquidate below the mark</span><br><b>${pct(m.liq.below.w3)}</b> of mapped long notional within 3%, <b>${pct(m.liq.below.w5)}</b> within 5%, <b>${pct(m.liq.below.w10)}</b> within 10%. The heaviest half-percent band sits at <b>${band(m.liq.below.heaviest, 'below')}</b>, holding ${pct(m.liq.below.heaviest.share)} (${usdPlain(m.liq.below.heaviest.usd)}).</p>
+      <p><span class="side">Shorts, liquidate above the mark</span><br><b>${pct(m.liq.above.w3)}</b> within 3%, <b>${pct(m.liq.above.w5)}</b> within 5%, <b>${pct(m.liq.above.w10)}</b> within 10%. Heaviest band <b>${band(m.liq.above.heaviest, 'above')}</b>, holding ${pct(m.liq.above.heaviest.share)} (${usdPlain(m.liq.above.heaviest.usd)}).</p>
+    </div>`).join('')
+  $('pos-note').innerHTML =
+    `Skew is by notional: +1 all long, −1 all short. The venue caps the all-traders pull at 1,000 positions a market, so the map and the crowd skew are built on the largest positions, covering about half of the book's notional ` +
+    `(coverage on the probe sample ${esc(POS.coverageProbe.sampleId)}: BTC ${POS.coverageProbe.BTC.toFixed(2)}, ETH ${POS.coverageProbe.ETH.toFixed(2)}); every surface that serves them says so beside the number. ` +
+    `The map's holders by cohort are served on the machine that sampled them and are not shown here. ` +
+    `Screener: ${POS.screener.all} markets. ${esc(POS.source)}; ${POS.calls} calls, ${POS.credits.used} credits.`
+
+  /* ── the study ── */
+  $('study-tiles').innerHTML = `
+    <div class="tile"><span class="k">Hypotheses</span><span class="v">${S.tested}<small>sealed in advance</small></span><span class="d">Six segments times three horizons. The bar is p &lt; 0.05 / ${S.tested}, Bonferroni over the search.</span></div>
+    <div class="tile"><span class="k">The sample</span><span class="v">${fmtInt(S.calls)}<small>API calls</small></span><span class="d">${fmtInt(S.observationsUsed)} token-days of the flow summary, ${fmtInt(S.forecastsFormed)} dated forecasts, each against a drift-matched control.</span></div>
+    <div class="tile dead"><span class="k">Carry a signal beyond drift</span><span class="v">${S.tested - S.failedSignal}<small>of ${S.tested}, at any cost</small></span><span class="d">The negative control, exchange flow, reads fail-signal at every horizon: the instrument is not inventing edge.</span></div>`
+  $('study-lead').innerHTML =
+    `Pre-registered before the first call, run on 2026-09-19 over twenty large tokens and eighteen months, one call per token per day. A net flow of $250k or more into a token becomes a dated claim that the token beats its own drift over the next 24, 48 or 168 hours; the control is the same token, direction and holding period entered at a random offset, so subtracting it removes the market and leaves the claim. ` +
+    `<b>No segment's flows predict returns beyond drift at any horizon.</b> On a seeded world with a planted edge, the same engine recovers a planted 160 bps as 159.0 and 81.3 as 82.7, which is what makes this null a reading rather than a silence.`
+  const cohorts = [...new Set(S.measured.map((m) => m.cohort))]
+  const H = [24, 48, 168]
+  $('prior-rows').innerHTML = cohorts.map((c) => {
+    const cells = H.map((h) => {
+      const m = S.measured.find((x) => x.cohort === c && x.horizonHours === h)
+      if (!m) return '<td class="pcell">—</td>'
+      return `<td class="pcell"><span class="v">${sgn(m.excessMeanBps)}${f1(m.excessMeanBps)} bps</span><span class="se">± ${f1(m.standardErrorBps)} · p ${m.pValue < 0.001 ? m.pValue.toExponential(1) : m.pValue.toFixed(2)} · <span class="pill chip" data-v="${esc(m.verdict)}">${esc(m.verdict)}</span></span></td>`
+    }).join('')
+    const n = Math.max(...S.measured.filter((x) => x.cohort === c).map((x) => x.n))
+    return `<tr><td class="sym">${esc(c)}${c === 'Exchange' ? ' <small>negative control</small>' : ''}</td>${cells}<td class="num r dim">${fmtInt(n)}</td></tr>`
+  }).join('')
+  $('study-note').innerHTML =
+    `Excess over the drift-matched control, before cost; the live table above nets the 12 bps round trip off the 24-hour column. Standard errors by block bootstrap, because holding windows overlap. ` +
+    `Method: <a href="https://github.com/gryps-finance/assay/blob/main/PREREGISTRATION.md">PREREGISTRATION.md</a>, sealed before the run; every flow call's request id is in <code>ledger/study/receipts.jsonl</code>. Signal fingerprint <b>${esc(S.signalFingerprint)}</b>.`
+
+  $('foot').innerHTML =
+    `<b>Assay</b> · built by the Gryps agent desk for the Nansen Meridian Buildathon, September 2026 · MIT · zero dependencies, Node 18+ · ` +
+    `<a href="https://github.com/gryps-finance/assay">github.com/gryps-finance/assay</a> · <a href="https://nansen.ai">Powered by Nansen API</a><br>` +
+    `The signals and the positioning read are the tool's own output from runs on our host, rendered verbatim with their times; run it with your key for today's. The study's figures are the engine's output over ${fmtInt(S.observationsUsed)} token-days, scored once per cost; the browser computes no verdict.`
+</script>
