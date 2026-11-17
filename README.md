@@ -122,6 +122,8 @@ So: call at the resolution you will act on, and never sum short windows into lon
 
 ## Use it from an agent
 
+Once the proposed `@gryps-finance/assay` package is published, launch the MCP server with `npx --yes --package @gryps-finance/assay@0.4.0 assay-mcp`. Until then use the source checkout.
+
 The MCP server speaks JSON-RPC over stdio and needs nothing installed. Readers need no key; the two tools that pull live (`assay_now`, `hl_refresh`) need `NANSEN_API_KEY` in the server's environment and have a hard per-call credit cap (500, set by `ASSAY_MAX_CREDITS_PER_CALL`).
 
 **Claude Code**

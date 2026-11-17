@@ -1,5 +1,5 @@
 {
-  "name": "assay",
+  "name": "@gryps-finance/assay",
   "version": "0.4.0",
   "description": "Measured priors for Nansen signals, live. Today's Nansen flows joined to what a 12,781-call pre-registered study measured them to be worth, live Hyperliquid positioning (liquidations by holder, smart money against the crowd), and the tools to measure your own. CLI, MCP server and Claude plugin; zero dependencies.",
   "type": "module",
@@ -43,9 +43,12 @@
   ],
   "files": [
     "src",
-    "test",
-    "docs",
-    "ledger/study",
+    "docs/RUNNING.md",
+    "docs/USAGE.md",
+    "ledger/study/convention-audit.json",
+    "ledger/study/study.json",
+    "ledger/study/universe-resolved.json",
+    "ledger/study/verdicts.json",
     "skills",
     ".claude-plugin",
     ".mcp.json",
@@ -58,6 +61,7 @@
     "NANSEN-API-REFERENCE.md",
     "FINDINGS.md"
   ],
+  "publishConfig": { "access": "public" },
   "author": "Gryps (https://github.com/gryps-finance)",
   "repository": {
     "type": "git",
