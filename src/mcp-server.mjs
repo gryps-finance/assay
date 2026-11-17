@@ -360,7 +360,7 @@ process.stdin.on('data', (chunk) => {
       respond(id, {
         protocolVersion: '2024-11-05',
         capabilities: { tools: {} },
-        serverInfo: { name: 'assay', version: '0.4.0' },
+        serverInfo: { name: '@gryps-finance/assay', version: '0.4.0' },
         instructions:
           'Assay returns measured priors for six Nansen flow segments (assay_*: a pre-registered 12,781-call study; no key needed to read them), today\'s live signals each joined to its prior and a decision (assay_now runs the pull; assay_signal_now serves it), and the sampled state of labelled positioning on Hyperliquid perps (hl_*: liquidation maps by holder, smart-money-versus-crowd crowding with funding, the smart-money tape; hl_refresh runs a light live pass). Every number carries its sample, its age and its provenance. It refuses to return a signal it has not calibrated and reports an unsampled market as absence: a refusal means "not measured", which is different from "measured and found empty". Powered by Nansen API.',
       })
